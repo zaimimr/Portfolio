@@ -1,0 +1,27 @@
+$blue: #3DC3DA;
+$white: #ffffff;
+
+$big: 180px;
+$medium: 180px;
+$small: 180px;
+
+.header{
+
+  color: $white;
+  margin-top: 200px;
+  margin-right: auto;
+  
+  &.big {
+    font-size: $big;
+    height: $big;
+  }
+  & .medium {
+    font-size: $medium;
+    height: $medium;
+  }
+  & .small {
+    font-size: $small;
+    height: $small;
+    color: $blue;
+  }
+}

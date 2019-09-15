@@ -1,0 +1,49 @@
+$gray: #333333;
+$yellow: #F8D060;
+$blue: #3DC3DA;
+$white: #ffffff;
+
+.wrapper {
+  display: grid;
+  grid-template-columns: auto, auto, auto;
+  margin-left: 100px;
+}
+
+.svg__name {
+  width: 950px;
+  height: 1px;
+  .line {
+    stroke: $yellow;
+    stroke-width: 2;
+  }
+}
+.description {
+  display: grid;
+  grid-template-columns: 950px auto;
+}
+
+.svg__line {
+  width: 1px;
+  height: 600px;
+  .line {
+    stroke: $yellow;
+    stroke-width: 2;
+  }
+}
+
+
+/*Husk responsiv
+@media only screen and (max-width: 970px) {
+  .name {
+    margin-top: 300px;
+    font-size: 100px;
+    height: 100px;
+  }
+  .about {
+    font-size: 25px;
+    margin-top: 5px;
+  }
+  .svg__name {
+    width: 600px;
+  }
+} */

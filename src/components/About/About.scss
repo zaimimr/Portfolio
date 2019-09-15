@@ -1,0 +1,39 @@
+$gray: #333333;
+$yellow: #F8D060;
+$blue: #3DC3DA;
+$white: #ffffff;
+
+.about {
+
+  margin-top: 20px;
+  font-size: 40px;
+
+  .block1 {
+    display: flex;
+    .b {
+      color: $blue;
+    }
+    .w {
+      color: $white;
+      margin-left: 10px;
+    }
+  }
+  
+
+  .block2 {
+    display: flex;
+    .b {
+      color: $blue;
+      margin-left: 10px;
+    }
+    .w {
+      color: $white;
+      margin-left: 10px;
+    }
+    .y {
+      color: $yellow;
+    }
+  }
+}
+
+

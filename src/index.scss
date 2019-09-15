@@ -1,8 +1,15 @@
+
+$gray: #333333;
+$yellow: #F8D060;
+$blue: #3DC3DA;
+$white: #ffffff;
+
+$mainFont: Calibri;
+
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
-    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-    sans-serif;
+  background-color: $gray;
+  font-family: $mainFont;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
