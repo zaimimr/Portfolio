@@ -1,0 +1,27 @@
+$blue: #3DC3DA;
+$yellow: #F8D060;
+
+.button__link {
+  position: relative;
+}
+
+.button__background { 
+  position: absolute;
+  top: 0;
+  left: 0; 
+}
+
+a svg circle{
+  fill: $blue;
+}
+a:hover svg circle{
+  fill: rgba($color: $blue, $alpha: .4)
+}
+
+.button__image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 60px;
+  height: 60px;
+}

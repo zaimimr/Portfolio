@@ -4,20 +4,7 @@ import Header from './components/Header/Header';
 import About from './components/About/About';
 import Project from './components/Project/Project';
 
-const alleTags = [
-  {
-    tag: "Typescript",
-    color: "yellow",
-  },
-  {
-    tag: "SASS",
-    color: "yellow"
-  },
-  {
-    tag: "Vue.js",
-    color: "blue"
-  }
-]
+const data = require('./projects.json');
 
 function App() {
   return (
@@ -47,7 +34,7 @@ function App() {
             <line x1="0" y1="0" x2="0" y2="10000" className="line" />
           </svg>
           <div>
-            <Project tags={alleTags} title="Project 1" text="Her skal det komme masse masse tekst"/>
+            <Project data={data} />
           </div>
         </div>
       </div>

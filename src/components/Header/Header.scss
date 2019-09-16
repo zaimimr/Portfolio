@@ -12,18 +12,19 @@ $small: 60px;
     height: $big;
     margin-top: 200px;
     margin-right: auto;
-    display: inline-block;
+    display: inline;
   }
   &-medium {
     color: $white;
     font-size: $medium;
     height: $medium;
-    display: inline-block;
+    display: inline;
   }
   &-small {
     font-size: $small;
     height: $small;
     color: $blue;
-    display: inline-block;
+    display: inline;
+    white-space: nowrap;
   }
 }
