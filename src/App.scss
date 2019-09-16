@@ -24,13 +24,53 @@ $white: #ffffff;
 
 .svg__line {
   width: 1px;
-  height: 600px;
+  height: 550px;
+  .line {
+    stroke: $yellow;
+    stroke-width: 2;
+  }
+}
+.projects {
+
+}
+.projects__header {
+  display: grid;
+  grid-template-columns: 350px 608px auto;
+  margin-left: -8px;
+}
+
+.svg__project-horizontal {
+  margin-top: 70px;
+  width: 608px;
+  height: 1px;
+  .line {
+    stroke: $yellow;
+    stroke-width: 2;
+  }
+}
+.svg__project-vertical {
+  width: 1px;
+  height: 70px;
   .line {
     stroke: $yellow;
     stroke-width: 2;
   }
 }
 
+.project__list {
+  margin-top: 20px;
+  display: grid;
+  grid-template-columns: 50px auto
+}
+
+.svg__line__auto {
+  width: 1px;
+  height: 1000px;
+  .line {
+    stroke: $yellow;
+    stroke-width: 2;
+  }
+}
 
 /*Husk responsiv
 @media only screen and (max-width: 970px) {

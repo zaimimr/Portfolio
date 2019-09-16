@@ -2,26 +2,28 @@ $blue: #3DC3DA;
 $white: #ffffff;
 
 $big: 180px;
-$medium: 180px;
-$small: 180px;
+$medium: 100px;
+$small: 60px;
 
 .header{
-
-  color: $white;
-  margin-top: 200px;
-  margin-right: auto;
-  
-  &.big {
+  &-big {
+    color: $white;
     font-size: $big;
     height: $big;
+    margin-top: 200px;
+    margin-right: auto;
+    display: inline-block;
   }
-  & .medium {
+  &-medium {
+    color: $white;
     font-size: $medium;
     height: $medium;
+    display: inline-block;
   }
-  & .small {
+  &-small {
     font-size: $small;
     height: $small;
     color: $blue;
+    display: inline-block;
   }
 }

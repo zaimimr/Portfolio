@@ -1,0 +1,25 @@
+$gray: #333333;
+$yellow: #F8D060;
+$blue: #3DC3DA;
+$white: #ffffff;
+
+
+.tags__wrapper {
+  display: inline-block;
+  border-radius: 50px;
+  font-size: 25px;
+  padding: 3px 10px;
+  &:not(:nth-child(1)){
+    margin-left: 20px;
+  }
+}
+
+.yellow {
+  background-color: $yellow;
+  color: $gray;
+}
+
+.blue {
+  background-color: $blue;
+  color: $white;
+}
