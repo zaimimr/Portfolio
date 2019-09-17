@@ -7,7 +7,7 @@ $white: #ffffff;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   grid-template-rows: repeat(2, 1fr);
-  grid-column-gap: 0px;
+  grid-column-gap: 40px;
   grid-row-gap: 40px;
 
   .card:nth-child(1) {

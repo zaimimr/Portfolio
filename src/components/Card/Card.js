@@ -2,7 +2,11 @@ import React, { Component } from 'react'
 import './Card.scss'
 import Header from '../Header/Header'
 import Tag from './components/Tags'
-import Button from './components/Button';
+import Button from '../Button/Button';
+
+import githubImg from '../../assets/img/github.svg'
+import webImg from '../../assets/img/website.svg'
+
 
 
 
@@ -21,20 +25,20 @@ export class Buttons extends Component {
     if(web != null && github != null){
       return (
         <div className="links">
-          <Button type="github" link={github} />
-          <Button type="web" link={web} />
+          <Button img={githubImg} link={github} />
+          <Button img={webImg} link={web} />
         </div>
       )
     } else if (web == null) {
       return (
         <div className="links">
-          <Button type="github" link={github} />
+          <Button img={githubImg} link={github} />
         </div>
       )
     }else if(github == null) {
       return (
         <div className="links">
-          <Button type="web" link={web} />
+          <Button img={webImg} link={web} />
         </div>
       )
     }
