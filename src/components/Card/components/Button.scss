@@ -1,27 +1,27 @@
 $blue: #3DC3DA;
 $yellow: #F8D060;
 
-.button__link {
-  position: relative;
+$rad: 50px;
+
+a {
+  margin-left: 10px;
 }
 
-.button__background { 
-  position: absolute;
-  top: 0;
-  left: 0; 
+.button__bc {
+  background-color: rgba($blue, 0.9);
+  border-radius: 30px;
+  padding: 5px;
+  width: $rad;
+  height: $rad;
+  overflow: hidden;
+
+  &:hover {
+    background-color: rgba($blue, 0.4);
+  }
 }
 
-a svg circle{
-  fill: $blue;
-}
-a:hover svg circle{
-  fill: rgba($color: $blue, $alpha: .4)
-}
 
 .button__image {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 60px;
-  height: 60px;
+  width: $rad;
+  height: $rad;
 }

@@ -26,15 +26,10 @@ export class Button extends Component {
 
   render() {
     return (
-      <a className="button__link" href={"https://www." + this.props.link}>
-        <svg className="button__background" width="100" height="100">
-          <circle cx="30"
-            cy="30"
-            r="35"
-            fill="#333333">
-          </circle>
-        </svg>
-        <img className="button__image" src={img(this.props.type)} alt={alt(this.props.type)} />
+      <a target="_blank" href={this.props.link}>
+        <div className="button__bc">
+          <img className="button__image" src={img(this.props.type)} alt={alt(this.props.type)} />
+        </div>
       </a>
     )
   }

@@ -14,16 +14,39 @@ export class Tags extends Component {
     )
   }
 }
+export class Buttons extends Component {
+  render() {
+    const github = this.props.github;
+    const web = this.props.web;
+    if(web != null && github != null){
+      return (
+        <div className="links">
+          <Button type="github" link={github} />
+          <Button type="web" link={web} />
+        </div>
+      )
+    } else if (web == null) {
+      return (
+        <div className="links">
+          <Button type="github" link={github} />
+        </div>
+      )
+    }else if(github == null) {
+      return (
+        <div className="links">
+          <Button type="web" link={web} />
+        </div>
+      )
+    }
+  }
+}
 
 export class card extends Component {
   render() {
     return (
       <div className="card__wrapper">
         <Header className="head" size="small" title={this.props.title} />
-        <div className="links">
-          <Button type="github" link={this.props.github} />
-          {/* <Button className="web" type="web" link={this.props.web} /> */}
-        </div>
+        <Buttons github={this.props.github} web={this.props.web}/>
         <div className="desc">
           {this.props.text}
         </div>

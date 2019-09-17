@@ -15,11 +15,11 @@ $white: #ffffff;
 }
 
 .yellow {
-  background-color: $yellow;
+  background-color: rgba($yellow,0.7);
   color: $gray;
 }
 
 .blue {
-  background-color: $blue;
+  background-color: rgba($blue, 0.7);
   color: $white;
 }
