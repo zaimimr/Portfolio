@@ -1,6 +1,6 @@
 [
   {
-    "title": "TIHLDE webpage",
+    "title": "TIHLDE",
     "text": "Tech lead for TIHLDE's webpage and member system. Me and my team are creating a platform for our members to use at a daily basis, both at uni, at home and at a party. I personally have build the entire event's system to help with organizing and promoting future events and business presentations.",
     "web": "https://tihlde.org/",
     "tags": [
@@ -71,7 +71,7 @@
   },
   {
     "title": "Squiggle",
-    "text": "I designed and developed this portfolio from the bottom. For the design process I took a lot of inspiration from my resume, and several other designs found online. The entire design is designed using Abode Illustrator and XD. I decided to use React as the frontend framework, instead of just JQuery, HTML and CSS, because of future expandability.",
+    "text": "Java game developed as a school project for my second semester. We used java pools and JavaFX to create our GUI. I was the Scrum master and responsible for database connection using java pools and MySQL. As a team we also created extensive documentation using ER-diagrams and vision documents",
     "github": "https://github.com/Zenjjim/Squiggle",
     "tags": [
       {

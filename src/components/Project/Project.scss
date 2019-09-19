@@ -30,3 +30,16 @@ $white: #ffffff;
   }
 }
 
+@media only screen and (max-width: 600px) {
+  .project__wrapper {
+    display: grid;
+    grid-template-rows: repeat(4, 1fr);
+    grid-template-columns: unset;
+    grid-column-gap: unset;
+    grid-row-gap: 20px;
+  }
+  .card{
+    grid-area: unset;
+  }
+}
+

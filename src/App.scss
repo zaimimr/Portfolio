@@ -72,18 +72,8 @@ $white: #ffffff;
   }
 }
 
-/*Husk responsiv
-@media only screen and (max-width: 970px) {
-  .name {
-    margin-top: 300px;
-    font-size: 100px;
-    height: 100px;
+@media only screen and (max-width: 600px) {
+  .svg__line__auto {
+    height: 1600px;
   }
-  .about {
-    font-size: 25px;
-    margin-top: 5px;
-  }
-  .svg__name {
-    width: 600px;
-  }
-} */
+}
