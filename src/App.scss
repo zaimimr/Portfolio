@@ -10,7 +10,7 @@ $white: #ffffff;
 }
 
 .svg__name {
-  width: 950px;
+  width: 951px;
   height: 1px;
   .line {
     stroke: $yellow;
@@ -24,24 +24,22 @@ $white: #ffffff;
 
 .svg__line {
   width: 1px;
-  height: 550px;
+  height: 400px;
   .line {
     stroke: $yellow;
     stroke-width: 2;
   }
 }
-.projects {
 
-}
 .projects__header {
   display: grid;
-  grid-template-columns: 350px 608px auto;
+  grid-template-columns: 300px 658px auto;
   margin-left: -8px;
 }
 
 .svg__project-horizontal {
-  margin-top: 70px;
-  width: 608px;
+  margin-top: 60px;
+  width: 659px;
   height: 1px;
   .line {
     stroke: $yellow;
@@ -50,7 +48,7 @@ $white: #ffffff;
 }
 .svg__project-vertical {
   width: 1px;
-  height: 70px;
+  height: 60px;
   .line {
     stroke: $yellow;
     stroke-width: 2;
