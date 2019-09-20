@@ -5,8 +5,8 @@ $white: #ffffff;
 
 
 .about {
-  margin-top: 20px;
-  font-size: 40px;
+  margin-top: 10px;
+  font-size: 25px;
   .block1 {
     display: flex;
     .b {
@@ -34,10 +34,10 @@ $white: #ffffff;
 }
 
 .links {
-  margin-top: 20px;
+  margin-top: 10px;
   margin-left: -10px;
   display: grid;
-  grid-template-columns: repeat(4, .09fr)
+  grid-template-columns: repeat(4, .08fr)
 }
 
 

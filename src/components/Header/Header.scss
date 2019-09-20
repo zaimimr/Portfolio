@@ -1,8 +1,8 @@
 $blue: #3DC3DA;
 $white: #ffffff;
 
-$big: 150px;
-$medium: 80px;
+$big: 120px;
+$medium: 60px;
 $small: 40px;
 
 .header{
@@ -21,10 +21,21 @@ $small: 40px;
     display: inline;
   }
   &-small {
+    margin-top: 10px;
     font-size: $small;
     height: $small;
     color: $blue;
     display: inline;
     white-space: nowrap;
+  }
+}
+
+@media only screen and (max-width: 1250px){
+  $small: 30px;
+  .header {
+    &-small {
+      font-size: $small;
+      height: $small;
+    }
   }
 }

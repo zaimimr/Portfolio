@@ -5,42 +5,57 @@ $white: #ffffff;
 
 .wrapper {
   display: grid;
-  grid-template-columns: auto, auto, auto;
+  grid-template-columns: auto, auto, auto, auto;
   margin-left: 100px;
 }
 
-.svg__name {
-  width: 951px;
-  height: 1px;
-  .line {
-    stroke: $yellow;
-    stroke-width: 2;
-  }
-}
 .description {
   display: grid;
-  grid-template-columns: 950px auto;
-}
-
-.svg__line {
-  width: 1px;
-  height: 400px;
-  .line {
-    stroke: $yellow;
-    stroke-width: 2;
-  }
+  grid-template-columns: 900px auto;
 }
 
 .projects__header {
   display: grid;
-  grid-template-columns: 300px 658px auto;
+  grid-template-columns: 220px 688px auto;
   margin-left: -8px;
 }
 
-.svg__project-horizontal {
-  margin-top: 60px;
-  width: 659px;
+.project__list {
+  display: grid;
+  grid-template-columns: 50px auto
+}
+
+.svg__line__auto {
+  margin-top: 20px;
+  width: 1px;
+  height: 100%;
+  .line {
+    stroke: $yellow;
+    stroke-width: 2;
+  }
+}
+
+.svg__name {
+  width: 901px;
   height: 1px;
+  .line {
+    stroke: $yellow;
+    stroke-width: 2;
+  }
+}
+.svg__line {
+  margin-right: 20px;
+  width: 1px;
+  height: 201px;
+  .line {
+    stroke: $yellow;
+    stroke-width: 2;
+  }
+}
+.svg__project-horizontal {
+  margin-top: 45px;
+  width: 689px;
+  height: 2px;
   .line {
     stroke: $yellow;
     stroke-width: 2;
@@ -48,30 +63,60 @@ $white: #ffffff;
 }
 .svg__project-vertical {
   width: 1px;
-  height: 60px;
+  height: 45px;
   .line {
     stroke: $yellow;
     stroke-width: 2;
   }
 }
-
-.project__list {
+.svg__end {
+  width: 100%;
   margin-top: 20px;
-  display: grid;
-  grid-template-columns: 50px auto
-}
-
-.svg__line__auto {
-  width: 1px;
-  height: 1000px;
+  margin-bottom: 4.8%;
+  height: 2px;
   .line {
     stroke: $yellow;
     stroke-width: 2;
   }
 }
 
-@media only screen and (max-width: 600px) {
-  .svg__line__auto {
-    height: 1600px;
+@media only screen and (max-width: 1050px) {
+  .wrapper {
+    margin-left: 50px;
   }
+  .svg__name{
+    width: 701px;
+  }
+  .description {
+    grid-template-columns: 700px auto;
+  }
+
+  .svg__project-horizontal{
+    width: 489px;
+  }
+  .projects__header {
+    grid-template-columns: 220px 488px auto;
+  }
+}
+
+  @media only screen and (max-width: 800px) {
+    .wrapper {
+      margin-left: 10px;
+    }
+    .svg__name{
+      width: 601px;
+      margin-right: 10px;
+    }
+    .svg__line {
+    }
+    .description {
+      grid-template-columns: 600px auto;
+    }
+
+    .svg__project-horizontal{
+      width: 389px;
+    }
+    .projects__header {
+      grid-template-columns: 220px 388px auto;
+    }
 }

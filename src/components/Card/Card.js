@@ -24,20 +24,20 @@ export class Buttons extends Component {
     const web = this.props.web;
     if(web != null && github != null){
       return (
-        <div className="links">
+        <div className="links__card">
           <Button img={githubImg} link={github} />
           <Button img={webImg} link={web} />
         </div>
       )
     } else if (web == null) {
       return (
-        <div className="links">
+        <div className="links__card">
           <Button img={githubImg} link={github} />
         </div>
       )
     }else if(github == null) {
       return (
-        <div className="links">
+        <div className="links__card">
           <Button img={webImg} link={web} />
         </div>
       )
