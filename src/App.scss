@@ -16,8 +16,8 @@ $white: #ffffff;
 
 .projects__header {
   display: grid;
-  grid-template-columns: 220px 688px auto;
-  margin-left: -8px;
+  grid-template-columns: 220px 683px auto;
+  margin-left: -3px;
 }
 
 .project__list {
@@ -46,7 +46,7 @@ $white: #ffffff;
 .svg__line {
   margin-right: 20px;
   width: 1px;
-  height: 201px;
+  height: 401px;
   .line {
     stroke: $yellow;
     stroke-width: 2;
@@ -54,7 +54,7 @@ $white: #ffffff;
 }
 .svg__project-horizontal {
   margin-top: 45px;
-  width: 689px;
+  width: 684px;
   height: 2px;
   .line {
     stroke: $yellow;
@@ -80,6 +80,30 @@ $white: #ffffff;
   }
 }
 
+.footer {
+  color: rgba($white, 0.2);
+  text-align: center;
+}
+
+@media only screen and (min-width: 1500px) {
+  .wrapper {
+    margin-left: 50px;
+  }
+  .svg__name{
+    width: 1318px;
+  }
+  .description {
+    grid-template-columns: 1317px auto;
+  }
+
+  .svg__project-horizontal{
+    width: 1101px;
+  }
+
+  .projects__header {
+    grid-template-columns: 220px 1100px auto;
+  }
+}
 @media only screen and (max-width: 1050px) {
   .wrapper {
     margin-left: 50px;
@@ -92,16 +116,17 @@ $white: #ffffff;
   }
 
   .svg__project-horizontal{
-    width: 489px;
+    width: 484px;
   }
+
   .projects__header {
-    grid-template-columns: 220px 488px auto;
+    grid-template-columns: 220px 483px auto;
   }
 }
 
   @media only screen and (max-width: 800px) {
     .wrapper {
-      margin-left: 10px;
+      margin-left: 50px;
     }
     .svg__name{
       width: 601px;
@@ -114,9 +139,40 @@ $white: #ffffff;
     }
 
     .svg__project-horizontal{
-      width: 389px;
+      width: 384px;
     }
     .projects__header {
-      grid-template-columns: 220px 388px auto;
+      grid-template-columns: 220px 383px auto;
     }
+}
+
+@media only screen and (max-width: 500px) {
+  .wrapper {
+    margin-left: 10px;
+  }
+  .svg__name{
+    width: 347px;
+    margin-right: 10px;
+  }
+  .description {
+    grid-template-columns: 346px auto;
+  }
+  .svg__line {
+    height: 401px;
+  }
+
+  .svg__project-horizontal{
+    width: 220px;
+    margin-top: 25px;
+  }
+  .svg__project-vertical {
+    height: 25px;
+  }
+  .projects__header {
+    grid-template-columns: 130px 219px auto;
+  }
+  .project__list {
+    display: grid;
+    grid-template-columns: 20px auto
+  }
 }

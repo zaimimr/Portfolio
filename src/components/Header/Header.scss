@@ -39,3 +39,33 @@ $small: 40px;
     }
   }
 }
+
+@media only screen and (max-width: 500px) {
+  $big: 70px;
+  $medium: 35px;
+  $small: 25px;
+  .header{
+    &-big {
+      color: $white;
+      font-size: $big;
+      height: $big;
+      margin-top: 200px;
+      margin-right: auto;
+      display: inline;
+    }
+    &-medium {
+      color: $white;
+      font-size: $medium;
+      height: $medium;
+      display: inline;
+    }
+    &-small {
+      margin-top: 10px;
+      font-size: $small;
+      height: $small;
+      color: $blue;
+      display: inline;
+      white-space: nowrap;
+    }
+  }
+}
