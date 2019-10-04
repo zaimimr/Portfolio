@@ -1,7 +1,7 @@
 {
   "name": "portfolio",
   "version": "0.1.0",
-  "homepage": "http://zaim.no",
+  "homepage": "https://zaim.no",
   "private": true,
   "dependencies": {
     "classnames": "^2.2.6",
