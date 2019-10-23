@@ -40,4 +40,68 @@ $white: #ffffff;
   grid-template-columns: repeat(4, .08fr)
 }
 
+@media only screen and (min-width: 1500px) {
+  .about {
+    margin-top: 10px;
+    font-size: 30px;
+    .block1 {
+      display: flex;
+      .b {
+        color: $blue;
+      }
+      .w {
+        color: $white;
+        margin-left: 3px;
+      }
+    }
+    .block2 {
+      display: flex;
+      .b {
+        color: $blue;
+        margin-left: 3px;
+      }
+      .w {
+        color: $white;
+        margin-left: 3px;
+      }
+      .y {
+        color: $yellow;
+      }
+    }
+    .links {
+      grid-template-columns: repeat(4, .05fr)
+    }
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  .about {
+    margin-top: 10px;
+    font-size: 14.5px;
+    .block1 {
+      display: flex;
+      .b {
+        color: $blue;
+      }
+      .w {
+        color: $white;
+        margin-left: 3px;
+      }
+    }
+    .block2 {
+      display: flex;
+      .b {
+        color: $blue;
+        margin-left: 3px;
+      }
+      .w {
+        color: $white;
+        margin-left: 3px;
+      }
+      .y {
+        color: $yellow;
+      }
+    }
+  }
+}
 

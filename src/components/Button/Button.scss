@@ -1,5 +1,6 @@
 $blue: #3DC3DA;
 $yellow: #F8D060;
+$white: #ffffff;
 
 $rad: 35px;
 
@@ -36,4 +37,29 @@ a {
 .button__image {
   width: $rad;
   height: $rad;
+}
+
+
+
+
+@media only screen and (max-width: 500px) {
+  $rad: 25px;
+  .button__bc {
+    background-color: rgba($blue, 0.9);
+    border-radius: 30px;
+    padding: 5px;
+    width: $rad;
+    height: $rad;
+    overflow: hidden;
+  
+    &:hover {
+      background-color: rgba($blue, 0.4);
+    }
+  }
+  
+  
+  .button__image {
+    width: $rad;
+    height: $rad;
+  }
 }
