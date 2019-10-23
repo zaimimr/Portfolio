@@ -8,8 +8,6 @@ import githubImg from '../../assets/img/github.svg'
 import webImg from '../../assets/img/website.svg'
 
 
-
-
 export class Tags extends Component {
   render() {
     const tags = this.props.tags;

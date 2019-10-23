@@ -25,7 +25,7 @@ export class About extends Component {
           <Button img={github} link="https://github.com/Zenjjim" />
           <Button img={linkedin} link="https://www.linkedin.com/in/zaim/" />
           <Button img={mail} link="mailto:zaim.imran@gmail.com" />
-          <Button img={cvimg} link={cv} />
+          <Button img={cvimg} link={cv} color="yellow"/>
         </div>
       </div>
     )

@@ -7,7 +7,7 @@ a {
   margin-left: 10px;
 }
 
-.button__bc {
+.button__bc-blue {
   background-color: rgba($blue, 0.9);
   border-radius: 30px;
   padding: 5px;
@@ -17,6 +17,18 @@ a {
 
   &:hover {
     background-color: rgba($blue, 0.4);
+  }
+}
+.button__bc-yellow {
+  background-color: rgba($yellow, 0.9);
+  border-radius: 30px;
+  padding: 5px;
+  width: $rad;
+  height: $rad;
+  overflow: hidden;
+
+  &:hover {
+    background-color: rgba($yellow, 0.4);
   }
 }
 

@@ -1,0 +1,29 @@
+[debug] [2019-10-23T01:58:35.948Z] ----------------------------------------------------------------------
+[debug] [2019-10-23T01:58:35.951Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\Zaim Imran\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js deploy
+[debug] [2019-10-23T01:58:35.951Z] CLI Version:   7.5.0
+[debug] [2019-10-23T01:58:35.951Z] Platform:      win32
+[debug] [2019-10-23T01:58:35.951Z] Node Version:  v10.15.3
+[debug] [2019-10-23T01:58:35.952Z] Time:          Wed Oct 23 2019 03:58:35 GMT+0200 (GMT+02:00)
+[debug] [2019-10-23T01:58:35.952Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2019-10-23T01:58:35.975Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2019-10-23T01:58:35.976Z] > authorizing via signed-in user
+[debug] [2019-10-23T01:58:35.976Z] [iam] checking project portfolio-7b363 for permissions ["firebase.projects.get","firebasehosting.sites.update"]
+[debug] [2019-10-23T01:58:35.977Z] > refreshing access token with scopes: ["email","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","openid"]
+[debug] [2019-10-23T01:58:35.978Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token  
+ <request body omitted>
+[debug] [2019-10-23T01:58:36.217Z] <<< HTTP RESPONSE 200
+[debug] [2019-10-23T01:58:36.230Z] >>> HTTP REQUEST POST https://cloudresourcemanager.googleapis.com/v1/projects/portfolio-7b363:testIamPermissions  
+
+[debug] [2019-10-23T01:58:37.242Z] <<< HTTP RESPONSE 200
+[debug] [2019-10-23T01:58:37.244Z] >>> HTTP REQUEST GET https://firebase.googleapis.com/v1beta1/projects/portfolio-7b363  
+ 
+[debug] [2019-10-23T01:58:37.726Z] <<< HTTP RESPONSE 200
+[info] 
+[info] === Deploying to 'portfolio-7b363'...
+[info] 
+[info] i  deploying hosting
+[debug] [2019-10-23T01:58:37.733Z] >>> HTTP REQUEST POST https://firebasehosting.googleapis.com/v1beta1/sites/zaim.no/versions  
+
+[debug] [2019-10-23T01:58:38.791Z] <<< HTTP RESPONSE 404
+[debug] [2019-10-23T01:58:38.791Z] <<< HTTP RESPONSE BODY
