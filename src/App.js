@@ -41,7 +41,7 @@ function App() {
       <svg className="svg__end">
         <line x1="0" y1="0" x2="4000" y2="0" className="line" />
       </svg>
-      <p className="footer">Laget av Zaim Imran™</p>
+      <a href="/static/media/Zaim_Imran_CV_2019.4c75e18d.pdf" target="_blank" rel="noopener noreferrer" className="footer">Laget av Zaim Imran™</a>
     </div>
   );
 }

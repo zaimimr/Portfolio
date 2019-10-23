@@ -81,8 +81,12 @@ $white: #ffffff;
 }
 
 .footer {
-  color: rgba($white, 0.2);
+  color: rgba($white, 0.4);
   text-align: center;
+  margin-bottom: 20px;
+}
+.footer:hover {
+  color: rgba($white, 0.2);
 }
 
 @media only screen and (min-width: 1500px) {

@@ -1,6 +1,5 @@
 {
   "hosting": {
-    "site": "zaim.no",
     "public": "build",
     "ignore": [
       "firebase.json",
