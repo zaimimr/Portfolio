@@ -34,6 +34,10 @@ const useStyles = makeStyles({
       color: theme.palette.primary.main,
     },
   },
+  avatar: {
+    height: "400px",
+    width: "400px"
+  }
 });
 
 const Header = () => {
@@ -41,7 +45,7 @@ const Header = () => {
 
   return (
     <div className={classes.header}>
-      <div>
+      <div className={classes.avatar}>
         <Avatar />
       </div>
       <div className={classes.headerName}>
