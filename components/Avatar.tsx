@@ -28,7 +28,7 @@ const Avatar = () => {
   const showSnackbar = useSnackbar();
 
   return (
-    <svg viewBox="150 0 800 662"  data-name='Layer 1' height='662' width='650' xmlns='http://www.w3.org/2000/svg' xmlnsXlink='http://www.w3.org/1999/xlink'>
+    <svg height='662' viewBox='150 0 800 662' width='650' xmlns='http://www.w3.org/2000/svg' xmlnsXlink='http://www.w3.org/1999/xlink'>
       <defs>
         <linearGradient id='afa9b5ae-644d-481c-a512-b5b81b77e42b' x1='0.50014' x2='0.50014' y1='1' y2='0'>
           <stop offset='0' stopColor='gray' stopOpacity='0.25' />

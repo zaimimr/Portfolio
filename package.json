@@ -13,7 +13,7 @@
     "start": "next start",
     "lint": "next lint",
     "eslint": "eslint --fix --max-warnings=0 .",
-    "format": "prettier --write --check --config ./.prettierrc './{pages, contexts, components, utils}/**/*.{js,jsx,ts,tsx,css,md,json}'"
+    "format": "prettier --write --check --config ./.prettierrc './**/*.{js,jsx,ts,tsx,css,md,json}'"
   },
   "dependencies": {
     "@emotion/react": "^11.4.0",
