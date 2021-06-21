@@ -35,9 +35,9 @@ const useStyles = makeStyles({
     },
   },
   avatar: {
-    height: "400px",
-    width: "400px"
-  }
+    height: '400px',
+    width: '100%',
+  },
 });
 
 const Header = () => {
