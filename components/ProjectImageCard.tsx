@@ -23,7 +23,7 @@ const ProjectImageCard = ({ align, project }: ProjectImageCardType) => {
 
   return (
     <div className={classes.root} data-aos='fade-up' style={{ justifyContent: `${align}` }}>
-      <Image height='500' loading='eager' src={project.img} width='900' />
+      <Image height='500' loading='lazy' src={project.img} width='900' />
       <ProjectPaper align={align} project={project} />
     </div>
   );
