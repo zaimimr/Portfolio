@@ -54,7 +54,7 @@ const Header = () => {
         </Typography>
         <div>
           <Paper className={classes.paper} elevation={8}>
-            <Stack direction='row' spacing={3}>
+            <Stack alignItems='center' direction='row' justifyContent='center' spacing={3}>
               <Tooltip title='Email'>
                 <a className={classes.icon} href='mailto:zaim.imran@gmail.com' onClick={() => analytics().logEvent('Email')}>
                   <MailOutline fontSize='large' />

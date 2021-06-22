@@ -37,7 +37,7 @@ const Home = ({ projects }) => {
         <link href='/favicon.ico' rel='icon' />
       </Head>
       <Container maxWidth='lg'>
-        <div style={{ paddingTop: `${matches ? '5vh' : '20vh'}` }} />
+        <div style={{ paddingTop: `${matches ? '20px' : '20vh'}` }} />
         <Header />
         <div style={{ paddingTop: '31vh' }} />
         <div style={{ display: 'flex', justifyContent: 'center' }}>
