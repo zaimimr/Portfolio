@@ -3,14 +3,14 @@ import Header from 'components/Header';
 import ProjectCard from 'components/ProjectCard';
 import ProjectCardMobile from 'components/ProjectCardMobile';
 import ProjectImageCard from 'components/ProjectImageCard';
-import { GetServerSideProps, InferGetServerSidePropsType } from 'next';
+import { GetStaticProps } from 'next';
 import Head from 'next/head';
 import safeJsonStringify from 'safe-json-stringify';
 import { db } from 'utils/firebase';
 import theme from 'utils/theme';
 import { IProject } from 'utils/types';
 
-export const getServerSideProps: GetServerSideProps = async () => {
+export const getStaticProps: GetStaticProps = async () => {
   const myProjects = await db
     .collection('my_projects')
     .orderBy('date', 'desc')
@@ -27,7 +27,7 @@ export const getServerSideProps: GetServerSideProps = async () => {
   return { props: { projects } };
 };
 
-const Home = ({ projects }: InferGetServerSidePropsType<typeof getServerSideProps>) => {
+const Home = ({ projects }) => {
   const matches = useMediaQuery(theme.breakpoints.down('md'));
   return (
     <div>
