@@ -10,7 +10,7 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "next start -p $PORT",
+    "start": "node server.js",
     "lint": "next lint",
     "eslint": "eslint --fix --max-warnings=0 .",
     "format": "prettier --write --check --config ./.prettierrc './**/*.{js,jsx,ts,tsx,css,md,json}'"

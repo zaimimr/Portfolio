@@ -37,6 +37,7 @@ function MyApp({ Component, pageProps }: AppProps) {
   useEffect(() => {
     AOS.init({
       easing: 'ease',
+      once: true,
     });
   }, []);
 
