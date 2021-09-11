@@ -83,7 +83,7 @@ const Header = () => {
               <Tooltip title='Resume'>
                 <a
                   className={classes.icon}
-                  href='https://www.dropbox.com/s/099cb2fgs4vw9xi/Zaim_Imran_CV_2021.pdf?dl=0'
+                  href='https://s.tihlde.org/zaim'
                   onClick={() => analytics().logEvent('Resume')}
                   rel='noopener noreferrer'
                   target='_blank'>
