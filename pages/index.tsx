@@ -3,13 +3,14 @@ import Header from 'components/Header';
 import ProjectCard from 'components/ProjectCard';
 import ProjectCardMobile from 'components/ProjectCardMobile';
 import ProjectImageCard from 'components/ProjectImageCard';
-import { GetStaticProps } from 'next';
+import { GetServerSideProps } from 'next';
 import Head from 'next/head';
 import safeJsonStringify from 'safe-json-stringify';
 import { db } from 'utils/firebase';
 import theme from 'utils/theme';
 import { IProject } from 'utils/types';
-export async function getServerSideProps(context) {
+
+export const getServerSideProps: GetServerSideProps = async (context) => {
   const myProjects = await db
     .collection('my_projects')
     .orderBy('date', 'desc')
@@ -24,23 +25,7 @@ export async function getServerSideProps(context) {
     );
   const projects = JSON.parse(safeJsonStringify(myProjects));
   return { props: { projects } };
-}
-// export const getStaticProps: GetStaticProps = async () => {
-//   const myProjects = await db
-//     .collection('my_projects')
-//     .orderBy('date', 'desc')
-//     .get()
-//     .then((data) =>
-//       data.docs.map((doc) => {
-//         const d = doc.data();
-//         d.id = doc.id;
-//         d.date = d.date.toDate();
-//         return d;
-//       }),
-//     );
-//   const projects = JSON.parse(safeJsonStringify(myProjects));
-//   return { props: { projects } };
-// };
+};
 
 const Home = ({ projects }) => {
   const matches = useMediaQuery(theme.breakpoints.down('md'));
