@@ -9,8 +9,7 @@ import safeJsonStringify from 'safe-json-stringify';
 import { db } from 'utils/firebase';
 import theme from 'utils/theme';
 import { IProject } from 'utils/types';
-
-export const getStaticProps: GetStaticProps = async () => {
+export async function getServerSideProps(context) {
   const myProjects = await db
     .collection('my_projects')
     .orderBy('date', 'desc')
@@ -25,7 +24,23 @@ export const getStaticProps: GetStaticProps = async () => {
     );
   const projects = JSON.parse(safeJsonStringify(myProjects));
   return { props: { projects } };
-};
+}
+// export const getStaticProps: GetStaticProps = async () => {
+//   const myProjects = await db
+//     .collection('my_projects')
+//     .orderBy('date', 'desc')
+//     .get()
+//     .then((data) =>
+//       data.docs.map((doc) => {
+//         const d = doc.data();
+//         d.id = doc.id;
+//         d.date = d.date.toDate();
+//         return d;
+//       }),
+//     );
+//   const projects = JSON.parse(safeJsonStringify(myProjects));
+//   return { props: { projects } };
+// };
 
 const Home = ({ projects }) => {
   const matches = useMediaQuery(theme.breakpoints.down('md'));
