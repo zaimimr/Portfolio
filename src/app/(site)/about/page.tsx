@@ -11,6 +11,7 @@ import { Highlight } from "@/components/site/highlight";
 import { Timeline } from "@/components/site/timeline";
 import type { TimelineEntryModel } from "@/components/site/timeline";
 import { Button } from "@/components/ui/button";
+import { Card } from "@/components/ui/card";
 import { Divider } from "@/components/ui/divider";
 import { SketchIcon } from "@/components/ui/sketch-icon";
 import { Tag } from "@/components/ui/tag";
@@ -61,9 +62,9 @@ export default async function AboutPage() {
   const education = cv.education.map(toTimelineEntry);
 
   return (
-    <div className="mx-auto w-full max-w-6xl px-gutter pb-section pt-10 md:pt-16">
+    <div className="px-gutter pb-section mx-auto w-full max-w-6xl pt-10 md:pt-16">
       <header className="max-w-3xl">
-        <h1 className="font-display text-h1 font-bold text-ink">
+        <h1 className="font-display text-h1 text-ink font-bold">
           About <Highlight>me</Highlight>
         </h1>
         <div className="mt-6">
@@ -74,7 +75,7 @@ export default async function AboutPage() {
       <section aria-labelledby="experience-heading" className="mt-section">
         <h2
           id="experience-heading"
-          className="mb-10 font-display text-h2 font-bold text-ink"
+          className="font-display text-h2 text-ink mb-10 font-bold"
         >
           Experience
         </h2>
@@ -84,7 +85,7 @@ export default async function AboutPage() {
       <section aria-labelledby="education-heading" className="mt-section">
         <h2
           id="education-heading"
-          className="mb-10 font-display text-h2 font-bold text-ink"
+          className="font-display text-h2 text-ink mb-10 font-bold"
         >
           Education
         </h2>
@@ -94,7 +95,7 @@ export default async function AboutPage() {
       <section aria-labelledby="skills-heading" className="mt-section">
         <h2
           id="skills-heading"
-          className="mb-6 font-display text-h2 font-bold text-ink"
+          className="font-display text-h2 text-ink mb-6 font-bold"
         >
           Skills
         </h2>
@@ -107,11 +108,91 @@ export default async function AboutPage() {
         </ul>
       </section>
 
+      <section aria-labelledby="awards-heading" className="mt-section">
+        <h2
+          id="awards-heading"
+          className="font-display text-h2 text-ink mb-10 font-bold"
+        >
+          Awards
+        </h2>
+        <ul className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+          {cv.awards.map((award, index) => (
+            <li key={val.raw(award.title)}>
+              <Card index={index} className="flex h-full flex-col gap-2">
+                <p className="text-mono-sm text-ink-muted font-mono tracking-wider uppercase">
+                  {award.year}
+                </p>
+                <h3 className="font-display text-h3 text-ink font-bold">
+                  {award.title}
+                </h3>
+                <p className="text-mono-sm text-accent-strong font-mono">
+                  {award.org}
+                </p>
+                <p className="text-body text-ink-muted">{award.detail}</p>
+              </Card>
+            </li>
+          ))}
+        </ul>
+      </section>
+
+      <section aria-labelledby="talks-heading" className="mt-section">
+        <h2
+          id="talks-heading"
+          className="font-display text-h2 text-ink mb-10 font-bold"
+        >
+          Talks
+        </h2>
+        <ul className="flex flex-col gap-6">
+          {cv.talks.map((talk, index) => (
+            <li key={val.raw(talk.title)}>
+              <Card index={index} className="flex flex-col gap-2">
+                <p className="text-mono-sm text-ink-muted font-mono tracking-wider uppercase">
+                  {talk.year} · {talk.venue}
+                </p>
+                <h3 className="font-display text-h3 text-ink font-bold">
+                  {talk.title}
+                </h3>
+                <p className="text-body text-ink-muted max-w-3xl">
+                  {talk.description}
+                </p>
+              </Card>
+            </li>
+          ))}
+        </ul>
+      </section>
+
+      <section aria-labelledby="certifications-heading" className="mt-section">
+        <h2
+          id="certifications-heading"
+          className="font-display text-h2 text-ink mb-6 font-bold"
+        >
+          Certifications
+        </h2>
+        <ul className="flex flex-col gap-3">
+          {cv.certifications.map((certification) => (
+            <li
+              key={val.raw(certification.title)}
+              className="flex flex-wrap items-baseline gap-x-3 gap-y-1"
+            >
+              <span className="text-mono-sm text-ink-muted font-mono">
+                {certification.year}
+              </span>
+              <span className="font-display text-ink font-semibold">
+                {certification.title}
+              </span>
+              <span className="text-mono-sm text-accent-strong font-mono">
+                {certification.org}
+              </span>
+            </li>
+          ))}
+        </ul>
+      </section>
+
       <section aria-label="Download CV" className="mt-section">
         <Divider className="mb-10" />
-        <div className="flex flex-col items-start gap-6 rounded-wobble-1 border-2 border-line bg-surface p-8 shadow-offset md:flex-row md:items-center md:justify-between md:p-10">
+        <div className="rounded-wobble-1 border-line bg-surface shadow-offset flex flex-col items-start gap-6 border-2 p-8 md:flex-row md:items-center md:justify-between md:p-10">
           <div className="flex flex-col gap-2">
-            <p className="font-display text-h3 font-bold text-ink">
+            <p className="font-display text-h3 text-ink font-bold">
               Prefer the paper version?
             </p>
             <p className="text-body text-ink-muted">
@@ -127,7 +208,7 @@ export default async function AboutPage() {
             <a href={pdfUrl} download>
               <SketchIcon name="download" size={20} />
               <span className="whitespace-nowrap">Download CV</span>
-              <span className="whitespace-nowrap font-mono text-mono-sm font-normal">
+              <span className="text-mono-sm font-mono font-normal whitespace-nowrap">
                 {pdfSize ? `PDF · ${pdfSize}` : "PDF"}
               </span>
             </a>
