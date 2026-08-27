@@ -1,36 +1,42 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# zaim.no
 
-## Getting Started
+Personal portfolio: CV, projects and playground experiments, plus a hidden admin portal. Content is code — no database.
 
-First, run the development server:
+## Stack
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
+- Next.js 16 (App Router, Turbopack), React 19, TypeScript strict
+- Tailwind CSS v4, all design tokens in `src/app/globals.css` under `@theme`
+- Motion for animation, presets in `src/lib/motion.ts`
+- Val.build CMS: content lives in `src/content/*.val.ts`, edited visually at `/val`, published as git commits
+- Auth.js (GitHub OAuth, single-account allowlist) guarding `/admin`
+- Resend for the contact form, Vercel for hosting and analytics
+
+## Development
+
+```sh
+pnpm install
 pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+- Site: http://localhost:3000
+- Val Studio: http://localhost:3000/val
+- Component gallery (dev only): http://localhost:3000/styleguide
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Checks: `pnpm typecheck`, `pnpm lint`, `pnpm validate` (Val content), `pnpm build`.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Content
 
-## Learn More
+Every piece of copy, every project and every admin link is a Val module in `src/content/`. Edit in the studio at `/val` or directly in the files. New modules must be registered in `val.modules.ts`. Projects carry two taxonomies: category (work/freelance/hobby) and type (website/app/game/non-technical), defined once in `src/config/taxonomy.ts`. Projects with `hidden: true` are only visible in the admin portal.
 
-To learn more about Next.js, take a look at the following resources:
+## Environment
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Copy `.env.example` to `.env.local`. The build requires no secrets; features degrade gracefully:
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+- `AUTH_SECRET`, `AUTH_GITHUB_ID`, `AUTH_GITHUB_SECRET`, `ADMIN_GITHUB_LOGIN` — admin sign-in
+- `RESEND_API_KEY`, `CONTACT_TO_EMAIL` — contact form (falls back to mailto without them)
+- `VERCEL_API_TOKEN`, `VERCEL_PROJECT_ID`, `VERCEL_TEAM_ID` — admin analytics dashboard
+- `VAL_API_KEY`, `VAL_SECRET` — Val remote mode (editing content in production)
 
-## Deploy on Vercel
+## Design
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+The design system is called "Fet Strek" — see `DESIGN.md` and `PRODUCT.md`. Rules that matter when contributing: consume tokens, never raw values; yellow is never text on light backgrounds; every animation needs a reduced-motion fallback; the admin portal stays calm.
