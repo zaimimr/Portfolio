@@ -37,18 +37,6 @@ export function SignatureStroke({ className }: { className?: string }) {
         vectorEffect="non-scaling-stroke"
         className="signature-stroke-main"
       />
-      <path
-        d="M232 19.4C258 15.8 284 17.2 308 20.2"
-        pathLength={1}
-        strokeDasharray="1"
-        fill="none"
-        stroke="var(--accent-strong)"
-        strokeWidth="3"
-        strokeLinecap="round"
-        opacity="0.6"
-        vectorEffect="non-scaling-stroke"
-        className="signature-stroke-tail"
-      />
     </svg>
   );
 }
