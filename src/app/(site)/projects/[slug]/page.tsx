@@ -29,8 +29,11 @@ async function getVisibleEntries() {
   );
 }
 
-export async function generateStaticParams() {
-  const visible = await getVisibleEntries();
+export function generateStaticParams() {
+  const projects = val.unstable_getUnpatchedUnencodedVal(projectsVal);
+  const visible = sortByDate(
+    getVisibleProjects(toProjectEntries(projects).map(rawEntry), false),
+  );
   return visible.map((project) => ({ slug: project.slug }));
 }
 
