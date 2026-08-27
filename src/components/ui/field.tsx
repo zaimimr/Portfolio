@@ -15,10 +15,9 @@ function SketchUnderline({ error }: { error: boolean }) {
       <path
         d="M1 3.8C9 1.9 17 5.2 25 3.6 33 2.1 41 5.1 50 3.5 59 2 67 5 75 3.6 83 2.2 91 4.9 99 3.4"
         pathLength={1}
-        vectorEffect="non-scaling-stroke"
         strokeLinecap="round"
         className={cn(
-          "fill-none stroke-2 transition-[stroke-dashoffset] duration-[var(--duration-slow)] ease-out [stroke-dasharray:1] [stroke-dashoffset:1] group-focus-within:[stroke-dashoffset:0] motion-reduce:transition-none",
+          "fill-none stroke-2 transition-[stroke-dashoffset] duration-[var(--duration-slow)] ease-out [stroke-dasharray:1_2] [stroke-dashoffset:1.02] group-focus-within:[stroke-dashoffset:0] motion-reduce:transition-none",
           error ? "stroke-danger" : "stroke-accent-strong",
         )}
       />

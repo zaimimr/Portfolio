@@ -34,8 +34,7 @@ export function SquiggleLink({
         <path
           d="M1 4.2C6 1.8 11 5.4 16 3.6 21 1.9 26 5.2 31 3.5 36 1.9 41 5.3 46 3.6 51 2 55.5 4.6 59 3.4"
           pathLength={1}
-          vectorEffect="non-scaling-stroke"
-          className="fill-none stroke-accent-strong stroke-2 [stroke-dasharray:1] [stroke-dashoffset:1] transition-[stroke-dashoffset] duration-[var(--duration-slow)] ease-out group-hover:[stroke-dashoffset:0] group-focus-visible:[stroke-dashoffset:0] group-data-[active]:[stroke-dashoffset:0] motion-reduce:transition-none"
+          className="fill-none stroke-accent-strong stroke-2 [stroke-dasharray:1_2] [stroke-dashoffset:1.02] transition-[stroke-dashoffset] duration-[var(--duration-slow)] ease-out group-hover:[stroke-dashoffset:0] group-focus-visible:[stroke-dashoffset:0] group-data-[active]:[stroke-dashoffset:0] motion-reduce:transition-none"
         />
       </svg>
     </Link>
