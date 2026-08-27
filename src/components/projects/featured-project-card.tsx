@@ -35,7 +35,7 @@ export function FeaturedProjectCard({
         >
           <div
             className={cn(
-              "border-line bg-surface-raised relative flex min-h-52 items-center justify-center overflow-hidden border-2 md:col-span-7 md:min-h-72",
+              "border-line bg-surface-raised/80 relative flex min-h-52 items-center justify-center overflow-hidden border-2 backdrop-blur-md md:col-span-7 md:min-h-72",
               wobbles[index % wobbles.length],
               reversed ? "md:order-last" : "",
             )}
@@ -59,7 +59,7 @@ export function FeaturedProjectCard({
           </div>
           <div
             className={cn(
-              "border-line bg-surface shadow-offset relative z-10 flex flex-col gap-3 border-2 p-6 md:col-span-5 md:my-8 md:p-8",
+              "border-line bg-surface/85 shadow-offset relative z-10 flex flex-col gap-3 border-2 p-6 backdrop-blur-md md:col-span-5 md:my-8 md:p-8",
               index % 2 === 1
                 ? "rounded-wobble-2 md:-mr-10"
                 : "rounded-wobble-2 md:-ml-10",

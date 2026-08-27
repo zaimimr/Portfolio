@@ -16,6 +16,17 @@
   --highlight: #f4de5d66;
   --danger: #c11515;
   --success: #1a7a42;
+
+  --scene-haze: #fffefa;
+  --scene-deep: #2f2619;
+  --scene-veil: 0.2;
+  --scene-glow: #8a6d00;
+  --scene-t0: color-mix(in oklab, var(--scene-haze) 93%, var(--scene-deep));
+  --scene-t1: color-mix(in oklab, var(--scene-haze) 73%, var(--scene-deep));
+  --scene-t2: color-mix(in oklab, var(--scene-haze) 50%, var(--scene-deep));
+  --scene-t3: color-mix(in oklab, var(--scene-haze) 29%, var(--scene-deep));
+  --scene-t4: color-mix(in oklab, var(--scene-haze) 14%, var(--scene-deep));
+  --scene-t5: color-mix(in oklab, var(--scene-haze) 4%, var(--scene-deep));
 }
 
 [data-theme="dark"] {
@@ -30,6 +41,11 @@
   --highlight: #f4de5d33;
   --danger: #ff6b6b;
   --success: #50c878;
+
+  --scene-haze: #ccdcec;
+  --scene-deep: #05080c;
+  --scene-veil: 0.24;
+  --scene-glow: #f4de5d;
 }
 
 @theme inline {
@@ -54,6 +70,15 @@
   --color-cat-work: #9cc6f5;
   --color-cat-freelance: #f7a8c4;
   --color-cat-hobby: #a8e6b8;
+
+  --color-scene-0: var(--scene-t0);
+  --color-scene-1: var(--scene-t1);
+  --color-scene-2: var(--scene-t2);
+  --color-scene-3: var(--scene-t3);
+  --color-scene-4: var(--scene-t4);
+  --color-scene-5: var(--scene-t5);
+  --color-scene-haze: var(--scene-haze);
+  --color-scene-glow: var(--scene-glow);
 
   --font-display: var(--font-bricolage);
   --font-sans: var(--font-schibsted);
@@ -105,6 +130,8 @@
   --animate-scribble: scribble 1.4s linear infinite;
   --animate-blink: blink 6.4s linear infinite;
   --animate-glow: glow 3.2s ease-in-out infinite;
+  --animate-vent: vent 5.6s ease-out infinite;
+  --animate-flicker: flicker 2.4s ease-in-out infinite;
 
   @keyframes scribble {
     0% {
@@ -137,6 +164,36 @@
     }
     50% {
       opacity: 0.55;
+    }
+  }
+
+  @keyframes vent {
+    0% {
+      opacity: 0;
+      transform: translateY(0) scale(0.6);
+    }
+    30% {
+      opacity: 0.5;
+    }
+    100% {
+      opacity: 0;
+      transform: translateY(-90px) scale(1.9);
+    }
+  }
+
+  @keyframes flicker {
+    0%,
+    100% {
+      opacity: 0.55;
+      transform: scale(1);
+    }
+    40% {
+      opacity: 0.9;
+      transform: scale(1.14);
+    }
+    70% {
+      opacity: 0.65;
+      transform: scale(0.96);
     }
   }
 }
@@ -198,5 +255,29 @@ mark.marker-highlight {
   }
   to {
     background-size: 100% 62%;
+  }
+}
+
+.signature-stroke-main,
+.signature-stroke-tail {
+  stroke-dashoffset: 0;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  [data-draw="true"] .signature-stroke-main {
+    animation: signature-draw var(--duration-draw) var(--ease-out) 380ms both;
+  }
+
+  [data-draw="true"] .signature-stroke-tail {
+    animation: signature-draw 560ms var(--ease-out) 1140ms both;
+  }
+}
+
+@keyframes signature-draw {
+  from {
+    stroke-dashoffset: 1;
+  }
+  to {
+    stroke-dashoffset: 0;
   }
 }
