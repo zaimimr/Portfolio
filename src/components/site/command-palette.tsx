@@ -110,7 +110,7 @@ export function CommandPalette({ socials, email }: CommandPaletteProps) {
           value={search}
           onValueChange={setSearch}
           placeholder="Where to?"
-          className="h-13 w-full bg-transparent text-body text-ink outline-none placeholder:text-ink-faint"
+          className="h-13 w-full bg-transparent text-body text-ink outline-none placeholder:text-ink-muted"
         />
         <Kbd>esc</Kbd>
       </div>

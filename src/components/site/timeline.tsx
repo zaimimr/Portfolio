@@ -73,7 +73,7 @@ export function Timeline({ entries }: { entries: TimelineEntryModel[] }) {
                   : "md:col-start-1 md:pr-12 md:text-right",
               )}
             >
-              <p className="font-mono text-mono-sm uppercase tracking-wider text-ink-faint">
+              <p className="font-mono text-mono-sm uppercase tracking-wider text-ink-muted">
                 {entry.period}
               </p>
               <h3 className="font-display text-h3 font-bold text-ink">

@@ -28,7 +28,7 @@ function SketchUnderline({ error }: { error: boolean }) {
 const shellClass = "group flex flex-col gap-1.5";
 const labelClass = "font-mono text-mono-sm uppercase tracking-wider text-ink-muted";
 const controlClass =
-  "w-full border-b-2 bg-transparent pb-2 text-body text-ink outline-none placeholder:text-ink-faint";
+  "w-full border-b-2 bg-transparent pb-2 text-body text-ink outline-none placeholder:text-ink-muted";
 
 function useFieldIds(id: string | undefined) {
   const autoId = useId();

@@ -18,7 +18,7 @@ export default async function AdminLayout({
         <Link href="/admin" className="font-display text-2xl font-bold">
           Z.
         </Link>
-        <span className="font-mono text-mono-sm text-ink-faint">admin</span>
+        <span className="font-mono text-mono-sm text-ink-muted">admin</span>
         <AdminNav />
         <Link
           href="/"

@@ -79,7 +79,7 @@ export function Footer({ socials, email }: FooterProps) {
             ))}
           </ul>
         </div>
-        <p className="mt-10 text-sm text-ink-faint">
+        <p className="mt-10 text-sm text-ink-muted">
           © {new Date().getFullYear()} Zaim Imran
         </p>
       </div>

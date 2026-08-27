@@ -61,7 +61,7 @@ export function LabCard({ experiment, index }: LabCardProps) {
               <SketchIcon
                 name="external"
                 size={18}
-                className="mt-1.5 shrink-0 text-ink-faint transition-colors duration-[var(--duration-fast)] ease-out group-hover:text-accent-strong"
+                className="mt-1.5 shrink-0 text-ink-muted transition-colors duration-[var(--duration-fast)] ease-out group-hover:text-accent-strong"
               />
             ) : null}
           </div>
@@ -70,7 +70,7 @@ export function LabCard({ experiment, index }: LabCardProps) {
             {experiment.tags.map((tag) => (
               <Tag key={tag}>{tag}</Tag>
             ))}
-            <span className="ml-auto font-mono text-mono-sm text-ink-faint">
+            <span className="ml-auto font-mono text-mono-sm text-ink-muted">
               {experiment.year}
             </span>
           </div>

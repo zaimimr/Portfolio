@@ -80,7 +80,7 @@ export default async function ProjectPage({
         <p className="mt-4 text-body-lg text-ink-muted">{project.description}</p>
         <dl className="mt-8 flex flex-wrap gap-x-10 gap-y-4 border-y-2 border-line/15 py-4 font-mono text-mono-sm">
           <div className="flex flex-col gap-1">
-            <dt className="uppercase tracking-wider text-ink-faint">Category</dt>
+            <dt className="uppercase tracking-wider text-ink-muted">Category</dt>
             <dd>
               <Tag category={project.category}>
                 {categoryLabels[project.category]}
@@ -88,15 +88,15 @@ export default async function ProjectPage({
             </dd>
           </div>
           <div className="flex flex-col gap-1">
-            <dt className="uppercase tracking-wider text-ink-faint">Type</dt>
+            <dt className="uppercase tracking-wider text-ink-muted">Type</dt>
             <dd className="text-ink">{typeLabels[project.type]}</dd>
           </div>
           <div className="flex flex-col gap-1">
-            <dt className="uppercase tracking-wider text-ink-faint">Year</dt>
+            <dt className="uppercase tracking-wider text-ink-muted">Year</dt>
             <dd className="text-ink">{project.date.slice(0, 4)}</dd>
           </div>
           <div className="flex flex-col gap-1">
-            <dt className="uppercase tracking-wider text-ink-faint">Stack</dt>
+            <dt className="uppercase tracking-wider text-ink-muted">Stack</dt>
             <dd className="text-ink">{project.tech.join(" · ")}</dd>
           </div>
         </dl>

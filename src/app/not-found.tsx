@@ -12,7 +12,7 @@ export default function NotFound() {
       <p className="max-w-md text-body-lg text-ink-muted">
         This page doesn&apos;t exist, or it&apos;s hiding really well.
       </p>
-      <p aria-hidden="true" className="font-hand text-hand text-ink-faint">
+      <p aria-hidden="true" className="font-hand text-hand text-ink-muted">
         404, if you&apos;re keeping score
       </p>
       <Button variant="accent" asChild>

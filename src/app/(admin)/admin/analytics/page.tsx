@@ -49,7 +49,7 @@ function RangeSection({
       <div className="mt-4 rounded-md border border-line/15 bg-surface p-4">
         <h3 className="font-mono text-mono-sm text-ink-muted">Top pages</h3>
         {summary.topPages.length === 0 ? (
-          <p className="mt-2 font-mono text-mono-sm text-ink-faint">
+          <p className="mt-2 font-mono text-mono-sm text-ink-muted">
             No traffic recorded in this range.
           </p>
         ) : (

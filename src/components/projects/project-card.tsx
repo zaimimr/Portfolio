@@ -47,9 +47,9 @@ export function ProjectCard({ project, index }: ProjectCardProps) {
             </div>
           ) : null}
           <div className="relative flex flex-col gap-2 pr-14">
-            <h3 className="font-display text-h3 font-bold text-ink transition-colors duration-[var(--duration-fast)] ease-out group-hover:text-accent-strong">
+            <h2 className="font-display text-h3 font-bold text-ink transition-colors duration-[var(--duration-fast)] ease-out group-hover:text-accent-strong">
               {project.title}
-            </h3>
+            </h2>
             <p className="text-sm text-ink-muted">{project.description}</p>
           </div>
           <div className="mt-auto flex flex-wrap items-center gap-2">
@@ -57,7 +57,7 @@ export function ProjectCard({ project, index }: ProjectCardProps) {
               {categoryLabels[project.category]}
             </Tag>
             <Tag>{typeLabels[project.type]}</Tag>
-            <span className="ml-auto font-mono text-mono-sm text-ink-faint">
+            <span className="ml-auto font-mono text-mono-sm text-ink-muted">
               {project.year}
             </span>
           </div>

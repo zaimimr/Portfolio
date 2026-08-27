@@ -7,7 +7,11 @@ import { ContactForm } from "@/components/site/contact-form";
 import { Highlight } from "@/components/site/highlight";
 import { SketchIcon } from "@/components/ui/sketch-icon";
 
-export async function ContactSection() {
+export async function ContactSection({
+  headingLevel: Heading = "h2",
+}: {
+  headingLevel?: "h1" | "h2";
+}) {
   const settings = await fetchVal(settingsVal);
   const copy = await fetchVal(pagesVal);
   const email = val.raw(settings.email);
@@ -24,12 +28,12 @@ export async function ContactSection() {
     >
       <div className="grid gap-10 md:grid-cols-12">
         <div className="flex flex-col gap-4 md:col-span-5">
-          <h2
+          <Heading
             id="contact-heading"
             className="font-display text-h1 font-bold text-ink"
           >
             Say <Highlight>hei</Highlight>
-          </h2>
+          </Heading>
           <p className="max-w-md text-body-lg text-ink-muted">
             {copy.contactBlurb}
           </p>
