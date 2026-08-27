@@ -88,6 +88,7 @@
   --radius-wobble-1: 255px 15px 225px 15px / 15px 225px 15px 255px;
   --radius-wobble-2: 15px 225px 15px 255px / 255px 15px 225px 15px;
   --radius-wobble-3: 225px 15px 255px 15px / 15px 255px 15px 225px;
+  --radius-wobble-sm: 10px 4px 12px 5px / 5px 12px 4px 10px;
 
   --shadow-offset-sm: 3px 3px 0 var(--line);
   --shadow-offset: 5px 5px 0 var(--line);
@@ -100,6 +101,44 @@
   --duration-base: 200ms;
   --duration-slow: 320ms;
   --duration-draw: 900ms;
+
+  --animate-scribble: scribble 1.4s linear infinite;
+  --animate-blink: blink 6.4s linear infinite;
+  --animate-glow: glow 3.2s ease-in-out infinite;
+
+  @keyframes scribble {
+    0% {
+      stroke-dashoffset: 1;
+    }
+    50% {
+      stroke-dashoffset: 0;
+    }
+    100% {
+      stroke-dashoffset: -1;
+    }
+  }
+
+  @keyframes blink {
+    0%,
+    95.5%,
+    99.2%,
+    100% {
+      transform: scaleY(0.08);
+    }
+    97.4% {
+      transform: scaleY(1);
+    }
+  }
+
+  @keyframes glow {
+    0%,
+    100% {
+      opacity: 0.25;
+    }
+    50% {
+      opacity: 0.55;
+    }
+  }
 }
 
 body {
@@ -115,4 +154,10 @@ body {
 :focus-visible {
   outline: 2px solid var(--accent-strong);
   outline-offset: 2px;
+}
+
+::view-transition-old(root),
+::view-transition-new(root) {
+  animation: none;
+  mix-blend-mode: normal;
 }
