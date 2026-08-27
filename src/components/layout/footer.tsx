@@ -6,13 +6,32 @@ import { Divider } from "@/components/ui/divider";
 import { Wordmark } from "@/components/layout/wordmark";
 import { navItems } from "@/components/layout/nav-items";
 
-const socials: { href: string; label: string; icon: SketchIconName }[] = [
-  { href: "https://github.com/Zenjjim", label: "GitHub", icon: "github" },
-  { href: "https://www.linkedin.com/in/zaim/", label: "LinkedIn", icon: "linkedin" },
-  { href: "mailto:zaim.imran@gmail.com", label: "Email", icon: "mail" },
-];
+const iconByLabel: Record<string, SketchIconName> = {
+  github: "github",
+  linkedin: "linkedin",
+  email: "mail",
+  mail: "mail",
+};
 
-export function Footer() {
+export type SocialLink = {
+  label: string;
+  url: string;
+};
+
+type FooterProps = {
+  socials: SocialLink[];
+  email: string;
+};
+
+export function Footer({ socials, email }: FooterProps) {
+  const links = [
+    ...socials.map((social) => ({
+      href: social.url,
+      label: social.label,
+      icon: iconByLabel[social.label.toLowerCase()] ?? ("external" as const),
+    })),
+    { href: `mailto:${email}`, label: "Email", icon: "mail" as const },
+  ];
   return (
     <footer className="mt-section">
       <div className="mx-auto w-full max-w-6xl px-gutter pb-10">
@@ -45,7 +64,7 @@ export function Footer() {
             </ul>
           </nav>
           <ul className="flex gap-2">
-            {socials.map((social) => (
+            {links.map((social) => (
               <li key={social.href}>
                 <a
                   href={social.href}
