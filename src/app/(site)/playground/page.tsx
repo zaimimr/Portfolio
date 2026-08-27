@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { val } from "../../../../val.config";
+import pagesVal from "@/content/pages.val";
 import playgroundVal from "@/content/playground.val";
 import { fetchVal } from "@/val/val.rsc";
 import { LabCard } from "@/components/site/lab-card";
@@ -14,6 +15,7 @@ export const metadata: Metadata = {
 
 export default async function PlaygroundPage() {
   const playground = await fetchVal(playgroundVal);
+  const copy = await fetchVal(pagesVal);
   const experiments: LabCardModel[] = Object.entries(playground)
     .map(([slug, experiment]) => ({
       slug,
@@ -33,9 +35,7 @@ export default async function PlaygroundPage() {
         <h1 className="font-display text-h1 font-bold text-ink">
           <Highlight>Playground</Highlight>
         </h1>
-        <p className="font-hand text-hand text-ink-muted">
-          Experiments, toys and things that seemed like a good idea at 23:40.
-        </p>
+        <p className="font-hand text-hand text-ink-muted">{copy.playgroundIntro}</p>
       </header>
       <ul className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
         {experiments.map((experiment, index) => (

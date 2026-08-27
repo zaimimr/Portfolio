@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import pagesVal from "@/content/pages.val";
 import projectsVal from "@/content/projects.val";
 import { fetchVal } from "@/val/val.rsc";
 import { getVisibleProjects, sortByDate, toProjectEntries } from "@/lib/projects";
@@ -19,6 +20,7 @@ export default async function ProjectsPage({
 }) {
   await searchParams;
   const projects = await fetchVal(projectsVal);
+  const copy = await fetchVal(pagesVal);
   const visible = sortByDate(
     getVisibleProjects(toProjectEntries(projects).map(rawEntry), false),
   );
@@ -31,8 +33,7 @@ export default async function ProjectsPage({
           <Highlight>Projects</Highlight>
         </h1>
         <p className="max-w-xl text-body-lg text-ink-muted">
-          Everything I&apos;ve built worth showing, from member platforms to
-          cake-debt calculators.
+          {copy.projectsIntro}
         </p>
       </header>
       <ProjectsExplorer projects={cards} />

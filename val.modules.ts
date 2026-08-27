@@ -7,5 +7,6 @@ export default modules(config, [
   { def: () => import("./src/content/projects.val") },
   { def: () => import("./src/content/cv.val") },
   { def: () => import("./src/content/playground.val") },
+  { def: () => import("./src/content/pages.val") },
   { def: () => import("./src/content/admin-links.val") },
 ]);

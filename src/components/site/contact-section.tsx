@@ -1,4 +1,5 @@
 import { val } from "../../../val.config";
+import pagesVal from "@/content/pages.val";
 import settingsVal from "@/content/settings.val";
 import { fetchVal } from "@/val/val.rsc";
 import { envOptional } from "@/lib/env";
@@ -8,6 +9,7 @@ import { SketchIcon } from "@/components/ui/sketch-icon";
 
 export async function ContactSection() {
   const settings = await fetchVal(settingsVal);
+  const copy = await fetchVal(pagesVal);
   const email = val.raw(settings.email);
   const availableForFreelance = val.raw(settings.availableForFreelance);
   const formEnabled = Boolean(
@@ -29,12 +31,11 @@ export async function ContactSection() {
             Say <Highlight>hei</Highlight>
           </h2>
           <p className="max-w-md text-body-lg text-ink-muted">
-            Got a project, a question, or a very strong opinion about cake
-            debt? My inbox is open.
+            {copy.contactBlurb}
           </p>
           {availableForFreelance ? (
             <p className="mt-2 -rotate-1 self-start rounded-wobble-sm border-2 border-line bg-surface px-4 py-2 font-hand text-hand text-ink shadow-offset-sm">
-              Currently open for freelance work
+              {copy.freelanceBadge}
             </p>
           ) : null}
         </div>
