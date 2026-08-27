@@ -1,0 +1,121 @@
+- generic [active] [ref=f2e1]:
+  - generic [ref=f2e2]:
+    - link "Skip to content" [ref=f2e3] [cursor=pointer]:
+      - /url: "#main"
+    - banner [ref=f2e4]:
+      - generic [ref=f2e5]:
+        - link "Zaim Imran, home" [ref=f2e6] [cursor=pointer]:
+          - /url: /
+          - img [ref=f2e7]
+        - navigation "Main" [ref=f2e10]:
+          - link "Projects" [ref=f2e11] [cursor=pointer]:
+            - /url: /projects
+            - text: Projects
+            - img [ref=f2e12]
+          - link "Playground" [ref=f2e14] [cursor=pointer]:
+            - /url: /playground
+            - text: Playground
+            - img [ref=f2e15]
+          - link "About" [ref=f2e17] [cursor=pointer]:
+            - /url: /about
+            - text: About
+            - img [ref=f2e18]
+          - link "Contact" [ref=f2e20] [cursor=pointer]:
+            - /url: /contact
+            - text: Contact
+            - img [ref=f2e21]
+        - button "Toggle theme" [ref=f2e24]:
+          - img [ref=f2e25]
+    - main [ref=f2e27]:
+      - article [ref=f2e28]:
+        - navigation "Breadcrumb" [ref=f2e29]:
+          - link "All projects" [ref=f2e30] [cursor=pointer]:
+            - /url: /projects
+            - img [ref=f2e31]
+            - text: All projects
+        - generic [ref=f2e34]:
+          - heading "TIHLDE" [level=1] [ref=f2e35]:
+            - mark [ref=f2e36]: TIHLDE
+          - paragraph [ref=f2e37]: Member platform and event system for the TIHLDE student association.
+          - generic [ref=f2e38]:
+            - generic [ref=f2e39]:
+              - term [ref=f2e40]: Category
+              - definition [ref=f2e41]:
+                - generic [ref=f2e42]: Work
+            - generic [ref=f2e43]:
+              - term [ref=f2e44]: Type
+              - definition [ref=f2e45]: Website
+            - generic [ref=f2e46]:
+              - term [ref=f2e47]: Year
+              - definition [ref=f2e48]: "2021"
+            - generic [ref=f2e49]:
+              - term [ref=f2e50]: Stack
+              - definition [ref=f2e51]: React · Django REST · MySQL · JavaScript · CSS
+        - generic [ref=f2e53]:
+          - paragraph [ref=f2e54]: Tech lead for TIHLDE's webpage and member system, a platform members use daily at uni, at home and at a party.
+          - paragraph [ref=f2e55]: I built the entire events system, helping the association organize and promote events and business presentations to its members.
+          - paragraph [ref=f2e56]: The stack pairs a React frontend with a Django REST backend on MySQL, maintained by a volunteer team I led.
+        - link "Visit the site" [ref=f2e58] [cursor=pointer]:
+          - /url: https://tihlde.org/
+          - img [ref=f2e59]
+          - text: Visit the site
+        - generic [ref=f2e63]:
+          - img [ref=f2e64]
+          - link "Next up NTNUI Sprint" [ref=f2e66] [cursor=pointer]:
+            - /url: /projects/ntnui-sprint
+            - paragraph [ref=f2e67]: Next up
+            - paragraph [ref=f2e68]:
+              - text: NTNUI Sprint
+              - img [ref=f2e69]
+    - contentinfo [ref=f2e72]:
+      - generic [ref=f2e73]:
+        - img [ref=f2e74]
+        - generic [ref=f2e76]:
+          - generic [ref=f2e77]:
+            - link "Zaim Imran, home" [ref=f2e78] [cursor=pointer]:
+              - /url: /
+              - img [ref=f2e79]
+            - paragraph [ref=f2e82]: Tegnet og bygget i Norge
+          - navigation "Footer" [ref=f2e83]:
+            - list [ref=f2e84]:
+              - listitem [ref=f2e85]:
+                - link "Home" [ref=f2e86] [cursor=pointer]:
+                  - /url: /
+                  - text: Home
+                  - img [ref=f2e87]
+              - listitem [ref=f2e89]:
+                - link "Projects" [ref=f2e90] [cursor=pointer]:
+                  - /url: /projects
+                  - text: Projects
+                  - img [ref=f2e91]
+              - listitem [ref=f2e93]:
+                - link "Playground" [ref=f2e94] [cursor=pointer]:
+                  - /url: /playground
+                  - text: Playground
+                  - img [ref=f2e95]
+              - listitem [ref=f2e97]:
+                - link "About" [ref=f2e98] [cursor=pointer]:
+                  - /url: /about
+                  - text: About
+                  - img [ref=f2e99]
+              - listitem [ref=f2e101]:
+                - link "Contact" [ref=f2e102] [cursor=pointer]:
+                  - /url: /contact
+                  - text: Contact
+                  - img [ref=f2e103]
+          - list [ref=f2e105]:
+            - listitem [ref=f2e106]:
+              - link "GitHub" [ref=f2e107] [cursor=pointer]:
+                - /url: https://github.com/zaimimr
+                - img [ref=f2e108]
+            - listitem [ref=f2e111]:
+              - link "LinkedIn" [ref=f2e112] [cursor=pointer]:
+                - /url: https://www.linkedin.com/in/zaim/
+                - img [ref=f2e113]
+            - listitem [ref=f2e118]:
+              - link "Email" [ref=f2e119] [cursor=pointer]:
+                - /url: mailto:zaim.imran@gmail.com
+                - img [ref=f2e120]
+        - paragraph [ref=f2e123]: © 2026 Zaim Imran
+  - button "Open Next.js Dev Tools" [ref=f2e129] [cursor=pointer]:
+    - img [ref=f2e130]

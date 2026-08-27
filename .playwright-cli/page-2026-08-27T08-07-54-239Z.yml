@@ -1,0 +1,146 @@
+- generic [active] [ref=f5e1]:
+  - generic [ref=f5e2]:
+    - link "Skip to content" [ref=f5e3] [cursor=pointer]:
+      - /url: "#main"
+    - banner [ref=f5e4]:
+      - generic [ref=f5e5]:
+        - link "Zaim Imran, home" [ref=f5e6] [cursor=pointer]:
+          - /url: /
+          - img [ref=f5e7]
+        - generic [ref=f5e10]:
+          - button "Toggle theme" [ref=f5e11]:
+            - img [ref=f5e12]
+          - button "Open menu" [ref=f5e14]:
+            - img [ref=f5e15]
+    - main [ref=f5e19]:
+      - generic [ref=f5e20]:
+        - generic [ref=f5e21]:
+          - heading "Projects" [level=1] [ref=f5e22]:
+            - mark [ref=f5e23]: Projects
+          - paragraph [ref=f5e24]: Everything I've built worth showing, from member platforms to cake-debt calculators.
+        - generic [ref=f5e25]:
+          - generic [ref=f5e26]:
+            - group "Filter by category" [ref=f5e27]:
+              - button "All" [pressed] [ref=f5e28]: All
+              - button "Work" [ref=f5e30]
+              - button "Freelance" [ref=f5e31]
+              - button "Hobby" [ref=f5e32]
+            - group "Filter by type" [ref=f5e33]:
+              - button "Website · 4" [ref=f5e34]
+              - button "App · 0" [disabled]
+              - button "Game · 1" [ref=f5e35]
+              - button "Non-technical · 0" [disabled]
+          - paragraph [ref=f5e36]: 5 projects shown
+          - list [ref=f5e37]:
+            - listitem [ref=f5e38]:
+              - link "TIHLDE Member platform and event system for the TIHLDE student association. Work Website 2021" [ref=f5e40] [cursor=pointer]:
+                - /url: /projects/tihlde
+                - generic [ref=f5e41]:
+                  - generic: "01"
+                  - generic [ref=f5e42]:
+                    - heading "TIHLDE" [level=3] [ref=f5e43]
+                    - paragraph [ref=f5e44]: Member platform and event system for the TIHLDE student association.
+                  - generic [ref=f5e45]:
+                    - generic [ref=f5e46]: Work
+                    - generic [ref=f5e47]: Website
+                    - generic [ref=f5e48]: "2021"
+            - listitem [ref=f5e49]:
+              - link "NTNUI Sprint Member administration portal for NTNUI's 12,000 members. Work Website 2021" [ref=f5e51] [cursor=pointer]:
+                - /url: /projects/ntnui-sprint
+                - generic [ref=f5e52]:
+                  - generic: "02"
+                  - generic [ref=f5e53]:
+                    - heading "NTNUI Sprint" [level=3] [ref=f5e54]
+                    - paragraph [ref=f5e55]: Member administration portal for NTNUI's 12,000 members.
+                  - generic [ref=f5e56]:
+                    - generic [ref=f5e57]: Work
+                    - generic [ref=f5e58]: Website
+                    - generic [ref=f5e59]: "2021"
+            - listitem [ref=f5e60]:
+              - link "Zaim's Constant A cake-debt calculator born from too many fines in NTNUI Sprint. Hobby Website 2020" [ref=f5e62] [cursor=pointer]:
+                - /url: /projects/zaims-constant
+                - generic [ref=f5e63]:
+                  - generic: "03"
+                  - generic [ref=f5e64]:
+                    - heading "Zaim's Constant" [level=3] [ref=f5e65]
+                    - paragraph [ref=f5e66]: A cake-debt calculator born from too many fines in NTNUI Sprint.
+                  - generic [ref=f5e67]:
+                    - generic [ref=f5e68]: Hobby
+                    - generic [ref=f5e69]: Website
+                    - generic [ref=f5e70]: "2020"
+            - listitem [ref=f5e71]:
+              - link "Portfolio This site, designed and built from scratch. Hobby Website 2020" [ref=f5e73] [cursor=pointer]:
+                - /url: /projects/portfolio
+                - generic [ref=f5e74]:
+                  - generic: "04"
+                  - generic [ref=f5e75]:
+                    - heading "Portfolio" [level=3] [ref=f5e76]
+                    - paragraph [ref=f5e77]: This site, designed and built from scratch.
+                  - generic [ref=f5e78]:
+                    - generic [ref=f5e79]: Hobby
+                    - generic [ref=f5e80]: Website
+                    - generic [ref=f5e81]: "2020"
+            - listitem [ref=f5e82]:
+              - link "Squiggle A JavaFX drawing game built as a second-semester school project. Hobby Game 2019" [ref=f5e84] [cursor=pointer]:
+                - /url: /projects/squiggle
+                - generic [ref=f5e85]:
+                  - generic: "05"
+                  - generic [ref=f5e86]:
+                    - heading "Squiggle" [level=3] [ref=f5e87]
+                    - paragraph [ref=f5e88]: A JavaFX drawing game built as a second-semester school project.
+                  - generic [ref=f5e89]:
+                    - generic [ref=f5e90]: Hobby
+                    - generic [ref=f5e91]: Game
+                    - generic [ref=f5e92]: "2019"
+    - contentinfo [ref=f5e93]:
+      - generic [ref=f5e94]:
+        - img [ref=f5e95]
+        - generic [ref=f5e97]:
+          - generic [ref=f5e98]:
+            - link "Zaim Imran, home" [ref=f5e99] [cursor=pointer]:
+              - /url: /
+              - img [ref=f5e100]
+            - paragraph [ref=f5e103]: Tegnet og bygget i Norge
+          - navigation "Footer" [ref=f5e104]:
+            - list [ref=f5e105]:
+              - listitem [ref=f5e106]:
+                - link "Home" [ref=f5e107] [cursor=pointer]:
+                  - /url: /
+                  - text: Home
+                  - img [ref=f5e108]
+              - listitem [ref=f5e110]:
+                - link "Projects" [ref=f5e111] [cursor=pointer]:
+                  - /url: /projects
+                  - text: Projects
+                  - img [ref=f5e112]
+              - listitem [ref=f5e114]:
+                - link "Playground" [ref=f5e115] [cursor=pointer]:
+                  - /url: /playground
+                  - text: Playground
+                  - img [ref=f5e116]
+              - listitem [ref=f5e118]:
+                - link "About" [ref=f5e119] [cursor=pointer]:
+                  - /url: /about
+                  - text: About
+                  - img [ref=f5e120]
+              - listitem [ref=f5e122]:
+                - link "Contact" [ref=f5e123] [cursor=pointer]:
+                  - /url: /contact
+                  - text: Contact
+                  - img [ref=f5e124]
+          - list [ref=f5e126]:
+            - listitem [ref=f5e127]:
+              - link "GitHub" [ref=f5e128] [cursor=pointer]:
+                - /url: https://github.com/zaimimr
+                - img [ref=f5e129]
+            - listitem [ref=f5e132]:
+              - link "LinkedIn" [ref=f5e133] [cursor=pointer]:
+                - /url: https://www.linkedin.com/in/zaim/
+                - img [ref=f5e134]
+            - listitem [ref=f5e139]:
+              - link "Email" [ref=f5e140] [cursor=pointer]:
+                - /url: mailto:zaim.imran@gmail.com
+                - img [ref=f5e141]
+        - paragraph [ref=f5e144]: © 2026 Zaim Imran
+  - button "Open Next.js Dev Tools" [ref=f5e150] [cursor=pointer]:
+    - img [ref=f5e151]

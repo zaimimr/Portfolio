@@ -1,0 +1,153 @@
+- generic [active] [ref=f3e1]:
+  - generic [ref=f3e2]:
+    - link "Skip to content" [ref=f3e3] [cursor=pointer]:
+      - /url: "#main"
+    - banner [ref=f3e4]:
+      - generic [ref=f3e5]:
+        - link "Zaim Imran, home" [ref=f3e6] [cursor=pointer]:
+          - /url: /
+          - img [ref=f3e7]
+        - navigation "Main" [ref=f3e10]:
+          - link "Projects" [ref=f3e11] [cursor=pointer]:
+            - /url: /projects
+            - text: Projects
+            - img [ref=f3e12]
+          - link "Playground" [ref=f3e14] [cursor=pointer]:
+            - /url: /playground
+            - text: Playground
+            - img [ref=f3e15]
+          - link "About" [ref=f3e17] [cursor=pointer]:
+            - /url: /about
+            - text: About
+            - img [ref=f3e18]
+          - link "Contact" [ref=f3e20] [cursor=pointer]:
+            - /url: /contact
+            - text: Contact
+            - img [ref=f3e21]
+        - button "Toggle theme" [ref=f3e24]:
+          - img [ref=f3e25]
+    - main [ref=f3e27]:
+      - generic [ref=f3e28]:
+        - generic [ref=f3e29]:
+          - heading "About me" [level=1] [ref=f3e30]:
+            - text: About
+            - mark [ref=f3e31]: me
+          - generic [ref=f3e33]:
+            - paragraph [ref=f3e34]: I'm Zaim, a developer based in Norway. I build websites, apps and games, from student association platforms to cake-debt calculators.
+            - paragraph [ref=f3e35]: "This site is my workshop: my work, my experiments and the occasional easter egg."
+        - region "Experience" [ref=f3e36]:
+          - heading "Experience" [level=2] [ref=f3e37]
+          - list [ref=f3e38]:
+            - img [ref=f3e39]
+            - listitem [ref=f3e41]:
+              - generic [ref=f3e43]:
+                - paragraph [ref=f3e44]: Jan 2023 – now
+                - 'heading "Placeholder: current role" [level=3] [ref=f3e45]'
+                - paragraph [ref=f3e46]: "Placeholder: edit in the studio"
+                - paragraph [ref=f3e47]: Placeholder entry. Replace with your current position in the Val studio.
+            - listitem [ref=f3e48]:
+              - generic [ref=f3e50]:
+                - paragraph [ref=f3e51]: Aug 2020 – Jun 2021
+                - heading "Frontend Developer" [level=3] [ref=f3e52]
+                - paragraph [ref=f3e53]: NTNUI Sprint
+                - paragraph [ref=f3e54]: Built the admin and coach portal for the member system serving NTNUI's 12,000 members.
+            - listitem [ref=f3e55]:
+              - generic [ref=f3e57]:
+                - paragraph [ref=f3e58]: Aug 2019 – Jun 2021
+                - heading "Tech Lead" [level=3] [ref=f3e59]
+                - paragraph [ref=f3e60]: TIHLDE
+                - paragraph [ref=f3e61]: Led the volunteer team behind TIHLDE's webpage and member system, and built the events system.
+        - region "Education" [ref=f3e62]:
+          - heading "Education" [level=2] [ref=f3e63]
+          - list [ref=f3e64]:
+            - img [ref=f3e65]
+            - listitem [ref=f3e67]:
+              - generic [ref=f3e69]:
+                - paragraph [ref=f3e70]: Aug 2018 – Jun 2021
+                - 'heading "Placeholder: degree" [level=3] [ref=f3e71]'
+                - paragraph [ref=f3e72]: NTNU
+                - paragraph [ref=f3e73]: Placeholder entry. Replace with the correct degree and dates in the Val studio.
+        - region "Skills" [ref=f3e74]:
+          - heading "Skills" [level=2] [ref=f3e75]
+          - list [ref=f3e76]:
+            - listitem [ref=f3e77]:
+              - generic [ref=f3e78]: TypeScript
+            - listitem [ref=f3e79]:
+              - generic [ref=f3e80]: React
+            - listitem [ref=f3e81]:
+              - generic [ref=f3e82]: Next.js
+            - listitem [ref=f3e83]:
+              - generic [ref=f3e84]: Vue.js
+            - listitem [ref=f3e85]:
+              - generic [ref=f3e86]: Java
+            - listitem [ref=f3e87]:
+              - generic [ref=f3e88]: MySQL
+            - listitem [ref=f3e89]:
+              - generic [ref=f3e90]: Django REST
+            - listitem [ref=f3e91]:
+              - generic [ref=f3e92]: SASS
+            - listitem [ref=f3e93]:
+              - generic [ref=f3e94]: Figma
+        - region "Download CV" [ref=f3e95]:
+          - img [ref=f3e96]
+          - generic [ref=f3e98]:
+            - generic [ref=f3e99]:
+              - paragraph [ref=f3e100]: Prefer the paper version?
+              - paragraph [ref=f3e101]: The whole story, neatly typeset on two pages.
+            - link "Download CV PDF · 0.2 MB" [ref=f3e102] [cursor=pointer]:
+              - /url: /cv/zaim-cv.pdf
+              - img [ref=f3e103]
+              - text: Download CV
+              - generic [ref=f3e107]: PDF · 0.2 MB
+    - contentinfo [ref=f3e108]:
+      - generic [ref=f3e109]:
+        - img [ref=f3e110]
+        - generic [ref=f3e112]:
+          - generic [ref=f3e113]:
+            - link "Zaim Imran, home" [ref=f3e114] [cursor=pointer]:
+              - /url: /
+              - img [ref=f3e115]
+            - paragraph [ref=f3e118]: Tegnet og bygget i Norge
+          - navigation "Footer" [ref=f3e119]:
+            - list [ref=f3e120]:
+              - listitem [ref=f3e121]:
+                - link "Home" [ref=f3e122] [cursor=pointer]:
+                  - /url: /
+                  - text: Home
+                  - img [ref=f3e123]
+              - listitem [ref=f3e125]:
+                - link "Projects" [ref=f3e126] [cursor=pointer]:
+                  - /url: /projects
+                  - text: Projects
+                  - img [ref=f3e127]
+              - listitem [ref=f3e129]:
+                - link "Playground" [ref=f3e130] [cursor=pointer]:
+                  - /url: /playground
+                  - text: Playground
+                  - img [ref=f3e131]
+              - listitem [ref=f3e133]:
+                - link "About" [ref=f3e134] [cursor=pointer]:
+                  - /url: /about
+                  - text: About
+                  - img [ref=f3e135]
+              - listitem [ref=f3e137]:
+                - link "Contact" [ref=f3e138] [cursor=pointer]:
+                  - /url: /contact
+                  - text: Contact
+                  - img [ref=f3e139]
+          - list [ref=f3e141]:
+            - listitem [ref=f3e142]:
+              - link "GitHub" [ref=f3e143] [cursor=pointer]:
+                - /url: https://github.com/zaimimr
+                - img [ref=f3e144]
+            - listitem [ref=f3e147]:
+              - link "LinkedIn" [ref=f3e148] [cursor=pointer]:
+                - /url: https://www.linkedin.com/in/zaim/
+                - img [ref=f3e149]
+            - listitem [ref=f3e154]:
+              - link "Email" [ref=f3e155] [cursor=pointer]:
+                - /url: mailto:zaim.imran@gmail.com
+                - img [ref=f3e156]
+        - paragraph [ref=f3e159]: © 2026 Zaim Imran
+  - button "Open Next.js Dev Tools" [ref=f3e165] [cursor=pointer]:
+    - img [ref=f3e166]
