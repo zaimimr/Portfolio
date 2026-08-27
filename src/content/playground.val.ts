@@ -24,12 +24,17 @@ export type Experiment = t.inferSchema<typeof experimentSchema>;
 export type Playground = t.inferSchema<typeof schema>;
 
 export default c.define("/src/content/playground.val.ts", schema, {
-  "zaims-constant": {
-    title: "Zaim's Constant",
-    description: "A small calculator for tracking team fines in NTNUI Sprint.",
-    href: "https://zenjjim.github.io/Zaims-constant/",
-    image: null,
-    date: "2020-10-01",
-    tags: ["calculator", "react"],
+  "ai-slides": {
+    title: "AI Slides",
+    description:
+      "A talk deck built as a web app, on keeping code quality when AI joins the project.",
+    href: "https://ai-slides-navy.vercel.app",
+    image: c.image("/public/val/projects/ai-slides-1.webp", {
+      width: 2000,
+      height: 1250,
+      mimeType: "image/webp",
+    }),
+    date: "2026-02-27",
+    tags: ["slides", "ai", "next.js"],
   },
 });
