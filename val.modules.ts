@@ -3,4 +3,5 @@ import { config } from "./val.config";
 
 export default modules(config, [
   { def: () => import("./src/content/settings.val") },
+  { def: () => import("./src/content/admin-links.val") },
 ]);
