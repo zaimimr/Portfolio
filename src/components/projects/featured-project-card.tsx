@@ -13,6 +13,12 @@ import { LanternGlow } from "@/components/site/terrain/lantern-glow";
 
 const wobbles = ["rounded-wobble-1", "rounded-wobble-3"];
 
+const LANTERN_BORDER =
+  "color-mix(in oklab, var(--scene-glow) calc(var(--lantern-step, 0) * 46%), var(--line))";
+
+const LANTERN_HALO =
+  "0 0 calc(var(--lantern-step, 0) * 80px) calc(var(--lantern-step, 0) * 10px) color-mix(in oklab, var(--scene-glow) calc(var(--lantern-step, 0) * 28%), transparent)";
+
 type FeaturedProjectCardProps = {
   project: ProjectCardModel;
   index: number;
@@ -35,8 +41,12 @@ export function FeaturedProjectCard({
           className="group grid items-stretch gap-0 md:grid-cols-12"
         >
           <div
+            style={{
+              borderColor: LANTERN_BORDER,
+              boxShadow: LANTERN_HALO,
+            }}
             className={cn(
-              "border-line bg-surface-raised/80 relative flex min-h-52 items-center justify-center overflow-hidden border-2 backdrop-blur-md md:col-span-7 md:min-h-72",
+              "bg-surface-raised/80 relative flex min-h-52 items-center justify-center overflow-hidden border-2 backdrop-blur-md md:col-span-7 md:min-h-72",
               wobbles[index % wobbles.length],
               reversed ? "md:order-last" : "",
             )}
@@ -60,14 +70,18 @@ export function FeaturedProjectCard({
             <LanternGlow />
           </div>
           <div
+            style={{
+              borderColor: LANTERN_BORDER,
+              boxShadow: `var(--card-offset-shadow), ${LANTERN_HALO}`,
+            }}
             className={cn(
-              "border-line bg-surface/85 shadow-offset relative z-10 flex flex-col gap-3 overflow-hidden border-2 p-6 backdrop-blur-md md:col-span-5 md:my-8 md:p-8",
+              "bg-surface/85 relative z-10 flex flex-col gap-3 overflow-hidden border-2 p-6 backdrop-blur-md md:col-span-5 md:my-8 md:p-8",
               index % 2 === 1
                 ? "rounded-wobble-2 md:-mr-10"
                 : "rounded-wobble-2 md:-ml-10",
             )}
           >
-            <LanternGlow scale={0.5} />
+            <LanternGlow edgeOnly />
             <h3 className="font-display text-h2 text-ink group-hover:text-accent-strong relative font-bold transition-colors duration-[var(--duration-fast)] ease-out">
               {project.title}
             </h3>

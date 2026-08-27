@@ -5,14 +5,16 @@ import { useReducedMotion } from "motion/react";
 import { subscribeLantern } from "./lantern-store";
 import { cn } from "@/lib/utils";
 
-const reach = 240;
+const reach = 340;
 
 export function LanternGlow({
   className,
   scale = 1,
+  edgeOnly = false,
 }: {
   className?: string;
   scale?: number;
+  edgeOnly?: boolean;
 }) {
   const ref = useRef<HTMLSpanElement>(null);
   const reducedMotion = useReducedMotion();
@@ -23,6 +25,7 @@ export function LanternGlow({
     if (!element || !host) return;
 
     let box = { top: 0, left: 0, width: 0, height: 0 };
+    let lastStep = -1;
 
     const remeasure = () => {
       const rect = host.getBoundingClientRect();
@@ -46,19 +49,26 @@ export function LanternGlow({
       const nearestX = Math.min(Math.max(localX, 0), box.width);
       const nearestY = Math.min(Math.max(localY, 0), box.height);
       const distance = Math.hypot(localX - nearestX, localY - nearestY);
-      const strength = Math.max(0, 1 - distance / reach);
+      const linear = Math.max(0, 1 - distance / reach);
+      const eased = linear * linear * (3 - 2 * linear);
 
-      element.style.setProperty("--lantern-x", `${localX.toFixed(1)}px`);
-      element.style.setProperty("--lantern-y", `${localY.toFixed(1)}px`);
-      element.style.setProperty(
-        "--lantern-strength",
-        (strength * scale).toFixed(3),
-      );
+      host.style.setProperty("--lantern-x", `${localX.toFixed(1)}px`);
+      host.style.setProperty("--lantern-y", `${localY.toFixed(1)}px`);
+      const strength = eased * scale;
+      host.style.setProperty("--lantern-strength", strength.toFixed(3));
+
+      const step = Math.round(strength * 10) / 10;
+      if (step !== lastStep) {
+        lastStep = step;
+        host.style.setProperty("--lantern-step", step.toFixed(1));
+      }
     });
 
     return () => {
       unsubscribe();
       resizeObserver.disconnect();
+      host.style.removeProperty("--lantern-strength");
+      host.style.removeProperty("--lantern-step");
     };
   }, [scale]);
 
@@ -69,13 +79,24 @@ export function LanternGlow({
       ref={ref}
       aria-hidden="true"
       className={cn(
-        "pointer-events-none absolute inset-0 rounded-[inherit] opacity-[var(--lantern-strength,0)] transition-opacity duration-200 ease-out",
+        "pointer-events-none absolute inset-0 rounded-[inherit] opacity-[var(--lantern-strength,0)]",
         className,
       )}
-      style={{
-        backgroundImage:
-          "radial-gradient(circle 200px at var(--lantern-x, -999px) var(--lantern-y, -999px), color-mix(in oklab, var(--scene-glow) 46%, transparent), color-mix(in oklab, var(--scene-glow) 14%, transparent) 45%, transparent 72%)",
-      }}
+      style={
+        edgeOnly
+          ? {
+              boxShadow:
+                "inset 0 0 20px -2px color-mix(in oklab, var(--scene-glow) 30%, transparent), inset 0 0 7px color-mix(in oklab, var(--scene-glow) 34%, transparent)",
+            }
+          : {
+              backgroundImage: [
+                "radial-gradient(circle 240px at var(--lantern-x, -999px) var(--lantern-y, -999px), color-mix(in oklab, var(--scene-glow) 40%, transparent), color-mix(in oklab, var(--scene-glow) 12%, transparent) 46%, transparent 74%)",
+                "linear-gradient(to bottom, color-mix(in oklab, var(--scene-glow) 8%, transparent), color-mix(in oklab, var(--scene-glow) 4%, transparent))",
+              ].join(","),
+              boxShadow:
+                "inset 0 0 40px 2px color-mix(in oklab, var(--scene-glow) 26%, transparent), inset 0 0 8px color-mix(in oklab, var(--scene-glow) 32%, transparent)",
+            }
+      }
     />
   );
 }
