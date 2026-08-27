@@ -177,8 +177,8 @@ mark.marker-highlight {
     transparent 99.5%
   );
   background-repeat: no-repeat;
-  background-size: 100% 78%;
-  background-position: 0 62%;
+  background-size: 100% 62%;
+  background-position: 0 74%;
 }
 
 @media (prefers-reduced-motion: no-preference) {
@@ -189,9 +189,9 @@ mark.marker-highlight {
 
 @keyframes marker-swipe {
   from {
-    background-size: 0% 78%;
+    background-size: 0% 62%;
   }
   to {
-    background-size: 100% 78%;
+    background-size: 100% 62%;
   }
 }

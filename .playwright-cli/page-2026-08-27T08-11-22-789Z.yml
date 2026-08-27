@@ -1,0 +1,96 @@
+- generic [active] [ref=f10e1]:
+  - generic [ref=f10e2]:
+    - link "Skip to content" [ref=f10e3] [cursor=pointer]:
+      - /url: "#main"
+    - banner [ref=f10e4]:
+      - generic [ref=f10e5]:
+        - link "Zaim Imran, home" [ref=f10e6] [cursor=pointer]:
+          - /url: /
+          - img [ref=f10e7]
+        - navigation "Main" [ref=f10e10]:
+          - link "Projects" [ref=f10e11] [cursor=pointer]:
+            - /url: /projects
+            - text: Projects
+            - img [ref=f10e12]
+          - link "Playground" [ref=f10e14] [cursor=pointer]:
+            - /url: /playground
+            - text: Playground
+            - img [ref=f10e15]
+          - link "About" [ref=f10e17] [cursor=pointer]:
+            - /url: /about
+            - text: About
+            - img [ref=f10e18]
+          - link "Contact" [ref=f10e20] [cursor=pointer]:
+            - /url: /contact
+            - text: Contact
+            - img [ref=f10e21]
+        - button "Toggle theme" [ref=f10e24]:
+          - img [ref=f10e25]
+    - main [ref=f10e27]:
+      - region "Say hei" [ref=f10e29]:
+        - generic [ref=f10e30]:
+          - generic [ref=f10e31]:
+            - heading "Say hei" [level=2] [ref=f10e32]:
+              - text: Say
+              - mark [ref=f10e33]: hei
+            - paragraph [ref=f10e34]: Got a project, a question, or a very strong opinion about cake debt? My inbox is open.
+            - paragraph [ref=f10e35]: Currently open for freelance work
+          - generic [ref=f10e37]:
+            - paragraph [ref=f10e38]: The form is taking a nap.
+            - paragraph [ref=f10e39]: "Email me directly instead, I read everything:"
+            - link "zaim.imran@gmail.com" [ref=f10e40] [cursor=pointer]:
+              - /url: mailto:zaim.imran@gmail.com
+              - img [ref=f10e41]
+              - text: zaim.imran@gmail.com
+    - contentinfo [ref=f10e44]:
+      - generic [ref=f10e45]:
+        - img [ref=f10e46]
+        - generic [ref=f10e48]:
+          - generic [ref=f10e49]:
+            - link "Zaim Imran, home" [ref=f10e50] [cursor=pointer]:
+              - /url: /
+              - img [ref=f10e51]
+            - paragraph [ref=f10e54]: Tegnet og bygget i Norge
+          - navigation "Footer" [ref=f10e55]:
+            - list [ref=f10e56]:
+              - listitem [ref=f10e57]:
+                - link "Home" [ref=f10e58] [cursor=pointer]:
+                  - /url: /
+                  - text: Home
+                  - img [ref=f10e59]
+              - listitem [ref=f10e61]:
+                - link "Projects" [ref=f10e62] [cursor=pointer]:
+                  - /url: /projects
+                  - text: Projects
+                  - img [ref=f10e63]
+              - listitem [ref=f10e65]:
+                - link "Playground" [ref=f10e66] [cursor=pointer]:
+                  - /url: /playground
+                  - text: Playground
+                  - img [ref=f10e67]
+              - listitem [ref=f10e69]:
+                - link "About" [ref=f10e70] [cursor=pointer]:
+                  - /url: /about
+                  - text: About
+                  - img [ref=f10e71]
+              - listitem [ref=f10e73]:
+                - link "Contact" [ref=f10e74] [cursor=pointer]:
+                  - /url: /contact
+                  - text: Contact
+                  - img [ref=f10e75]
+          - list [ref=f10e77]:
+            - listitem [ref=f10e78]:
+              - link "GitHub" [ref=f10e79] [cursor=pointer]:
+                - /url: https://github.com/zaimimr
+                - img [ref=f10e80]
+            - listitem [ref=f10e83]:
+              - link "LinkedIn" [ref=f10e84] [cursor=pointer]:
+                - /url: https://www.linkedin.com/in/zaim/
+                - img [ref=f10e85]
+            - listitem [ref=f10e90]:
+              - link "Email" [ref=f10e91] [cursor=pointer]:
+                - /url: mailto:zaim.imran@gmail.com
+                - img [ref=f10e92]
+        - paragraph [ref=f10e95]: © 2026 Zaim Imran
+  - button "Open Next.js Dev Tools" [ref=f10e101] [cursor=pointer]:
+    - img [ref=f10e102]

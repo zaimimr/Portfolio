@@ -1,0 +1,168 @@
+- generic [active] [ref=f6e1]:
+  - generic [ref=f6e2]:
+    - link "Skip to content" [ref=f6e3] [cursor=pointer]:
+      - /url: "#main"
+    - banner [ref=f6e4]:
+      - generic [ref=f6e5]:
+        - link "Zaim Imran, home" [ref=f6e6] [cursor=pointer]:
+          - /url: /
+          - img [ref=f6e7]
+        - navigation "Main" [ref=f6e10]:
+          - link "Projects" [ref=f6e11] [cursor=pointer]:
+            - /url: /projects
+            - text: Projects
+            - img [ref=f6e12]
+          - link "Playground" [ref=f6e14] [cursor=pointer]:
+            - /url: /playground
+            - text: Playground
+            - img [ref=f6e15]
+          - link "About" [ref=f6e17] [cursor=pointer]:
+            - /url: /about
+            - text: About
+            - img [ref=f6e18]
+          - link "Contact" [ref=f6e20] [cursor=pointer]:
+            - /url: /contact
+            - text: Contact
+            - img [ref=f6e21]
+        - button "Toggle theme" [ref=f6e24]:
+          - img [ref=f6e25]
+    - main [ref=f6e27]:
+      - generic [ref=f6e28]:
+        - generic [ref=f6e29]:
+          - generic [ref=f6e30]:
+            - img "Hand-drawn portrait of Zaim at his computer" [ref=f6e31]
+            - button "Toggle light mode" [ref=f6e53] [cursor=pointer]
+          - paragraph [ref=f6e55]:
+            - text: the screen does
+            - text: something, btw
+        - generic [ref=f6e57]:
+          - paragraph [ref=f6e58]: Hei! My name is
+          - heading "Zaim Imran" [level=1] [ref=f6e59]:
+            - mark [ref=f6e60]: Zaim
+            - text: Imran
+          - paragraph [ref=f6e61]: Developer in Norway building websites, apps and games.
+          - generic [ref=f6e62]:
+            - link "See my work" [ref=f6e63] [cursor=pointer]:
+              - /url: /projects
+            - list [ref=f6e64]:
+              - listitem [ref=f6e65]:
+                - link "GitHub" [ref=f6e66] [cursor=pointer]:
+                  - /url: https://github.com/zaimimr
+                  - img [ref=f6e67]
+              - listitem [ref=f6e70]:
+                - link "LinkedIn" [ref=f6e71] [cursor=pointer]:
+                  - /url: https://www.linkedin.com/in/zaim/
+                  - img [ref=f6e72]
+          - img [ref=f6e77]
+      - region "Selected work" [ref=f6e80]:
+        - generic [ref=f6e81]:
+          - heading "Selected work" [level=2] [ref=f6e82]
+          - link "Browse everything" [ref=f6e83] [cursor=pointer]:
+            - /url: /projects
+            - text: Browse everything
+            - img [ref=f6e84]
+        - generic [ref=f6e86]:
+          - generic [ref=f6e87]:
+            - generic: "01"
+            - link "TIHLDE Member platform and event system for the TIHLDE student association. Work Website Read the story" [ref=f6e89] [cursor=pointer]:
+              - /url: /projects/tihlde
+              - generic [ref=f6e91]: T
+              - generic [ref=f6e92]:
+                - heading "TIHLDE" [level=3] [ref=f6e93]
+                - paragraph [ref=f6e94]: Member platform and event system for the TIHLDE student association.
+                - generic [ref=f6e95]:
+                  - generic [ref=f6e96]: Work
+                  - generic [ref=f6e97]: Website
+                - generic [ref=f6e98]:
+                  - text: Read the story
+                  - img [ref=f6e99]
+          - generic [ref=f6e102]:
+            - generic: "02"
+            - link "NTNUI Sprint Member administration portal for NTNUI's 12,000 members. Work Website Read the story" [ref=f6e104] [cursor=pointer]:
+              - /url: /projects/ntnui-sprint
+              - generic [ref=f6e106]: "N"
+              - generic [ref=f6e107]:
+                - heading "NTNUI Sprint" [level=3] [ref=f6e108]
+                - paragraph [ref=f6e109]: Member administration portal for NTNUI's 12,000 members.
+                - generic [ref=f6e110]:
+                  - generic [ref=f6e111]: Work
+                  - generic [ref=f6e112]: Website
+                - generic [ref=f6e113]:
+                  - text: Read the story
+                  - img [ref=f6e114]
+      - region "Who's drawing all this?" [ref=f6e117]:
+        - generic [ref=f6e118]:
+          - heading "Who's drawing all this?" [level=2] [ref=f6e120]
+          - generic [ref=f6e121]:
+            - generic [ref=f6e122]:
+              - paragraph [ref=f6e123]: I'm Zaim, a developer based in Norway. I build websites, apps and games, from student association platforms to cake-debt calculators.
+              - paragraph [ref=f6e124]: "This site is my workshop: my work, my experiments and the occasional easter egg."
+            - link "More about me" [ref=f6e125] [cursor=pointer]:
+              - /url: /about
+      - region "Say hei" [ref=f6e127]:
+        - generic [ref=f6e128]:
+          - generic [ref=f6e129]:
+            - heading "Say hei" [level=2] [ref=f6e130]:
+              - text: Say
+              - mark [ref=f6e131]: hei
+            - paragraph [ref=f6e132]: Got a project, a question, or a very strong opinion about cake debt? My inbox is open.
+            - paragraph [ref=f6e133]: Currently open for freelance work
+          - generic [ref=f6e135]:
+            - paragraph [ref=f6e136]: The form is taking a nap.
+            - paragraph [ref=f6e137]: "Email me directly instead, I read everything:"
+            - link "zaim.imran@gmail.com" [ref=f6e138] [cursor=pointer]:
+              - /url: mailto:zaim.imran@gmail.com
+              - img [ref=f6e139]
+              - text: zaim.imran@gmail.com
+    - contentinfo [ref=f6e142]:
+      - generic [ref=f6e143]:
+        - img [ref=f6e144]
+        - generic [ref=f6e146]:
+          - generic [ref=f6e147]:
+            - link "Zaim Imran, home" [ref=f6e148] [cursor=pointer]:
+              - /url: /
+              - img [ref=f6e149]
+            - paragraph [ref=f6e152]: Tegnet og bygget i Norge
+          - navigation "Footer" [ref=f6e153]:
+            - list [ref=f6e154]:
+              - listitem [ref=f6e155]:
+                - link "Home" [ref=f6e156] [cursor=pointer]:
+                  - /url: /
+                  - text: Home
+                  - img [ref=f6e157]
+              - listitem [ref=f6e159]:
+                - link "Projects" [ref=f6e160] [cursor=pointer]:
+                  - /url: /projects
+                  - text: Projects
+                  - img [ref=f6e161]
+              - listitem [ref=f6e163]:
+                - link "Playground" [ref=f6e164] [cursor=pointer]:
+                  - /url: /playground
+                  - text: Playground
+                  - img [ref=f6e165]
+              - listitem [ref=f6e167]:
+                - link "About" [ref=f6e168] [cursor=pointer]:
+                  - /url: /about
+                  - text: About
+                  - img [ref=f6e169]
+              - listitem [ref=f6e171]:
+                - link "Contact" [ref=f6e172] [cursor=pointer]:
+                  - /url: /contact
+                  - text: Contact
+                  - img [ref=f6e173]
+          - list [ref=f6e175]:
+            - listitem [ref=f6e176]:
+              - link "GitHub" [ref=f6e177] [cursor=pointer]:
+                - /url: https://github.com/zaimimr
+                - img [ref=f6e178]
+            - listitem [ref=f6e181]:
+              - link "LinkedIn" [ref=f6e182] [cursor=pointer]:
+                - /url: https://www.linkedin.com/in/zaim/
+                - img [ref=f6e183]
+            - listitem [ref=f6e188]:
+              - link "Email" [ref=f6e189] [cursor=pointer]:
+                - /url: mailto:zaim.imran@gmail.com
+                - img [ref=f6e190]
+        - paragraph [ref=f6e193]: © 2026 Zaim Imran
+  - button "Open Next.js Dev Tools" [ref=f6e199] [cursor=pointer]:
+    - img [ref=f6e200]

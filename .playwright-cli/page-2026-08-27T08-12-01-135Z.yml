@@ -1,0 +1,110 @@
+- generic [active] [ref=f12e1]:
+  - generic [ref=f12e2]:
+    - link "Skip to content" [ref=f12e3] [cursor=pointer]:
+      - /url: "#main"
+    - banner [ref=f12e4]:
+      - generic [ref=f12e5]:
+        - link "Zaim Imran, home" [ref=f12e6] [cursor=pointer]:
+          - /url: /
+          - img [ref=f12e7]
+        - navigation "Main" [ref=f12e10]:
+          - link "Projects" [ref=f12e11] [cursor=pointer]:
+            - /url: /projects
+            - text: Projects
+            - img [ref=f12e12]
+          - link "Playground" [ref=f12e14] [cursor=pointer]:
+            - /url: /playground
+            - text: Playground
+            - img [ref=f12e15]
+          - link "About" [ref=f12e17] [cursor=pointer]:
+            - /url: /about
+            - text: About
+            - img [ref=f12e18]
+          - link "Contact" [ref=f12e20] [cursor=pointer]:
+            - /url: /contact
+            - text: Contact
+            - img [ref=f12e21]
+        - button "Toggle theme" [ref=f12e24]:
+          - img [ref=f12e25]
+    - main [ref=f12e27]:
+      - region "Say hei" [ref=f12e29]:
+        - generic [ref=f12e30]:
+          - generic [ref=f12e31]:
+            - heading "Say hei" [level=2] [ref=f12e32]:
+              - text: Say
+              - mark [ref=f12e33]: hei
+            - paragraph [ref=f12e34]: Got a project, a question, or a very strong opinion about cake debt? My inbox is open.
+            - paragraph [ref=f12e35]: Currently open for freelance work
+          - generic [ref=f12e37]:
+            - generic [ref=f12e38]:
+              - generic [ref=f12e39]:
+                - generic [ref=f12e40]: Name
+                - generic [ref=f12e41]:
+                  - textbox "Name" [ref=f12e42]
+                  - img
+              - generic [ref=f12e43]:
+                - generic [ref=f12e44]: Email
+                - generic [ref=f12e45]:
+                  - textbox "Email" [ref=f12e46]
+                  - img
+            - generic [ref=f12e47]:
+              - generic [ref=f12e48]: Message
+              - generic [ref=f12e49]:
+                - textbox "Message" [ref=f12e50]
+                - img
+            - generic [ref=f12e51]:
+              - text: Company
+              - textbox [ref=f12e52]
+            - button "Send it over" [ref=f12e54]
+    - contentinfo [ref=f12e55]:
+      - generic [ref=f12e56]:
+        - img [ref=f12e57]
+        - generic [ref=f12e59]:
+          - generic [ref=f12e60]:
+            - link "Zaim Imran, home" [ref=f12e61] [cursor=pointer]:
+              - /url: /
+              - img [ref=f12e62]
+            - paragraph [ref=f12e65]: Tegnet og bygget i Norge
+          - navigation "Footer" [ref=f12e66]:
+            - list [ref=f12e67]:
+              - listitem [ref=f12e68]:
+                - link "Home" [ref=f12e69] [cursor=pointer]:
+                  - /url: /
+                  - text: Home
+                  - img [ref=f12e70]
+              - listitem [ref=f12e72]:
+                - link "Projects" [ref=f12e73] [cursor=pointer]:
+                  - /url: /projects
+                  - text: Projects
+                  - img [ref=f12e74]
+              - listitem [ref=f12e76]:
+                - link "Playground" [ref=f12e77] [cursor=pointer]:
+                  - /url: /playground
+                  - text: Playground
+                  - img [ref=f12e78]
+              - listitem [ref=f12e80]:
+                - link "About" [ref=f12e81] [cursor=pointer]:
+                  - /url: /about
+                  - text: About
+                  - img [ref=f12e82]
+              - listitem [ref=f12e84]:
+                - link "Contact" [ref=f12e85] [cursor=pointer]:
+                  - /url: /contact
+                  - text: Contact
+                  - img [ref=f12e86]
+          - list [ref=f12e88]:
+            - listitem [ref=f12e89]:
+              - link "GitHub" [ref=f12e90] [cursor=pointer]:
+                - /url: https://github.com/zaimimr
+                - img [ref=f12e91]
+            - listitem [ref=f12e94]:
+              - link "LinkedIn" [ref=f12e95] [cursor=pointer]:
+                - /url: https://www.linkedin.com/in/zaim/
+                - img [ref=f12e96]
+            - listitem [ref=f12e101]:
+              - link "Email" [ref=f12e102] [cursor=pointer]:
+                - /url: mailto:zaim.imran@gmail.com
+                - img [ref=f12e103]
+        - paragraph [ref=f12e106]: © 2026 Zaim Imran
+  - button "Open Next.js Dev Tools" [ref=f12e112] [cursor=pointer]:
+    - img [ref=f12e113]

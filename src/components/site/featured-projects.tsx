@@ -10,7 +10,7 @@ export function FeaturedProjects({ projects }: { projects: ProjectCardModel[] })
       aria-labelledby="featured-heading"
       className="mx-auto w-full max-w-6xl px-gutter pb-section"
     >
-      <div className="mb-12 flex flex-wrap items-end justify-between gap-4">
+      <div className="mb-16 flex flex-wrap items-end justify-between gap-4 md:mb-24">
         <h2
           id="featured-heading"
           className="font-display text-h1 font-bold text-ink"

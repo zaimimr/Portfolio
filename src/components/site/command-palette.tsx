@@ -206,28 +206,27 @@ export function CommandPalette({ socials, email }: CommandPaletteProps) {
               </span>
             </span>
           </Command.Item>
-          {showAdmin ? (
-            <Command.Item
-              value="admin"
-              forceMount
-              onSelect={() =>
-                runAction(() => {
-                  markAdminFound();
-                  router.push("/admin");
-                })
-              }
-              className={itemClass}
-            >
-              <SketchIcon name="command" size={18} className="text-ink-muted" />
-              <span>
-                Admin{" "}
-                <span className="font-hand text-hand text-ink-muted">
-                  you found the back door
-                </span>
-              </span>
-            </Command.Item>
-          ) : null}
         </Command.Group>
+        {showAdmin ? (
+          <Command.Item
+            value="admin"
+            onSelect={() =>
+              runAction(() => {
+                markAdminFound();
+                router.push("/admin");
+              })
+            }
+            className={itemClass}
+          >
+            <SketchIcon name="command" size={18} className="text-ink-muted" />
+            <span>
+              Admin{" "}
+              <span className="font-hand text-hand text-ink-muted">
+                you found the back door
+              </span>
+            </span>
+          </Command.Item>
+        ) : null}
       </Command.List>
     </Command.Dialog>
   );
