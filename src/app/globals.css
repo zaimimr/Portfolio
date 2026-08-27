@@ -19,7 +19,9 @@
 
   --scene-haze: #fffefa;
   --scene-deep: #2f2619;
-  --scene-veil: 0.2;
+  --scene-veil: 0.5;
+  --scene-wash: 1;
+  --card-offset-shadow: 5px 5px 0 var(--line);
   --scene-glow: #8a6d00;
   --scene-t0: color-mix(in oklab, var(--scene-haze) 93%, var(--scene-deep));
   --scene-t1: color-mix(in oklab, var(--scene-haze) 73%, var(--scene-deep));
@@ -44,7 +46,9 @@
 
   --scene-haze: #ccdcec;
   --scene-deep: #05080c;
-  --scene-veil: 0.24;
+  --scene-veil: 0.34;
+  --scene-wash: 0.9;
+  --card-offset-shadow: 5px 5px 0 var(--line);
   --scene-glow: #f4de5d;
 }
 
@@ -78,6 +82,7 @@
   --color-scene-4: var(--scene-t4);
   --color-scene-5: var(--scene-t5);
   --color-scene-haze: var(--scene-haze);
+  --color-scene-deep: var(--scene-deep);
   --color-scene-glow: var(--scene-glow);
 
   --font-display: var(--font-bricolage);
@@ -258,18 +263,13 @@ mark.marker-highlight {
   }
 }
 
-.signature-stroke-main,
-.signature-stroke-tail {
+.signature-stroke-main {
   stroke-dashoffset: 0;
 }
 
 @media (prefers-reduced-motion: no-preference) {
   [data-draw="true"] .signature-stroke-main {
     animation: signature-draw var(--duration-draw) var(--ease-out) 380ms both;
-  }
-
-  [data-draw="true"] .signature-stroke-tail {
-    animation: signature-draw 560ms var(--ease-out) 1140ms both;
   }
 }
 

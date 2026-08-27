@@ -345,7 +345,52 @@ function backdrop() {
     }),
   );
 
-  return { height: H, shapes, dust };
+  return { height: H, shapes, dust, anchor: meanCrest(ridgeA.yAt) };
+}
+
+function meanCrest(yAt) {
+  let total = 0;
+  const steps = 32;
+  for (let i = 0; i <= steps; i += 1) total += yAt((W * i) / steps);
+  return n(total / (steps + 1));
+}
+
+function footprints(random, samples, { from, to, step }) {
+  const prints = [];
+  for (let y = from; y <= to; y += step) {
+    const t = y / BAND;
+    const index = Math.round(t * (samples.length - 1));
+    const x = samples[Math.min(Math.max(index, 0), samples.length - 1)];
+    const side = (prints.length % 2 === 0 ? -1 : 1) * (9 + random() * 5);
+    prints.push({
+      x: n(x + side),
+      y: n(y),
+      r: n(6 + random() * 3),
+    });
+  }
+  return prints;
+}
+
+function scratches(random, { count, from, to, top, bottom }) {
+  const out = [];
+  for (let i = 0; i < count; i += 1) {
+    const x = from + random() * (to - from);
+    const y = top + random() * (bottom - top);
+    const len = 40 + random() * 130;
+    const lift = (random() - 0.5) * 26;
+    out.push(
+      smoothPath(
+        [
+          [x, y],
+          [x + len * 0.4, y + lift * 0.6],
+          [x + len * 0.75, y + lift],
+          [x + len, y + lift * 1.3],
+        ],
+        false,
+      ),
+    );
+  }
+  return out;
 }
 
 function midLayer() {
@@ -386,6 +431,7 @@ function midLayer() {
     }),
   );
   const head = { height: BAND, shapes: headShapes };
+  const anchor = meanCrest(horizon.yAt);
 
   const body = [];
   for (let b = 0; b < 3; b += 1) {
@@ -453,10 +499,22 @@ function midLayer() {
     if (b === 1)
       accents.push({ kind: "beacon", x: 1250, y: n(shelf.yAt(1250)) - 100 });
 
-    body.push({ height: BAND, shapes, drips, accents });
+    body.push({
+      height: BAND,
+      shapes,
+      drips,
+      accents,
+      scratches: scratches(random, {
+        count: 9,
+        from: 0,
+        to: W,
+        top: 1220,
+        bottom: BAND,
+      }),
+    });
   }
 
-  return { head, body };
+  return { head, body, anchor };
 }
 
 function terrainLayer() {
@@ -493,11 +551,25 @@ function terrainLayer() {
       tone: 3,
     }),
   );
+  const headTrail = trail(random0, { startX: 800, endX: 800, sway: 0.4 });
+  const anchor = meanCrest(horizon.yAt);
   const head = {
     height: BAND,
     shapes: headShapes,
     accents: [{ kind: "cairn", x: 1215, y: n(horizon.yAt(1215)) - 74 }],
-    trailSamples: trail(random0, { startX: 800, endX: 800, sway: 0.4 }),
+    trailSamples: headTrail,
+    prints: footprints(random0, headTrail, {
+      from: 780,
+      to: BAND - 30,
+      step: 78,
+    }),
+    scratches: scratches(random0, {
+      count: 14,
+      from: 0,
+      to: W,
+      top: 820,
+      bottom: BAND - 20,
+    }),
   };
 
   const body = [];
@@ -617,10 +689,27 @@ function terrainLayer() {
       accents.push({ kind: "flag", x: 1180, y: n(shelfB.yAt(1180)) - 94 });
     }
 
-    body.push({ height: BAND, shapes, accents, trailSamples: samples });
+    body.push({
+      height: BAND,
+      shapes,
+      accents,
+      trailSamples: samples,
+      prints: footprints(random, samples, {
+        from: 40,
+        to: BAND - 30,
+        step: 74,
+      }),
+      scratches: scratches(random, {
+        count: 18,
+        from: 0,
+        to: W,
+        top: 520,
+        bottom: BAND - 20,
+      }),
+    });
   }
 
-  return { head, body };
+  return { head, body, anchor };
 }
 
 function nearLayer() {
@@ -631,37 +720,32 @@ function nearLayer() {
 
     shapes.push(
       periodicTrunk(random, {
-        baseX: 34,
-        width: 74 + random() * 34,
+        baseX: 18,
+        width: 118 + random() * 62,
         phase: b * 1.3,
-        swayAmount: 18 + random() * 14,
+        swayAmount: 44 + random() * 26,
       }),
     );
     shapes.push(
       periodicTrunk(random, {
-        baseX: W - 44,
-        width: 80 + random() * 36,
+        baseX: W - 26,
+        width: 126 + random() * 64,
         phase: 2.1 + b * 1.1,
-        swayAmount: 18 + random() * 15,
+        swayAmount: 42 + random() * 28,
       }),
     );
-    if (b % 2 === 0) {
+    for (let i = 0; i < 2; i += 1) {
+      const cx = 360 + random() * (W - 720);
+      const rx = 130 + random() * 120;
       shapes.push(
-        periodicTrunk(random, {
-          baseX: 168,
-          width: 26 + random() * 18,
-          phase: 0.7 + b,
-          swayAmount: 22,
-        }),
-      );
-    }
-    if (b % 3 !== 1) {
-      shapes.push(
-        periodicTrunk(random, {
-          baseX: W - 190,
-          width: 24 + random() * 16,
-          phase: 1.9 + b,
-          swayAmount: 20,
+        blob(random, {
+          cx,
+          cy: 1170 + random() * 110,
+          rx,
+          ry: rx * (0.3 + random() * 0.14),
+          wobble: 0.22,
+          points: 11,
+          tone: 5,
         }),
       );
     }
@@ -699,10 +783,13 @@ export type SceneBand = {
   drips?: string[];
   accents?: SceneAccent[];
   trailSamples?: number[];
+  prints?: { x: number; y: number; r: number }[];
+  scratches?: string[];
 };
 
 export type Backdrop = SceneBand & {
   dust: { x: number; y: number; r: number; o: number }[];
+  anchor: number;
 };
 
 export const sceneWidth = ${W};
@@ -716,6 +803,8 @@ const body = [
   `export const terrainHead: SceneBand = ${JSON.stringify(art.terrain.head)};`,
   `export const terrainBody: SceneBand[] = ${JSON.stringify(art.terrain.body)};`,
   `export const nearBody: SceneBand[] = ${JSON.stringify(art.near.body)};`,
+  `export const midAnchor = ${art.mid.anchor};`,
+  `export const terrainAnchor = ${art.terrain.anchor};`,
 ].join("\n\n");
 
 const target = process.argv[2] ?? "src/components/site/terrain/terrain-art.ts";

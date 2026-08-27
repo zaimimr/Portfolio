@@ -9,8 +9,15 @@ import { categoryLabels, typeLabels } from "@/lib/labels";
 import type { ProjectCardModel } from "@/lib/project-view";
 import { spring } from "@/lib/motion";
 import { cn } from "@/lib/utils";
+import { LanternGlow } from "@/components/site/terrain/lantern-glow";
 
 const wobbles = ["rounded-wobble-1", "rounded-wobble-3"];
+
+const LANTERN_BORDER =
+  "color-mix(in oklab, var(--scene-glow) calc(var(--lantern-step, 0) * 46%), var(--line))";
+
+const LANTERN_HALO =
+  "0 0 calc(var(--lantern-step, 0) * 80px) calc(var(--lantern-step, 0) * 10px) color-mix(in oklab, var(--scene-glow) calc(var(--lantern-step, 0) * 28%), transparent)";
 
 type FeaturedProjectCardProps = {
   project: ProjectCardModel;
@@ -34,8 +41,12 @@ export function FeaturedProjectCard({
           className="group grid items-stretch gap-0 md:grid-cols-12"
         >
           <div
+            style={{
+              borderColor: LANTERN_BORDER,
+              boxShadow: LANTERN_HALO,
+            }}
             className={cn(
-              "border-line bg-surface-raised/80 relative flex min-h-52 items-center justify-center overflow-hidden border-2 backdrop-blur-md md:col-span-7 md:min-h-72",
+              "bg-surface-raised/80 relative flex min-h-52 items-center justify-center overflow-hidden border-2 backdrop-blur-md md:col-span-7 md:min-h-72",
               wobbles[index % wobbles.length],
               reversed ? "md:order-last" : "",
             )}
@@ -56,26 +67,34 @@ export function FeaturedProjectCard({
                 {project.title.trim().charAt(0)}
               </span>
             )}
+            <LanternGlow />
           </div>
           <div
+            style={{
+              borderColor: LANTERN_BORDER,
+              boxShadow: `var(--card-offset-shadow), ${LANTERN_HALO}`,
+            }}
             className={cn(
-              "border-line bg-surface/85 shadow-offset relative z-10 flex flex-col gap-3 border-2 p-6 backdrop-blur-md md:col-span-5 md:my-8 md:p-8",
+              "bg-surface/85 relative z-10 flex flex-col gap-3 overflow-hidden border-2 p-6 backdrop-blur-md md:col-span-5 md:my-8 md:p-8",
               index % 2 === 1
                 ? "rounded-wobble-2 md:-mr-10"
                 : "rounded-wobble-2 md:-ml-10",
             )}
           >
-            <h3 className="font-display text-h2 text-ink group-hover:text-accent-strong font-bold transition-colors duration-[var(--duration-fast)] ease-out">
+            <LanternGlow edgeOnly />
+            <h3 className="font-display text-h2 text-ink group-hover:text-accent-strong relative font-bold transition-colors duration-[var(--duration-fast)] ease-out">
               {project.title}
             </h3>
-            <p className="text-body text-ink-muted">{project.description}</p>
-            <div className="mt-auto flex flex-wrap items-center gap-2 pt-2">
+            <p className="text-body text-ink-muted relative">
+              {project.description}
+            </p>
+            <div className="relative mt-auto flex flex-wrap items-center gap-2 pt-2">
               <Tag category={project.category}>
                 {categoryLabels[project.category]}
               </Tag>
               <Tag>{typeLabels[project.type]}</Tag>
             </div>
-            <span className="text-mono-sm text-accent-strong inline-flex items-center gap-2 font-mono">
+            <span className="text-mono-sm text-accent-strong relative inline-flex items-center gap-2 font-mono">
               Read the story
               <SketchIcon
                 name="arrow-right"
