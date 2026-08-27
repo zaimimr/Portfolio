@@ -9,6 +9,7 @@ import { rawEntry, toCardModel } from "@/lib/project-view";
 import { PortfolioHero } from "@/components/site/portfolio-hero";
 import { FeaturedProjects } from "@/components/site/featured-projects";
 import { ContactSection } from "@/components/site/contact-section";
+import { TerrainScene } from "@/components/site/terrain/terrain-scene";
 
 export default async function HomePage() {
   const projects = await fetchVal(projectsVal);
@@ -21,10 +22,13 @@ export default async function HomePage() {
 
   return (
     <>
-      <PortfolioHero />
-      <FeaturedProjects projects={featured} />
-      <div className="pt-section">
-        <ContactSection />
+      <TerrainScene />
+      <div className="relative z-10">
+        <PortfolioHero />
+        <FeaturedProjects projects={featured} />
+        <div className="pt-section">
+          <ContactSection />
+        </div>
       </div>
     </>
   );
