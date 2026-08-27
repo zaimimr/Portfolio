@@ -8,7 +8,7 @@ Personal portfolio: CV, projects and playground experiments, plus a hidden admin
 - Tailwind CSS v4, all design tokens in `src/app/globals.css` under `@theme`
 - Motion for animation, presets in `src/lib/motion.ts`
 - Val.build CMS: content lives in `src/content/*.val.ts`, edited visually at `/val`, published as git commits
-- Auth.js (GitHub OAuth, single-account allowlist) guarding `/admin`
+- Auth.js (GitHub OAuth, invited-account allowlist) guarding `/admin`
 - Resend for the contact form, Vercel for hosting and analytics
 
 ## Development
@@ -32,10 +32,17 @@ Every piece of copy, every project and every admin link is a Val module in `src/
 
 Copy `.env.example` to `.env.local`. The build requires no secrets; features degrade gracefully:
 
-- `AUTH_SECRET`, `AUTH_GITHUB_ID`, `AUTH_GITHUB_SECRET`, `ADMIN_GITHUB_LOGIN` — admin sign-in
-- `RESEND_API_KEY`, `CONTACT_TO_EMAIL` — contact form (falls back to mailto without them)
-- `VERCEL_API_TOKEN`, `VERCEL_PROJECT_ID`, `VERCEL_TEAM_ID` — admin analytics dashboard
-- `VAL_API_KEY`, `VAL_SECRET` — Val remote mode (editing content in production)
+- `AUTH_SECRET`, `AUTH_GITHUB_ID`, `AUTH_GITHUB_SECRET` - GitHub OAuth
+- `ADMIN_GITHUB_ACCOUNTS` - optional invited accounts as comma-separated `login:id` entries; `zaimimr` is always allowed
+- `RESEND_API_KEY`, `CONTACT_TO_EMAIL` - contact form (falls back to mailto without them)
+- `VERCEL_API_TOKEN`, `VERCEL_PROJECT_ID`, `VERCEL_TEAM_ID` - admin analytics dashboard
+- `VAL_API_KEY`, `VAL_SECRET` - Val remote mode (editing content in production)
+
+### Admin invites
+
+`zaimimr` is always allowed and is the default GitHub account on the sign-in page. Add invited accounts to `ADMIN_GITHUB_ACCOUNTS` as comma-separated `login:id` entries. GitHub exposes the numeric ID at `https://api.github.com/users/<login>`.
+
+Removing an entry revokes that account when its session is next checked.
 
 ## Design
 
