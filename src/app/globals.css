@@ -21,6 +21,7 @@
   --scene-deep: #2f2619;
   --scene-veil: 0.5;
   --scene-wash: 1;
+  --card-offset-shadow: 5px 5px 0 var(--line);
   --scene-glow: #8a6d00;
   --scene-t0: color-mix(in oklab, var(--scene-haze) 93%, var(--scene-deep));
   --scene-t1: color-mix(in oklab, var(--scene-haze) 73%, var(--scene-deep));
@@ -47,6 +48,7 @@
   --scene-deep: #05080c;
   --scene-veil: 0.34;
   --scene-wash: 0.9;
+  --card-offset-shadow: 5px 5px 0 var(--line);
   --scene-glow: #f4de5d;
 }
 
