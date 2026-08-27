@@ -141,10 +141,15 @@
   }
 }
 
+html {
+  scrollbar-color: var(--ink-faint) transparent;
+}
+
 body {
   background-color: var(--bg);
   color: var(--ink);
   font-family: var(--font-schibsted), system-ui, sans-serif;
+  caret-color: var(--accent-strong);
 }
 
 ::selection {

@@ -35,15 +35,24 @@ export default async function PlaygroundPage() {
         <h1 className="font-display text-h1 font-bold text-ink">
           <Highlight>Playground</Highlight>
         </h1>
-        <p className="font-hand text-hand text-ink-muted">{copy.playgroundIntro}</p>
+        <p className="max-w-xl text-body-lg text-ink-muted">{copy.playgroundIntro}</p>
       </header>
-      <ul className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
-        {experiments.map((experiment, index) => (
-          <li key={experiment.slug}>
-            <LabCard experiment={experiment} index={index} />
-          </li>
-        ))}
-      </ul>
+      {experiments.length > 0 ? (
+        <ul className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          {experiments.map((experiment, index) => (
+            <li key={experiment.slug}>
+              <LabCard experiment={experiment} index={index} />
+            </li>
+          ))}
+        </ul>
+      ) : (
+        <div className="flex max-w-md flex-col gap-3 rounded-wobble-2 border-2 border-line bg-surface p-8 shadow-offset">
+          <p className="font-hand text-h3 text-ink">The bench is empty.</p>
+          <p className="text-body text-ink-muted">
+            The next experiment is probably brewing right now, at 23:40.
+          </p>
+        </div>
+      )}
     </div>
   );
 }

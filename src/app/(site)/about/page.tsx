@@ -118,11 +118,16 @@ export default async function AboutPage() {
               The whole story, neatly typeset on two pages.
             </p>
           </div>
-          <Button variant="accent" size="lg" asChild>
+          <Button
+            variant="accent"
+            size="lg"
+            asChild
+            className="h-auto min-h-13 flex-wrap py-2.5"
+          >
             <a href={pdfUrl} download>
               <SketchIcon name="download" size={20} />
-              Download CV
-              <span className="font-mono text-mono-sm font-normal">
+              <span className="whitespace-nowrap">Download CV</span>
+              <span className="whitespace-nowrap font-mono text-mono-sm font-normal">
                 {pdfSize ? `PDF · ${pdfSize}` : "PDF"}
               </span>
             </a>

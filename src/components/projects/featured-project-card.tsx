@@ -25,7 +25,7 @@ export function FeaturedProjectCard({ project, index }: FeaturedProjectCardProps
       <span
         aria-hidden="true"
         className={cn(
-          "pointer-events-none absolute -top-[0.5em] z-10 select-none font-display text-[clamp(6rem,14vw,11rem)] font-bold leading-none text-accent/25",
+          "pointer-events-none absolute -top-[0.5em] z-10 select-none font-display text-[clamp(6rem,14vw,11rem)] font-bold leading-none text-accent-strong/25",
           reversed ? "-right-2 md:-right-6" : "-left-2 md:-left-6",
         )}
       >
