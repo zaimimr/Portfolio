@@ -17,20 +17,14 @@ type FeaturedProjectCardProps = {
   index: number;
 };
 
-export function FeaturedProjectCard({ project, index }: FeaturedProjectCardProps) {
+export function FeaturedProjectCard({
+  project,
+  index,
+}: FeaturedProjectCardProps) {
   const reversed = index % 2 === 1;
 
   return (
     <div className="relative">
-      <span
-        aria-hidden="true"
-        className={cn(
-          "pointer-events-none absolute -top-[0.5em] z-10 select-none font-display text-[clamp(6rem,14vw,11rem)] font-bold leading-none text-accent-strong/25",
-          reversed ? "-right-2 md:-right-6" : "-left-2 md:-left-6",
-        )}
-      >
-        {String(index + 1).padStart(2, "0")}
-      </span>
       <motion.div
         whileHover={{ y: -6, rotate: reversed ? 0.6 : -0.6 }}
         transition={spring.snappy}
@@ -41,7 +35,7 @@ export function FeaturedProjectCard({ project, index }: FeaturedProjectCardProps
         >
           <div
             className={cn(
-              "relative flex min-h-52 items-center justify-center overflow-hidden border-2 border-line bg-surface-raised md:col-span-7 md:min-h-72",
+              "border-line bg-surface-raised relative flex min-h-52 items-center justify-center overflow-hidden border-2 md:col-span-7 md:min-h-72",
               wobbles[index % wobbles.length],
               reversed ? "md:order-last" : "",
             )}
@@ -57,7 +51,7 @@ export function FeaturedProjectCard({ project, index }: FeaturedProjectCardProps
             ) : (
               <span
                 aria-hidden="true"
-                className="select-none font-display text-[7rem] font-bold text-ink/10"
+                className="font-display text-ink/10 text-[7rem] font-bold select-none"
               >
                 {project.title.trim().charAt(0)}
               </span>
@@ -65,11 +59,13 @@ export function FeaturedProjectCard({ project, index }: FeaturedProjectCardProps
           </div>
           <div
             className={cn(
-              "relative z-10 flex flex-col gap-3 border-2 border-line bg-surface p-6 shadow-offset md:col-span-5 md:my-8 md:p-8",
-              index % 2 === 1 ? "rounded-wobble-2 md:-mr-10" : "rounded-wobble-2 md:-ml-10",
+              "border-line bg-surface shadow-offset relative z-10 flex flex-col gap-3 border-2 p-6 md:col-span-5 md:my-8 md:p-8",
+              index % 2 === 1
+                ? "rounded-wobble-2 md:-mr-10"
+                : "rounded-wobble-2 md:-ml-10",
             )}
           >
-            <h3 className="font-display text-h2 font-bold text-ink transition-colors duration-[var(--duration-fast)] ease-out group-hover:text-accent-strong">
+            <h3 className="font-display text-h2 text-ink group-hover:text-accent-strong font-bold transition-colors duration-[var(--duration-fast)] ease-out">
               {project.title}
             </h3>
             <p className="text-body text-ink-muted">{project.description}</p>
@@ -79,7 +75,7 @@ export function FeaturedProjectCard({ project, index }: FeaturedProjectCardProps
               </Tag>
               <Tag>{typeLabels[project.type]}</Tag>
             </div>
-            <span className="inline-flex items-center gap-2 font-mono text-mono-sm text-accent-strong">
+            <span className="text-mono-sm text-accent-strong inline-flex items-center gap-2 font-mono">
               Read the story
               <SketchIcon
                 name="arrow-right"
