@@ -1,3 +1,5 @@
+import { ValProvider } from "@valbuild/next";
+import { config } from "../../val.config";
 import type { Metadata } from "next";
 import {
   Bricolage_Grotesque,
@@ -46,7 +48,9 @@ export default function RootLayout({
       <body
         className={`${bricolage.variable} ${schibsted.variable} ${shantell.variable} ${jetbrains.variable} antialiased`}
       >
-        <Providers>{children}</Providers>
+        <ValProvider config={config}>
+          <Providers>{children}</Providers>
+        </ValProvider>
         <Analytics />
       </body>
     </html>

@@ -35,6 +35,7 @@
     "@types/react": "^19",
     "@types/react-dom": "^19",
     "@valbuild/cli": "^0.102.0",
+    "@valbuild/eslint-plugin": "^0.93.0",
     "eslint": "^9",
     "eslint-config-next": "16.3.3",
     "prettier-plugin-tailwindcss": "^0.8.1",

@@ -72,6 +72,9 @@ importers:
       '@valbuild/cli':
         specifier: ^0.102.0
         version: 0.102.0(@types/react@19.2.18)(eslint@9.39.5(jiti@2.7.0))(prettier@3.9.6)(react-dom@19.2.8(react@19.2.8))(react@19.2.8)(typescript@5.9.3)
+      '@valbuild/eslint-plugin':
+        specifier: ^0.93.0
+        version: 0.93.0(eslint@9.39.5(jiti@2.7.0))(typescript@5.9.3)
       eslint:
         specifier: ^9
         version: 9.39.5(jiti@2.7.0)
