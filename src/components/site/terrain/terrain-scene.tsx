@@ -4,6 +4,7 @@ import { useEffect, useRef, useState } from "react";
 import { useReducedMotion } from "motion/react";
 import { BackdropLayer, BandGroup } from "./terrain-layers";
 import { Explorer } from "./explorer";
+import { publishLantern } from "./lantern-store";
 import {
   backdropBand,
   bandHeight,
@@ -201,6 +202,12 @@ export function TerrainScene() {
       walker.style.transform = `translate3d(${x.toFixed(1)}px, ${groundY.toFixed(
         1,
       )}px, 0) translate(-50%, -92%) scaleX(${facing})`;
+
+      const figureHeight = walkerUnits * current.unit;
+      publishLantern(
+        x + facing * 0.143 * figureHeight,
+        groundY - 0.735 * figureHeight,
+      );
     };
 
     const schedule = () => {

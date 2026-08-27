@@ -11,9 +11,8 @@ import {
   characterEyeWhite as eyeWhite,
   characterInk as hairInk,
   characterJacket as shirt,
+  characterSkin as skin,
 } from "@/components/site/character-palette";
-
-const skin = "#b06c49";
 
 const shirtPath =
   "m489.33068,521.72159c48.89581,0 128.8143,-14.57335 166.79676,-39.61233c-4.11411,-22.48424 -13.57985,-58.86769 -22.55024,-91.42816c-11.42431,-41.46766 -83.52767,-70.216 -126.54025,-70.216l-41.4486,0c-43.1459,0 -115.35328,28.91469 -126.6338,70.55985c-8.5964,31.736 -17.77266,66.589 -22.33837,87.05194c39.1347,27.49829 121.25159,43.6447 172.7145,43.6447z";

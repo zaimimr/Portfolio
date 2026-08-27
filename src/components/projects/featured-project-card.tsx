@@ -9,6 +9,7 @@ import { categoryLabels, typeLabels } from "@/lib/labels";
 import type { ProjectCardModel } from "@/lib/project-view";
 import { spring } from "@/lib/motion";
 import { cn } from "@/lib/utils";
+import { LanternGlow } from "@/components/site/terrain/lantern-glow";
 
 const wobbles = ["rounded-wobble-1", "rounded-wobble-3"];
 
@@ -56,26 +57,30 @@ export function FeaturedProjectCard({
                 {project.title.trim().charAt(0)}
               </span>
             )}
+            <LanternGlow />
           </div>
           <div
             className={cn(
-              "border-line bg-surface/85 shadow-offset relative z-10 flex flex-col gap-3 border-2 p-6 backdrop-blur-md md:col-span-5 md:my-8 md:p-8",
+              "border-line bg-surface/85 shadow-offset relative z-10 flex flex-col gap-3 overflow-hidden border-2 p-6 backdrop-blur-md md:col-span-5 md:my-8 md:p-8",
               index % 2 === 1
                 ? "rounded-wobble-2 md:-mr-10"
                 : "rounded-wobble-2 md:-ml-10",
             )}
           >
-            <h3 className="font-display text-h2 text-ink group-hover:text-accent-strong font-bold transition-colors duration-[var(--duration-fast)] ease-out">
+            <LanternGlow scale={0.5} />
+            <h3 className="font-display text-h2 text-ink group-hover:text-accent-strong relative font-bold transition-colors duration-[var(--duration-fast)] ease-out">
               {project.title}
             </h3>
-            <p className="text-body text-ink-muted">{project.description}</p>
-            <div className="mt-auto flex flex-wrap items-center gap-2 pt-2">
+            <p className="text-body text-ink-muted relative">
+              {project.description}
+            </p>
+            <div className="relative mt-auto flex flex-wrap items-center gap-2 pt-2">
               <Tag category={project.category}>
                 {categoryLabels[project.category]}
               </Tag>
               <Tag>{typeLabels[project.type]}</Tag>
             </div>
-            <span className="text-mono-sm text-accent-strong inline-flex items-center gap-2 font-mono">
+            <span className="text-mono-sm text-accent-strong relative inline-flex items-center gap-2 font-mono">
               Read the story
               <SketchIcon
                 name="arrow-right"
