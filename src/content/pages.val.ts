@@ -8,19 +8,13 @@ export const schema = s.object({
     .string()
     .describe("Hand-written line under the Playground heading"),
   contactBlurb: s.string().describe("Paragraph in the contact section"),
-  freelanceBadge: s
-    .string()
-    .describe("Badge text shown when available for freelance"),
 });
 
 export type PagesCopy = t.inferSchema<typeof schema>;
 
 export default c.define("/src/content/pages.val.ts", schema, {
-  projectsIntro:
-    "Everything I've built worth showing, from member platforms to cake-debt calculators.",
-  playgroundIntro:
-    "Experiments, toys and things that seemed like a good idea at 23:40.",
+  projectsIntro: "A complete archive of work, freelance and hobby projects.",
+  playgroundIntro: "Small experiments, tools and unfinished ideas.",
   contactBlurb:
-    "Got a project, a question, or a very strong opinion about cake debt? My inbox is open.",
-  freelanceBadge: "Currently open for freelance work",
+    "For project enquiries or anything else, send a message or email me directly.",
 });

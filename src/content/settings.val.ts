@@ -10,7 +10,6 @@ export const schema = s.object({
       url: s.string(),
     }),
   ),
-  availableForFreelance: s.boolean(),
 });
 
 export type Settings = t.inferSchema<typeof schema>;
@@ -18,11 +17,10 @@ export type Settings = t.inferSchema<typeof schema>;
 export default c.define("/src/content/settings.val.ts", schema, {
   siteTitle: "Zaim Imran",
   seoDescription:
-    "Developer in Norway building websites, apps and games. Work, freelance and hobby projects.",
-  email: "zaim.imran@gmail.com",
+    "Selected websites, apps, games and experiments by Zaim Imran.",
+  email: "work@zaim.no",
   socials: [
     { label: "GitHub", url: "https://github.com/zaimimr" },
     { label: "LinkedIn", url: "https://www.linkedin.com/in/zaim/" },
   ],
-  availableForFreelance: true,
 });

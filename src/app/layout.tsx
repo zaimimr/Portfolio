@@ -36,8 +36,7 @@ export const metadata: Metadata = {
     default: "Zaim Imran",
     template: "%s · Zaim Imran",
   },
-  description:
-    "Developer in Norway building websites, apps and games. Work, freelance and hobby projects.",
+  description: "Selected websites, apps, games and experiments by Zaim Imran.",
 };
 
 export default function RootLayout({

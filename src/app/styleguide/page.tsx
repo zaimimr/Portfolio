@@ -18,7 +18,13 @@ import { AvatarScene } from "@/components/site/avatar-scene";
 import { Header } from "@/components/layout/header";
 import { Footer } from "@/components/layout/footer";
 
-function Section({ title, children }: { title: string; children: React.ReactNode }) {
+function Section({
+  title,
+  children,
+}: {
+  title: string;
+  children: React.ReactNode;
+}) {
   return (
     <section className="flex flex-col gap-5">
       <h2 className="font-display text-h2 font-bold">{title}</h2>
@@ -42,13 +48,13 @@ export default function StyleguidePage() {
   return (
     <>
       <Header />
-      <main className="mx-auto flex w-full max-w-6xl flex-col gap-16 px-gutter py-12">
+      <main className="px-gutter mx-auto flex w-full max-w-6xl flex-col gap-16 py-12">
         <div className="flex flex-col gap-3">
           <h1 className="font-display text-h1 font-bold">Fet Strek</h1>
-          <p className="max-w-prose text-body-lg text-ink-muted">
-            Every primitive in the design system, in all variants. Switch theme with
-            the sun and moon toggle in the header, or click the screen on the avatar
-            below.
+          <p className="text-body-lg text-ink-muted max-w-prose">
+            Every primitive in the design system, in all variants. Switch theme
+            with the sun and moon toggle in the header, or click the screen on
+            the avatar below.
           </p>
         </div>
 
@@ -96,10 +102,12 @@ export default function StyleguidePage() {
           <div className="grid gap-8 md:grid-cols-3">
             {[0, 1, 2].map((index) => (
               <Card key={index} index={index}>
-                <h3 className="mb-2 font-display text-h3 font-bold">Wobble {index + 1}</h3>
+                <h3 className="font-display text-h3 mb-2 font-bold">
+                  Wobble {index + 1}
+                </h3>
                 <p className="text-body text-ink-muted">
-                  Each card cycles through one of three uneven border radii so no two
-                  neighbours look cloned.
+                  Each card cycles through one of three uneven border radii so
+                  no two neighbours look cloned.
                 </p>
               </Card>
             ))}
@@ -125,7 +133,10 @@ export default function StyleguidePage() {
 
         <Section title="Toast">
           <Row>
-            <Button variant="sketch" onClick={() => toast("It finally happened.")}>
+            <Button
+              variant="sketch"
+              onClick={() => toast("It finally happened.")}
+            >
               Show toast
             </Button>
             <Button variant="ghost" onClick={() => toast("Saved. Probably.")}>
@@ -162,7 +173,11 @@ export default function StyleguidePage() {
 
         <Section title="Sketch icons">
           <Row>
-            <Button variant="ghost" size="sm" onClick={() => setDrawKey((key) => key + 1)}>
+            <Button
+              variant="ghost"
+              size="sm"
+              onClick={() => setDrawKey((key) => key + 1)}
+            >
               <SketchIcon name="play" size={16} />
               Redraw all
             </Button>
@@ -171,20 +186,23 @@ export default function StyleguidePage() {
             {sketchIconNames.map((name) => (
               <li
                 key={name}
-                className="flex flex-col items-center gap-2 rounded-md border border-line/20 p-4"
+                className="border-line/20 flex flex-col items-center gap-2 rounded-md border p-4"
               >
                 <SketchIcon key={drawKey} name={name} draw={drawKey > 0} />
-                <span className="font-mono text-mono-sm text-ink-muted">{name}</span>
+                <span className="text-mono-sm text-ink-muted font-mono">
+                  {name}
+                </span>
               </li>
             ))}
           </ul>
         </Section>
 
         <Section title="Avatar scene">
-          <p className="max-w-prose text-body text-ink-muted">
-            Pupils follow the cursor on fine pointers at md and up, eyelids blink on
-            an idle loop, and the PC screen is a button: clicking it toggles light
-            mode with a circular wipe. The first light-mode unlock shows a toast.
+          <p className="text-body text-ink-muted max-w-prose">
+            Pupils follow the cursor on fine pointers at md and up, eyelids
+            blink on an idle loop, and the PC screen is a button: clicking it
+            toggles light mode with a circular wipe. The first light-mode unlock
+            shows a toast.
           </p>
           <div className="max-w-sm">
             <AvatarScene />
@@ -196,7 +214,7 @@ export default function StyleguidePage() {
           { label: "GitHub", url: "https://github.com/zaimimr" },
           { label: "LinkedIn", url: "https://www.linkedin.com/in/zaim/" },
         ]}
-        email="zaim.imran@gmail.com"
+        email="work@zaim.no"
       />
     </>
   );
