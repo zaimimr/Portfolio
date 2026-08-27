@@ -12,7 +12,7 @@ export function FeaturedProjects({
   return (
     <section
       aria-labelledby="featured-heading"
-      className="px-gutter pb-section mx-auto w-full max-w-6xl pt-16 md:pt-24"
+      className="px-gutter pb-section mx-auto w-full max-w-6xl overflow-x-clip pt-16 md:pt-24"
     >
       <div className="mb-16 flex flex-wrap items-end justify-between gap-4 md:mb-24">
         <h2

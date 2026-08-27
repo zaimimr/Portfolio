@@ -5,6 +5,7 @@ import type { SketchIconName } from "@/components/ui/sketch-icon";
 import { Divider } from "@/components/ui/divider";
 import { Wordmark } from "@/components/layout/wordmark";
 import { navItems } from "@/components/layout/nav-items";
+import { SceneWash } from "@/components/site/scene-wash";
 
 const iconByLabel: Record<string, SketchIconName> = {
   github: "github",
@@ -33,8 +34,9 @@ export function Footer({ socials, email }: FooterProps) {
     { href: `mailto:${email}`, label: "Email", icon: "mail" as const },
   ];
   return (
-    <footer className="mt-section">
-      <div className="px-gutter mx-auto w-full max-w-6xl pb-10">
+    <footer className="mt-section relative isolate">
+      <SceneWash variant="band" className="inset-x-0 -top-24 bottom-0" />
+      <div className="px-gutter relative mx-auto w-full max-w-6xl pb-10">
         <Divider variant={2} className="text-line/30 mb-10" />
         <div className="flex flex-col gap-10 md:flex-row md:items-end md:justify-between">
           <Link

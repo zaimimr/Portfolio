@@ -5,7 +5,7 @@ import { motion } from "motion/react";
 export function ScrollCue({ note }: { note: string }) {
   return (
     <div className="flex items-end gap-3">
-      <p className="font-hand text-hand text-ink-muted max-w-[18rem] leading-snug">
+      <p className="font-hand text-hand text-ink max-w-[18rem] leading-snug">
         {note}
       </p>
       <motion.svg

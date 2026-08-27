@@ -6,6 +6,7 @@ import { fetchVal } from "@/val/val.rsc";
 import { Highlight } from "@/components/site/highlight";
 import { SignatureStroke } from "@/components/site/signature-stroke";
 import { ScrollCue } from "@/components/site/scroll-cue";
+import { SceneWash } from "@/components/site/scene-wash";
 import { Button } from "@/components/ui/button";
 import { SketchIcon } from "@/components/ui/sketch-icon";
 import type { SketchIconName } from "@/components/ui/sketch-icon";
@@ -33,26 +34,11 @@ export async function PortfolioHero() {
   return (
     <section
       aria-labelledby="portfolio-heading"
-      className="px-gutter relative mx-auto flex w-full max-w-6xl flex-col justify-between pt-8 pb-12 md:min-h-[calc(100svh-5rem)] md:pt-14"
+      className="px-gutter relative mx-auto flex min-h-[calc(100svh-4rem)] w-full max-w-6xl flex-col justify-between overflow-x-clip pt-8 pb-12 md:min-h-[calc(100svh-5rem)] md:pt-14"
     >
-      <div
-        aria-hidden="true"
-        className="pointer-events-none absolute inset-x-0 -top-24 -bottom-8 -z-10 md:hidden"
-        style={{
-          backgroundImage:
-            "linear-gradient(to bottom, var(--bg) 12%, color-mix(in oklab, var(--bg) 96%, transparent) 74%, color-mix(in oklab, var(--bg) 58%, transparent) 89%, transparent)",
-        }}
-      />
-      <div
-        aria-hidden="true"
-        className="pointer-events-none absolute inset-x-0 -top-24 bottom-1/3 -z-10 hidden md:block"
-        style={{
-          backgroundImage:
-            "radial-gradient(84% 62% at 22% 38%, color-mix(in oklab, var(--bg) 95%, transparent) 34%, transparent 78%), radial-gradient(62% 54% at 82% 44%, var(--bg) 30%, color-mix(in oklab, var(--bg) 88%, transparent) 58%, transparent 82%)",
-        }}
-      />
       <div className="md:grid md:grid-cols-12 md:gap-8">
-        <div className="md:col-span-8">
+        <div className="relative md:col-span-8">
+          <SceneWash className="-inset-x-12 -top-14 -bottom-6" />
           <h1
             id="portfolio-heading"
             className="font-display text-display text-ink font-bold tracking-[-0.045em] uppercase"
@@ -60,12 +46,13 @@ export async function PortfolioHero() {
             <span className="block">{firstName}</span>
             <span className="block">{restName.join(" ")}</span>
           </h1>
-          <SignatureStroke className="mt-1 max-w-[min(28rem,80%)] md:mt-2" />
+          <SignatureStroke className="mt-1 max-w-[min(20rem,66%)] md:mt-2 md:max-w-[min(28rem,78%)]" />
           <p className="font-display text-h2 text-ink mt-7 font-bold tracking-[-0.02em] md:mt-9">
             <Highlight animate>{profile.role}</Highlight>
           </p>
         </div>
-        <div className="mt-8 flex flex-col gap-7 md:col-span-4 md:mt-2 md:self-end">
+        <div className="relative mt-8 flex flex-col gap-7 md:col-span-4 md:mt-2 md:self-end">
+          <SceneWash className="-inset-x-12 -inset-y-14" />
           <p className="text-body-lg text-ink-muted max-w-[38ch]">
             {profile.heroLine}
           </p>

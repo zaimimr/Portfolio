@@ -7,20 +7,23 @@ import { Explorer } from "./explorer";
 import {
   backdropBand,
   bandHeight,
+  midAnchor,
   midBody,
   midHead,
   nearBody,
   sceneWidth,
+  terrainAnchor,
   terrainBody,
   terrainHead,
 } from "./terrain-art";
 import type { SceneBand } from "./terrain-art";
 
 const terrainRate = 0.62;
-const walkerBaseline = 0.76;
-const walkerBaselineNarrow = 0.86;
-const walkerUnits = 66;
-const maxTiles = 9;
+const terrainHorizon = 0.62;
+const midHorizon = 0.5;
+const walkerClearance = 120;
+const walkerUnits = 116;
+const maxTiles = 14;
 
 const layers = [
   {
@@ -30,6 +33,8 @@ const layers = [
     body: midBody,
     haze: 0.34,
     className: "",
+    anchor: midAnchor,
+    horizon: midHorizon,
   },
   {
     key: "terrain",
@@ -38,6 +43,8 @@ const layers = [
     body: terrainBody,
     haze: 0.14,
     className: "",
+    anchor: terrainAnchor,
+    horizon: terrainHorizon,
   },
   {
     key: "near",
@@ -46,6 +53,8 @@ const layers = [
     body: nearBody,
     haze: 0,
     className: "hidden md:block",
+    anchor: 0,
+    horizon: 0,
   },
 ] as const;
 
@@ -92,11 +101,21 @@ function bandAt(
   return pick(body, head ? index - 1 : index);
 }
 
-function tileCount(hasHead: boolean, rate: number, metrics: Metrics) {
+function layerTop(anchor: number, horizon: number, metrics: Metrics) {
+  if (!anchor) return 0;
+  return metrics.viewport * horizon - anchor * metrics.unit;
+}
+
+function tileCount(
+  hasHead: boolean,
+  rate: number,
+  top: number,
+  metrics: Metrics,
+) {
   const rendered = bandHeight * metrics.unit;
   if (rendered <= 0) return 2;
   const needed =
-    metrics.viewport + metrics.range * rate - (hasHead ? rendered : 0);
+    metrics.viewport - top + metrics.range * rate - (hasHead ? rendered : 0);
   return Math.min(maxTiles, Math.max(1, Math.ceil(needed / rendered) + 1));
 }
 
@@ -120,6 +139,8 @@ export function TerrainScene() {
   const backdropRef = useRef<HTMLDivElement>(null);
   const layerRefs = useRef<(HTMLDivElement | null)[]>([]);
   const walkerRef = useRef<HTMLDivElement>(null);
+  const frameMetrics = useRef<Metrics>(initialMetrics);
+  const terrainTiles = useRef(1);
 
   useEffect(() => {
     let frame = 0;
@@ -130,7 +151,7 @@ export function TerrainScene() {
 
     const apply = () => {
       frame = 0;
-      const current = measure();
+      const current = frameMetrics.current;
       const scroll = reducedMotion ? 0 : window.scrollY;
 
       if (backdropRef.current) {
@@ -147,11 +168,17 @@ export function TerrainScene() {
       if (!walker) return;
 
       const rendered = bandHeight * current.unit;
-      const baseline =
-        current.width < 768 ? walkerBaselineNarrow : walkerBaseline;
-      const world = scroll * terrainRate + current.viewport * baseline;
-      const index = Math.floor(world / rendered);
-      const local = world / rendered - index;
+      const top = layerTop(terrainAnchor, terrainHorizon, current);
+      const groundY = Math.min(
+        current.viewport * terrainHorizon + walkerClearance * current.unit,
+        current.viewport * 0.92,
+      );
+      const world = scroll * terrainRate + groundY - top;
+      const index = Math.min(
+        Math.max(Math.floor(world / rendered), 0),
+        terrainTiles.current,
+      );
+      const local = world / rendered - Math.floor(world / rendered);
       const samples = bandAt(terrainHead, terrainBody, index).trailSamples;
       const offset = (current.width - sceneWidth * current.unit) / 2;
       const raw = samples
@@ -171,9 +198,9 @@ export function TerrainScene() {
 
       walker.style.setProperty("--swing", Math.sin(stride).toFixed(3));
       walker.style.setProperty("--lift", Math.abs(Math.cos(stride)).toFixed(3));
-      walker.style.transform = `translate3d(${x.toFixed(1)}px, ${(
-        current.viewport * baseline
-      ).toFixed(1)}px, 0) translate(-50%, -92%) scaleX(${facing})`;
+      walker.style.transform = `translate3d(${x.toFixed(1)}px, ${groundY.toFixed(
+        1,
+      )}px, 0) translate(-50%, -92%) scaleX(${facing})`;
     };
 
     const schedule = () => {
@@ -184,6 +211,13 @@ export function TerrainScene() {
     const remeasure = () => {
       setMetrics((previous) => {
         const next = measure();
+        frameMetrics.current = next;
+        terrainTiles.current = tileCount(
+          true,
+          terrainRate,
+          layerTop(terrainAnchor, terrainHorizon, next),
+          next,
+        );
         const same =
           Math.abs(next.width - previous.width) < 1 &&
           Math.abs(next.viewport - previous.viewport) < 1 &&
@@ -228,8 +262,11 @@ export function TerrainScene() {
 
       <div
         ref={backdropRef}
-        style={sceneStyle}
-        className="absolute top-0 will-change-transform"
+        style={{
+          ...sceneStyle,
+          top: `${layerTop(backdropBand.anchor, midHorizon - 0.08, metrics)}px`,
+        }}
+        className="absolute"
       >
         <BackdropLayer band={backdropBand} />
       </div>
@@ -240,13 +277,20 @@ export function TerrainScene() {
             ref={(element) => {
               layerRefs.current[index] = element;
             }}
-            style={sceneStyle}
-            className="absolute top-0 will-change-transform"
+            style={{
+              ...sceneStyle,
+              top: `${layerTop(layer.anchor, layer.horizon, metrics)}px`,
+            }}
+            className="absolute"
           >
             {Array.from({
               length:
-                tileCount(Boolean(layer.head), layer.rate, metrics) +
-                (layer.head ? 1 : 0),
+                tileCount(
+                  Boolean(layer.head),
+                  layer.rate,
+                  layerTop(layer.anchor, layer.horizon, metrics),
+                  metrics,
+                ) + (layer.head ? 1 : 0),
             }).map((_, tile) => (
               <BandGroup
                 key={tile}
@@ -263,9 +307,9 @@ export function TerrainScene() {
         ref={walkerRef}
         style={{
           height: `${walkerUnits * metrics.unit}px`,
-          width: `${walkerUnits * metrics.unit * (40 / 64)}px`,
+          width: `${walkerUnits * metrics.unit * (44 / 66)}px`,
         }}
-        className="absolute top-0 left-0 will-change-transform"
+        className="absolute top-0 left-0"
       >
         <Explorer />
       </div>
@@ -275,10 +319,10 @@ export function TerrainScene() {
         style={{ backgroundColor: "var(--bg)", opacity: "var(--scene-veil)" }}
       />
       <div
-        className="absolute inset-x-0 top-0 h-44"
+        className="absolute inset-x-0 top-0 h-28"
         style={{
           backgroundImage:
-            "linear-gradient(to bottom, var(--bg), color-mix(in oklab, var(--bg) 45%, transparent) 55%, transparent)",
+            "linear-gradient(to bottom, color-mix(in oklab, var(--bg) 88%, transparent), color-mix(in oklab, var(--bg) 32%, transparent) 60%, transparent)",
         }}
       />
       <div

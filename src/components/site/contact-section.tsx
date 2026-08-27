@@ -5,6 +5,7 @@ import { fetchVal } from "@/val/val.rsc";
 import { envOptional } from "@/lib/env";
 import { ContactForm } from "@/components/site/contact-form";
 import { SketchIcon } from "@/components/ui/sketch-icon";
+import { SceneWash } from "@/components/site/scene-wash";
 
 export async function ContactSection({
   headingLevel: Heading = "h2",
@@ -24,7 +25,7 @@ export async function ContactSection({
     <section
       id="contact"
       aria-labelledby="contact-heading"
-      className="px-gutter pb-section mx-auto w-full max-w-6xl scroll-mt-24"
+      className="px-gutter pb-section mx-auto w-full max-w-6xl scroll-mt-24 overflow-x-clip"
     >
       <div className="grid gap-10 md:grid-cols-12">
         <div className="flex flex-col gap-4 md:col-span-5">
@@ -34,9 +35,12 @@ export async function ContactSection({
           >
             Contact
           </Heading>
-          <p className="text-body-lg text-ink-muted max-w-md">
-            {copy.contactBlurb}
-          </p>
+          <span className="relative block max-w-md">
+            <SceneWash className="-inset-x-12 -inset-y-12" />
+            <span className="text-body-lg text-ink-muted block">
+              {copy.contactBlurb}
+            </span>
+          </span>
         </div>
         <div className="md:col-span-7">
           {formEnabled ? (

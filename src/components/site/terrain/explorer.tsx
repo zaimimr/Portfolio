@@ -1,129 +1,172 @@
-const skin = "#b06c49";
-const hairInk = "#2b2929";
-const jacket = "#308c8b";
+import {
+  characterInk as ink,
+  characterRobe as robe,
+  characterRobeLining as lining,
+  characterRobeShade as robeShade,
+  characterSkin as skin,
+  characterSkinShade as skinShade,
+} from "@/components/site/character-palette";
 
-const hip = { transformBox: "view-box", transformOrigin: "20px 39px" } as const;
-const shoulder = {
+const hip = { transformBox: "view-box", transformOrigin: "22px 46px" } as const;
+const staffArm = {
   transformBox: "view-box",
-  transformOrigin: "28px 24px",
+  transformOrigin: "30px 34px",
 } as const;
 
 export function Explorer() {
   return (
     <svg
-      viewBox="0 0 40 64"
+      viewBox="0 0 44 66"
       className="h-full w-full overflow-visible"
       aria-hidden="true"
     >
       <ellipse
-        cx="20"
-        cy="60.5"
-        rx="10.5"
-        ry="2.2"
+        cx="21"
+        cy="63"
+        rx="12"
+        ry="2.4"
         fill="var(--scene-deep)"
-        opacity="0.4"
+        opacity="0.42"
       />
-      <g
-        style={{
-          transform: "translateY(calc(var(--lift, 0) * -1.4px))",
-        }}
-      >
+
+      <g style={{ transform: "translateY(calc(var(--lift, 0) * -1.3px))" }}>
         <g
           style={{
             ...hip,
-            transform: "rotate(calc(var(--swing, 0) * -17deg))",
+            transform: "rotate(calc(var(--swing, 0) * -14deg))",
           }}
         >
           <path
-            d="M18.6 38C17.8 45.4 17 52 16.4 59.2"
+            d="M18.6 45.5C18 52.2 17.6 56.8 17.4 60.4"
             fill="none"
-            stroke={hairInk}
+            stroke={lining}
+            strokeWidth="4"
+            strokeLinecap="round"
+          />
+          <path
+            d="M17.4 60.6C16.2 60.9 15.2 61.3 14.6 61.8"
+            fill="none"
+            stroke={skinShade}
             strokeWidth="3.4"
             strokeLinecap="round"
           />
         </g>
         <g
-          style={{
-            ...hip,
-            transform: "rotate(calc(var(--swing, 0) * 17deg))",
-          }}
+          style={{ ...hip, transform: "rotate(calc(var(--swing, 0) * 14deg))" }}
         >
           <path
-            d="M21.6 38C22.6 45.4 23.4 52 24 59.2"
+            d="M24.4 45.5C25 52.2 25.4 56.8 25.6 60.4"
             fill="none"
-            stroke={hairInk}
+            stroke={lining}
+            strokeWidth="4"
+            strokeLinecap="round"
+          />
+          <path
+            d="M25.6 60.6C26.8 60.9 27.8 61.3 28.4 61.8"
+            fill="none"
+            stroke={skinShade}
             strokeWidth="3.4"
             strokeLinecap="round"
           />
         </g>
 
         <path
-          d="M11.4 22.6C10.2 30.4 10 36 11 41.4 17 42.8 23 42.8 29 41.4 30 36 29.8 30.4 28.6 22.6 22.8 20.8 17.2 20.8 11.4 22.6"
-          fill={jacket}
+          d="M15.6 30C12.4 36.4 10.6 43.4 10.2 50.6 16.8 52.6 26.2 52.6 32.8 50.6 32.4 43.4 30.6 36.4 27.4 30 23.4 28.8 19.6 28.8 15.6 30"
+          fill={robe}
         />
         <path
-          d="M6.2 24C3.6 26.6 2.6 31.4 3 36.4 4.4 37.4 6.4 37.6 8.4 36.8 8 32.2 8.6 27.8 10 24.6 8.8 23.8 7.4 23.5 6.2 24"
-          fill={hairInk}
-          opacity="0.9"
+          d="M21.5 30.4C21.9 37.4 22.2 44.4 22.2 51.9 26.2 51.8 30 51.4 32.8 50.6 32.4 43.4 30.6 36.4 27.4 30 25.4 29.4 23.5 29.1 21.5 30.4"
+          fill={robeShade}
         />
         <path
-          d="M11.4 22.8C9 24.4 7.6 28.8 7 35 6.8 37.2 7 38.8 7.6 40"
-          fill="none"
-          stroke={jacket}
-          strokeWidth="4.4"
-          strokeLinecap="round"
+          d="M10.4 48.8C16.9 51 26.1 51 32.6 48.8 32.7 49.8 32.8 50.3 32.8 50.6 26.2 52.6 16.8 52.6 10.2 50.6 10.2 50.3 10.3 49.8 10.4 48.8"
+          fill={lining}
+          opacity="0.55"
         />
 
         <g
           style={{
-            ...shoulder,
-            transform: "rotate(calc(var(--swing, 0) * 9deg))",
+            ...staffArm,
+            transform: "rotate(calc(var(--swing, 0) * 7deg))",
           }}
         >
           <path
-            d="M28.6 23C31.6 24.8 33.2 29.2 33.6 33.6"
+            d="M31.6 15.6C32.4 27.4 32.9 39.4 33 51.6"
             fill="none"
-            stroke={jacket}
-            strokeWidth="4.4"
+            stroke={robeShade}
+            strokeWidth="2.4"
             strokeLinecap="round"
           />
-          <g className="text-scene-glow" transform="translate(33.8 35.6)">
+          <g className="text-scene-glow">
             <circle
-              r="14"
+              cx="31.4"
+              cy="12.2"
+              r="10"
               fill="currentColor"
-              opacity="0.36"
-              className="animate-flicker [filter:blur(6px)] motion-reduce:animate-none"
+              opacity="0.34"
+              className="animate-flicker [filter:blur(5px)] motion-reduce:animate-none"
             />
-            <circle r="3.2" fill="currentColor" opacity="0.9" />
-            <path
-              d="M-2.4 -3.2C-1 -5 1 -5 2.4 -3.2"
+            <circle
+              cx="31.4"
+              cy="12.2"
+              r="4.4"
               fill="none"
-              stroke={hairInk}
-              strokeWidth="1.5"
-              strokeLinecap="round"
+              stroke="currentColor"
+              strokeWidth="2"
             />
-            <path
-              d="M0 -4.8C0.2 -6.8 -0.4 -8.4 -2.2 -9.4"
-              fill="none"
-              stroke={hairInk}
-              strokeWidth="1.4"
-              strokeLinecap="round"
-            />
+            <circle cx="31.4" cy="12.2" r="1.7" fill="currentColor" />
           </g>
+          <path
+            d="M27.6 33.4C29.6 32.4 31.4 32.3 32.8 33"
+            fill="none"
+            stroke={skin}
+            strokeWidth="3.6"
+            strokeLinecap="round"
+          />
         </g>
 
-        <ellipse cx="20" cy="15.4" rx="8.4" ry="8.6" fill={skin} />
         <path
-          d="M11.8 13.4C11.4 8 15.2 4.4 20 4.4 24.8 4.4 28.6 8 28.2 13.4 26.2 11 23.4 9.8 20 9.8 16.6 9.8 13.8 11 11.8 13.4"
-          fill={hairInk}
+          d="M12.6 31.6C10.6 33.4 9.6 36.6 9.8 40.4 11.4 41.2 13.2 41.2 14.8 40.4 14.6 36.8 15.2 33.8 16.4 31.4 15.2 30.8 13.8 30.8 12.6 31.6"
+          fill={robeShade}
+        />
+
+        <ellipse cx="21.4" cy="19.6" rx="11.4" ry="11" fill={skin} />
+        <path
+          d="M12.4 15.4C13.6 8.4 17.2 4.8 21.6 4.8 26 4.8 29.4 8.4 30.4 15.4 31.6 16.2 32 17.6 31.4 18.8 30 15.6 26.4 13.8 21.4 13.8 16.4 13.8 12.8 15.6 11.4 18.8 10.8 17.6 11.2 16.2 12.4 15.4"
+          fill={robe}
         />
         <path
-          d="M14.8 20.2C16.8 22.4 23.2 22.4 25.2 20.2"
+          d="M11.4 18.8C12.8 15.6 16.4 13.8 21.4 13.8 26.4 13.8 30 15.6 31.4 18.8 31.8 20.6 30.8 22 29 22.2 27.4 19.4 24.8 18 21.4 18 18 18 15.4 19.4 13.8 22.2 12 22 11 20.6 11.4 18.8"
+          fill={robeShade}
+        />
+
+        <ellipse cx="17" cy="21.8" rx="3.1" ry="3.5" fill={ink} />
+        <ellipse cx="25.8" cy="21.8" rx="3.1" ry="3.5" fill={ink} />
+        <circle cx="18.1" cy="20.5" r="1.1" fill="#ffffff" opacity="0.9" />
+        <circle cx="26.9" cy="20.5" r="1.1" fill="#ffffff" opacity="0.9" />
+        <ellipse
+          cx="13.2"
+          cy="24.4"
+          rx="1.9"
+          ry="1.3"
+          fill={skinShade}
+          opacity="0.6"
+        />
+        <ellipse
+          cx="29.6"
+          cy="24.4"
+          rx="1.9"
+          ry="1.3"
+          fill={skinShade}
+          opacity="0.6"
+        />
+        <path
+          d="M19.8 26.4C20.8 27.2 22 27.2 23 26.4"
           fill="none"
-          stroke={hairInk}
-          strokeWidth="1.4"
+          stroke={ink}
+          strokeWidth="1.3"
           strokeLinecap="round"
-          opacity="0.7"
+          opacity="0.75"
         />
       </g>
     </svg>

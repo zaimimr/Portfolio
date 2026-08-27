@@ -177,6 +177,34 @@ function BandShapes({ band, idPrefix }: { band: SceneBand; idPrefix: string }) {
         </g>
       ))}
 
+      {band.scratches?.length ? (
+        <g
+          className="stroke-scene-haze"
+          strokeWidth="2.5"
+          strokeLinecap="round"
+          fill="none"
+          opacity="0.16"
+        >
+          {band.scratches.map((d) => (
+            <path key={d} d={d} />
+          ))}
+        </g>
+      ) : null}
+
+      {band.prints?.length ? (
+        <g className="fill-scene-deep" opacity="0.3">
+          {band.prints.map((print) => (
+            <ellipse
+              key={`${print.x}-${print.y}`}
+              cx={print.x}
+              cy={print.y}
+              rx={print.r}
+              ry={print.r * 0.62}
+            />
+          ))}
+        </g>
+      ) : null}
+
       {band.drips?.length ? (
         <g className="fill-scene-haze" opacity="0.26">
           {band.drips.map((d) => (
