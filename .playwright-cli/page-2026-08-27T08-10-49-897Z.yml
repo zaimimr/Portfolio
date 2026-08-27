@@ -1,0 +1,137 @@
+- generic [ref=f9e1]:
+  - generic [ref=f9e2]:
+    - link "Skip to content" [ref=f9e3] [cursor=pointer]:
+      - /url: "#main"
+    - banner [ref=f9e4]:
+      - generic [ref=f9e5]:
+        - link "Zaim Imran, home" [ref=f9e6] [cursor=pointer]:
+          - /url: /
+          - img [ref=f9e7]
+        - navigation "Main" [ref=f9e10]:
+          - link "Projects" [ref=f9e11] [cursor=pointer]:
+            - /url: /projects
+            - text: Projects
+            - img [ref=f9e12]
+          - link "Playground" [ref=f9e14] [cursor=pointer]:
+            - /url: /playground
+            - text: Playground
+            - img [ref=f9e15]
+          - link "About" [ref=f9e17] [cursor=pointer]:
+            - /url: /about
+            - text: About
+            - img [ref=f9e18]
+          - link "Contact" [ref=f9e20] [cursor=pointer]:
+            - /url: /contact
+            - text: Contact
+            - img [ref=f9e21]
+        - button "Switch to dark mode" [ref=f9e162]:
+          - img [ref=f9e164]
+    - main [ref=f9e27]:
+      - generic [ref=f9e28]:
+        - generic [ref=f9e29]:
+          - heading "Projects" [level=1] [ref=f9e30]:
+            - mark [ref=f9e31]: Projects
+          - paragraph [ref=f9e32]: Everything I've built worth showing, from member platforms to cake-debt calculators.
+        - generic [ref=f9e33]:
+          - generic [ref=f9e34]:
+            - group "Filter by category" [ref=f9e35]:
+              - button "All" [ref=f9e36]
+              - button "Work" [ref=f9e38]
+              - button "Freelance" [ref=f9e39]
+              - button "Hobby" [active] [pressed] [ref=f9e40]: Hobby
+            - group "Filter by type" [ref=f9e41]:
+              - button "Website · 2" [ref=f9e173]
+              - button "App · 0" [disabled]
+              - button "Game · 1" [ref=f9e43]
+              - button "Non-technical · 0" [disabled]
+          - paragraph [ref=f9e44]: 3 projects shown
+          - list [ref=f9e45]:
+            - listitem [ref=f9e68]:
+              - link "Zaim's Constant A cake-debt calculator born from too many fines in NTNUI Sprint. Hobby Website 2020" [ref=f9e70] [cursor=pointer]:
+                - /url: /projects/zaims-constant
+                - generic [ref=f9e71]:
+                  - generic: "01"
+                  - generic [ref=f9e72]:
+                    - heading "Zaim's Constant" [level=3] [ref=f9e73]
+                    - paragraph [ref=f9e74]: A cake-debt calculator born from too many fines in NTNUI Sprint.
+                  - generic [ref=f9e75]:
+                    - generic [ref=f9e76]: Hobby
+                    - generic [ref=f9e77]: Website
+                    - generic [ref=f9e78]: "2020"
+            - listitem [ref=f9e79]:
+              - link "Portfolio This site, designed and built from scratch. Hobby Website 2020" [ref=f9e81] [cursor=pointer]:
+                - /url: /projects/portfolio
+                - generic [ref=f9e82]:
+                  - generic: "02"
+                  - generic [ref=f9e83]:
+                    - heading "Portfolio" [level=3] [ref=f9e84]
+                    - paragraph [ref=f9e85]: This site, designed and built from scratch.
+                  - generic [ref=f9e86]:
+                    - generic [ref=f9e87]: Hobby
+                    - generic [ref=f9e88]: Website
+                    - generic [ref=f9e89]: "2020"
+            - listitem [ref=f9e90]:
+              - link "Squiggle A JavaFX drawing game built as a second-semester school project. Hobby Game 2019" [ref=f9e92] [cursor=pointer]:
+                - /url: /projects/squiggle
+                - generic [ref=f9e93]:
+                  - generic: "03"
+                  - generic [ref=f9e94]:
+                    - heading "Squiggle" [level=3] [ref=f9e95]
+                    - paragraph [ref=f9e96]: A JavaFX drawing game built as a second-semester school project.
+                  - generic [ref=f9e97]:
+                    - generic [ref=f9e98]: Hobby
+                    - generic [ref=f9e99]: Game
+                    - generic [ref=f9e100]: "2019"
+    - contentinfo [ref=f9e101]:
+      - generic [ref=f9e102]:
+        - img [ref=f9e103]
+        - generic [ref=f9e105]:
+          - generic [ref=f9e106]:
+            - link "Zaim Imran, home" [ref=f9e107] [cursor=pointer]:
+              - /url: /
+              - img [ref=f9e108]
+            - paragraph [ref=f9e111]: Tegnet og bygget i Norge
+          - navigation "Footer" [ref=f9e112]:
+            - list [ref=f9e113]:
+              - listitem [ref=f9e114]:
+                - link "Home" [ref=f9e115] [cursor=pointer]:
+                  - /url: /
+                  - text: Home
+                  - img [ref=f9e116]
+              - listitem [ref=f9e118]:
+                - link "Projects" [ref=f9e119] [cursor=pointer]:
+                  - /url: /projects
+                  - text: Projects
+                  - img [ref=f9e120]
+              - listitem [ref=f9e122]:
+                - link "Playground" [ref=f9e123] [cursor=pointer]:
+                  - /url: /playground
+                  - text: Playground
+                  - img [ref=f9e124]
+              - listitem [ref=f9e126]:
+                - link "About" [ref=f9e127] [cursor=pointer]:
+                  - /url: /about
+                  - text: About
+                  - img [ref=f9e128]
+              - listitem [ref=f9e130]:
+                - link "Contact" [ref=f9e131] [cursor=pointer]:
+                  - /url: /contact
+                  - text: Contact
+                  - img [ref=f9e132]
+          - list [ref=f9e134]:
+            - listitem [ref=f9e135]:
+              - link "GitHub" [ref=f9e136] [cursor=pointer]:
+                - /url: https://github.com/zaimimr
+                - img [ref=f9e137]
+            - listitem [ref=f9e140]:
+              - link "LinkedIn" [ref=f9e141] [cursor=pointer]:
+                - /url: https://www.linkedin.com/in/zaim/
+                - img [ref=f9e142]
+            - listitem [ref=f9e147]:
+              - link "Email" [ref=f9e148] [cursor=pointer]:
+                - /url: mailto:zaim.imran@gmail.com
+                - img [ref=f9e149]
+        - paragraph [ref=f9e152]: © 2026 Zaim Imran
+  - button "Open Next.js Dev Tools" [ref=f9e158] [cursor=pointer]:
+    - img [ref=f9e159]
+  - alert [ref=f9e171]

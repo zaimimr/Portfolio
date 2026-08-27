@@ -161,3 +161,37 @@ body {
   animation: none;
   mix-blend-mode: normal;
 }
+
+mark.marker-highlight {
+  background-color: transparent;
+  color: inherit;
+  padding-inline: 0.08em;
+  margin-inline: -0.08em;
+  box-decoration-break: clone;
+  -webkit-box-decoration-break: clone;
+  background-image: linear-gradient(
+    100deg,
+    transparent 0.5%,
+    var(--highlight) 3.5%,
+    var(--highlight) 96.5%,
+    transparent 99.5%
+  );
+  background-repeat: no-repeat;
+  background-size: 100% 62%;
+  background-position: 0 74%;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  mark.marker-highlight-animate {
+    animation: marker-swipe var(--duration-draw) var(--ease-out) 350ms both;
+  }
+}
+
+@keyframes marker-swipe {
+  from {
+    background-size: 0% 62%;
+  }
+  to {
+    background-size: 100% 62%;
+  }
+}

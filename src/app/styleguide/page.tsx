@@ -191,7 +191,13 @@ export default function StyleguidePage() {
           </div>
         </Section>
       </main>
-      <Footer />
+      <Footer
+        socials={[
+          { label: "GitHub", url: "https://github.com/zaimimr" },
+          { label: "LinkedIn", url: "https://www.linkedin.com/in/zaim/" },
+        ]}
+        email="zaim.imran@gmail.com"
+      />
     </>
   );
 }

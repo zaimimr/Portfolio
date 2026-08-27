@@ -1,0 +1,100 @@
+- generic [active] [ref=f8e1]:
+  - generic [ref=f8e2]:
+    - link "Skip to content" [ref=f8e3] [cursor=pointer]:
+      - /url: "#main"
+    - banner [ref=f8e4]:
+      - generic [ref=f8e5]:
+        - link "Zaim Imran, home" [ref=f8e6] [cursor=pointer]:
+          - /url: /
+          - img [ref=f8e7]
+        - navigation "Main" [ref=f8e10]:
+          - link "Projects" [ref=f8e11] [cursor=pointer]:
+            - /url: /projects
+            - text: Projects
+            - img [ref=f8e12]
+          - link "Playground" [ref=f8e14] [cursor=pointer]:
+            - /url: /playground
+            - text: Playground
+            - img [ref=f8e15]
+          - link "About" [ref=f8e17] [cursor=pointer]:
+            - /url: /about
+            - text: About
+            - img [ref=f8e18]
+          - link "Contact" [ref=f8e20] [cursor=pointer]:
+            - /url: /contact
+            - text: Contact
+            - img [ref=f8e21]
+        - button "Toggle theme" [ref=f8e24]:
+          - img [ref=f8e25]
+    - main [ref=f8e27]:
+      - generic [ref=f8e28]:
+        - generic [ref=f8e29]:
+          - heading "Playground" [level=1] [ref=f8e30]:
+            - mark [ref=f8e31]: Playground
+          - paragraph [ref=f8e32]: Experiments, toys and things that seemed like a good idea at 23:40.
+        - list [ref=f8e33]:
+          - listitem [ref=f8e34]:
+            - link "Zaim's Constant The original cake-debt calculator, still crunching fines. calculator cake react 2020" [ref=f8e36] [cursor=pointer]:
+              - /url: https://zenjjim.github.io/Zaims-constant/
+              - generic [ref=f8e37]:
+                - generic [ref=f8e38]:
+                  - heading "Zaim's Constant" [level=2] [ref=f8e39]
+                  - img [ref=f8e40]
+                - paragraph [ref=f8e44]: The original cake-debt calculator, still crunching fines.
+                - generic [ref=f8e45]:
+                  - generic [ref=f8e46]: calculator
+                  - generic [ref=f8e47]: cake
+                  - generic [ref=f8e48]: react
+                  - generic [ref=f8e49]: "2020"
+    - contentinfo [ref=f8e50]:
+      - generic [ref=f8e51]:
+        - img [ref=f8e52]
+        - generic [ref=f8e54]:
+          - generic [ref=f8e55]:
+            - link "Zaim Imran, home" [ref=f8e56] [cursor=pointer]:
+              - /url: /
+              - img [ref=f8e57]
+            - paragraph [ref=f8e60]: Tegnet og bygget i Norge
+          - navigation "Footer" [ref=f8e61]:
+            - list [ref=f8e62]:
+              - listitem [ref=f8e63]:
+                - link "Home" [ref=f8e64] [cursor=pointer]:
+                  - /url: /
+                  - text: Home
+                  - img [ref=f8e65]
+              - listitem [ref=f8e67]:
+                - link "Projects" [ref=f8e68] [cursor=pointer]:
+                  - /url: /projects
+                  - text: Projects
+                  - img [ref=f8e69]
+              - listitem [ref=f8e71]:
+                - link "Playground" [ref=f8e72] [cursor=pointer]:
+                  - /url: /playground
+                  - text: Playground
+                  - img [ref=f8e73]
+              - listitem [ref=f8e75]:
+                - link "About" [ref=f8e76] [cursor=pointer]:
+                  - /url: /about
+                  - text: About
+                  - img [ref=f8e77]
+              - listitem [ref=f8e79]:
+                - link "Contact" [ref=f8e80] [cursor=pointer]:
+                  - /url: /contact
+                  - text: Contact
+                  - img [ref=f8e81]
+          - list [ref=f8e83]:
+            - listitem [ref=f8e84]:
+              - link "GitHub" [ref=f8e85] [cursor=pointer]:
+                - /url: https://github.com/zaimimr
+                - img [ref=f8e86]
+            - listitem [ref=f8e89]:
+              - link "LinkedIn" [ref=f8e90] [cursor=pointer]:
+                - /url: https://www.linkedin.com/in/zaim/
+                - img [ref=f8e91]
+            - listitem [ref=f8e96]:
+              - link "Email" [ref=f8e97] [cursor=pointer]:
+                - /url: mailto:zaim.imran@gmail.com
+                - img [ref=f8e98]
+        - paragraph [ref=f8e101]: © 2026 Zaim Imran
+  - button "Open Next.js Dev Tools" [ref=f8e107] [cursor=pointer]:
+    - img [ref=f8e108]
