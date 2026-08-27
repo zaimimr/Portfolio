@@ -17,8 +17,8 @@ import {
 import type { SceneBand } from "./terrain-art";
 
 const terrainRate = 0.62;
-const walkerBaseline = 0.72;
-const walkerBaselineNarrow = 0.85;
+const walkerBaseline = 0.76;
+const walkerBaselineNarrow = 0.86;
 const walkerUnits = 66;
 const maxTiles = 9;
 

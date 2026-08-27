@@ -89,9 +89,9 @@ export function Explorer() {
           />
           <g className="text-scene-glow" transform="translate(33.8 35.6)">
             <circle
-              r="12"
+              r="14"
               fill="currentColor"
-              opacity="0.28"
+              opacity="0.36"
               className="animate-flicker [filter:blur(6px)] motion-reduce:animate-none"
             />
             <circle r="3.2" fill="currentColor" opacity="0.9" />
