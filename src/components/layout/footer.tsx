@@ -34,19 +34,16 @@ export function Footer({ socials, email }: FooterProps) {
   ];
   return (
     <footer className="mt-section">
-      <div className="mx-auto w-full max-w-6xl px-gutter pb-10">
-        <Divider variant={2} className="mb-10 text-line/30" />
+      <div className="px-gutter mx-auto w-full max-w-6xl pb-10">
+        <Divider variant={2} className="text-line/30 mb-10" />
         <div className="flex flex-col gap-10 md:flex-row md:items-end md:justify-between">
-          <div className="flex flex-col gap-3">
-            <Link
-              href="/"
-              aria-label="Zaim Imran, home"
-              className="w-fit text-ink transition-colors duration-[var(--duration-fast)] ease-out hover:text-accent-strong"
-            >
-              <Wordmark className="size-12" />
-            </Link>
-            <p className="font-hand text-hand text-ink-muted">Tegnet og bygget i Norge</p>
-          </div>
+          <Link
+            href="/"
+            aria-label="Zaim Imran, home"
+            className="text-ink hover:text-accent-strong w-fit transition-colors duration-[var(--duration-fast)] ease-out"
+          >
+            <Wordmark className="size-12" />
+          </Link>
           <nav aria-label="Footer">
             <ul className="flex flex-wrap gap-x-7 gap-y-3">
               <li>
@@ -69,9 +66,11 @@ export function Footer({ socials, email }: FooterProps) {
                 <a
                   href={social.href}
                   target={social.href.startsWith("http") ? "_blank" : undefined}
-                  rel={social.href.startsWith("http") ? "noreferrer" : undefined}
+                  rel={
+                    social.href.startsWith("http") ? "noreferrer" : undefined
+                  }
                   aria-label={social.label}
-                  className="inline-flex size-10 items-center justify-center rounded-md text-ink transition-colors duration-[var(--duration-fast)] ease-out hover:bg-surface-raised hover:text-accent-strong"
+                  className="text-ink hover:bg-surface-raised hover:text-accent-strong inline-flex size-10 items-center justify-center rounded-md transition-colors duration-[var(--duration-fast)] ease-out"
                 >
                   <SketchIcon name={social.icon} size={22} />
                 </a>
@@ -79,7 +78,7 @@ export function Footer({ socials, email }: FooterProps) {
             ))}
           </ul>
         </div>
-        <p className="mt-10 text-sm text-ink-muted">
+        <p className="text-ink-muted mt-10 text-sm">
           © {new Date().getFullYear()} Zaim Imran
         </p>
       </div>

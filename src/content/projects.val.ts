@@ -17,7 +17,9 @@ const linkSchema = s.union(
 );
 
 const projectSchema = s.object({
-  title: s.string().describe("Project name shown in lists and on the project page"),
+  title: s
+    .string()
+    .describe("Project name shown in lists and on the project page"),
   description: s.string().describe("One-liner shown on project cards"),
   body: s
     .richtext({
@@ -50,22 +52,22 @@ const projectSchema = s.object({
     .describe("What kind of thing the project is"),
   tech: s.array(s.string()).describe("Technologies used, shown as tags"),
   links: s.array(linkSchema).describe("Where to see the project"),
-  images: s.array(s.image()).describe("Screenshots or artwork, first image is the cover"),
+  images: s
+    .array(s.image())
+    .describe("Screenshots or artwork, first image is the cover"),
   date: s.date().describe("When the project shipped or was last active"),
   featured: s.boolean().describe("Featured projects appear on the front page"),
   hidden: s.boolean().describe("Hidden projects are only visible to the admin"),
 });
 
-export const schema = s
-  .record(projectSchema.describe("Project"))
-  .render({
-    as: "list",
-    select: ({ val }) => ({
-      title: val.title,
-      subtitle: val.description,
-      image: val.images[0] ?? null,
-    }),
-  });
+export const schema = s.record(projectSchema.describe("Project")).render({
+  as: "list",
+  select: ({ val }) => ({
+    title: val.title,
+    subtitle: val.description,
+    image: val.images[0] ?? null,
+  }),
+});
 
 export type Project = t.inferSchema<typeof projectSchema>;
 export type Projects = t.inferSchema<typeof schema>;
@@ -106,8 +108,7 @@ export default c.define("/src/content/projects.val.ts", schema, {
   },
   "ntnui-sprint": {
     title: "NTNUI Sprint",
-    description:
-      "Member administration portal for NTNUI's 12,000 members.",
+    description: "Member administration portal for NTNUI's 12,000 members.",
     body: [
       {
         tag: "p",
@@ -133,19 +134,18 @@ export default c.define("/src/content/projects.val.ts", schema, {
   },
   "zaims-constant": {
     title: "Zaim's Constant",
-    description:
-      "A cake-debt calculator born from too many fines in NTNUI Sprint.",
+    description: "A calculator for tracking team fines in NTNUI Sprint.",
     body: [
       {
         tag: "p",
         children: [
-          "A fun project: a calculator that works out how much cake I owe the team because of my fines in NTNUI Sprint.",
+          "A small calculator that tracks team fines in NTNUI Sprint.",
         ],
       },
       {
         tag: "p",
         children: [
-          "It started as a joke and ended up as a simple tool the entire team uses, built with React and Material-UI and designed in Adobe XD.",
+          "It started as a team joke and became a shared tool, built with React and Material-UI and designed in Adobe XD.",
         ],
       },
     ],
@@ -198,7 +198,8 @@ export default c.define("/src/content/projects.val.ts", schema, {
   },
   squiggle: {
     title: "Squiggle",
-    description: "A JavaFX drawing game built as a second-semester school project.",
+    description:
+      "A JavaFX drawing game built as a second-semester school project.",
     body: [
       {
         tag: "p",

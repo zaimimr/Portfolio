@@ -52,11 +52,9 @@ export function ContactForm({ email }: { email: string }) {
   if (status === "sent") {
     return (
       <div aria-live="polite" className="flex flex-col gap-3 py-6">
-        <p className="font-hand text-h3 text-accent-strong">
-          Message sent. I&apos;ll draw up a reply soon.
-        </p>
+        <p className="font-hand text-h3 text-accent-strong">Message sent.</p>
         <p className="text-body text-ink-muted">
-          Thanks for reaching out, you&apos;ll hear from me shortly.
+          Thanks, you&apos;ll hear from me shortly.
         </p>
       </div>
     );
@@ -81,8 +79,13 @@ export function ContactForm({ email }: { email: string }) {
           required
         />
       </div>
-      <Textarea label="Message" name="message" error={errors.message} required />
-      <div aria-hidden="true" className="absolute -left-[9999px] top-auto">
+      <Textarea
+        label="Message"
+        name="message"
+        error={errors.message}
+        required
+      />
+      <div aria-hidden="true" className="absolute top-auto -left-[9999px]">
         <label htmlFor="contact-company">Company</label>
         <input
           id="contact-company"
@@ -109,9 +112,12 @@ export function ContactForm({ email }: { email: string }) {
           )}
         </Button>
         {status === "failed" ? (
-          <p aria-live="polite" className="text-sm text-danger">
+          <p aria-live="polite" className="text-danger text-sm">
             That didn&apos;t go through. Try again, or email me at{" "}
-            <a href={`mailto:${email}`} className="underline underline-offset-4">
+            <a
+              href={`mailto:${email}`}
+              className="underline underline-offset-4"
+            >
               {email}
             </a>
             .
