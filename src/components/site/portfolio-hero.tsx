@@ -54,9 +54,6 @@ export async function PortfolioHero() {
           </div>
           <div className="relative mt-8 flex flex-col gap-7 md:col-span-4 md:mt-2 md:self-end">
             <SceneWash className="-inset-x-12 -inset-y-14" />
-            <p className="text-body-lg text-ink-muted max-w-[38ch]">
-              {profile.heroLine}
-            </p>
             <div className="flex flex-wrap items-center gap-3">
               <Button variant="accent" size="lg" asChild>
                 <Link href="/projects">
