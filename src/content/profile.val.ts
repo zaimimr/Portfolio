@@ -2,9 +2,6 @@ import { c, s, type t } from "../../val.config";
 
 export const schema = s.object({
   role: s.string().describe("Short role line shown under the name in the hero"),
-  heroLine: s
-    .string()
-    .describe("One sentence in the hero, under the role line"),
   heroNote: s
     .string()
     .describe("Hand-written note in the hero, next to the scroll cue"),
@@ -24,9 +21,7 @@ export const schema = s.object({
 export type Profile = t.inferSchema<typeof schema>;
 
 export default c.define("/src/content/profile.val.ts", schema, {
-  role: "Developer",
-  heroLine:
-    "I build websites, apps and games, from member platforms used by thousands of students to experiments nobody asked for.",
+  role: "Builder of stuff",
   heroNote: "more terrain below",
   intro: [
     {
