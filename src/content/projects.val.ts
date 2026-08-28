@@ -346,7 +346,13 @@ export default c.define("/src/content/projects.val.ts", schema, {
       "MCP",
     ],
     links: [{ kind: "web", url: "https://www.bi.no/" }],
-    images: [],
+    images: [
+      c.image("/public/val/projects/bisap-1.webp", {
+        width: 2000,
+        height: 1128,
+        mimeType: "image/webp",
+      }),
+    ],
     date: "2026-08-01",
     featured: true,
     hidden: false,
