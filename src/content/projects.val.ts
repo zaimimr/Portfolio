@@ -187,7 +187,13 @@ export default c.define("/src/content/projects.val.ts", schema, {
       "MCP",
     ],
     links: [{ kind: "web", url: "https://aneo.com/" }],
-    images: [],
+    images: [
+      c.image("/public/val/projects/aneo-mobility-1.webp", {
+        width: 2000,
+        height: 1192,
+        mimeType: "image/webp",
+      }),
+    ],
     date: "2025-12-01",
     featured: true,
     hidden: false,
@@ -746,75 +752,6 @@ export default c.define("/src/content/projects.val.ts", schema, {
     featured: false,
     hidden: false,
   },
-  "one-million-lives": {
-    title: "One Million Lives",
-    description:
-      "A website builder for Laerdal Medical, in service of saving one million lives a year by 2030.",
-    body: [
-      {
-        tag: "p",
-        children: [
-          "Laerdal Medical has a stated goal of helping save at least one million lives every year by 2030. This project was the full website builder behind that message, so the organisation could tell the story itself without going through developers each time.",
-        ],
-      },
-      {
-        tag: "p",
-        children: [
-          "It is built with Next.js 14 using the App Router, Sanity as the content backend and Tailwind for styling.",
-        ],
-      },
-      {
-        tag: "h2",
-        children: ["What I did"],
-      },
-      {
-        tag: "ul",
-        children: [
-          {
-            tag: "li",
-            children: [
-              {
-                tag: "p",
-                children: [
-                  "Built several of the page building blocks by defining good Sanity schemas and robust Next components on top of them",
-                ],
-              },
-            ],
-          },
-          {
-            tag: "li",
-            children: [
-              {
-                tag: "p",
-                children: [
-                  "Upgraded the project from the Next.js 13 pages router to the Next.js 14 app router, including the optimisations the upgrade opened up",
-                ],
-              },
-            ],
-          },
-          {
-            tag: "li",
-            children: [
-              {
-                tag: "p",
-                children: [
-                  "Improved the preview flow between Sanity and the site, and implemented Sanity Presentation so editors could see their changes in place",
-                ],
-              },
-            ],
-          },
-        ],
-      },
-    ],
-    category: "work",
-    type: "website",
-    tech: ["Next.js", "React", "Sanity", "Tailwind CSS", "TypeScript"],
-    links: [{ kind: "web", url: "https://laerdal.com/" }],
-    images: [],
-    date: "2023-12-01",
-    featured: false,
-    hidden: false,
-  },
   trak: {
     title: "Trak",
     description:
@@ -926,7 +863,13 @@ export default c.define("/src/content/projects.val.ts", schema, {
       "Heroku",
     ],
     links: [{ kind: "web", url: "https://www.trak.no/" }],
-    images: [],
+    images: [
+      c.image("/public/val/projects/trak-1.webp", {
+        width: 2000,
+        height: 1250,
+        mimeType: "image/webp",
+      }),
+    ],
     date: "2023-06-01",
     featured: false,
     hidden: false,
@@ -1133,81 +1076,6 @@ export default c.define("/src/content/projects.val.ts", schema, {
     links: [{ kind: "web", url: "https://entur.no/" }],
     images: [],
     date: "2020-08-01",
-    featured: false,
-    hidden: false,
-  },
-  anansi: {
-    title: "Anansi",
-    description:
-      "A competence mapping platform for Blank, connecting personal ambitions to company goals.",
-    body: [
-      {
-        tag: "p",
-        children: [
-          "Anansi is a system for mapping and developing competence inside Blank. Employees assess and document where they stand together with their subject lead, set personal development goals, and leadership gets a view of the company's combined competence.",
-        ],
-      },
-      {
-        tag: "p",
-        children: [
-          "The point of it is to be a bridge between what an individual wants to become good at and where the company is trying to go, which are usually discussed in completely separate conversations.",
-        ],
-      },
-      {
-        tag: "p",
-        children: [
-          "I built the frontend in Next.js 13 with Material UI, worked closely with a designer on the experience, and built large parts of the backend as an ASP.NET Core Minimal API on MongoDB. Anansi integrates with Blank's internal employee lists and was designed so external systems could be connected later. I was also Scrum master, running sprint planning, retrospectives and customer demos.",
-        ],
-      },
-    ],
-    category: "work",
-    type: "website",
-    tech: [
-      "Next.js 13",
-      "React",
-      "Material UI",
-      "ASP.NET Core",
-      ".NET",
-      "MongoDB",
-      "Scrum",
-      "Heroku",
-    ],
-    links: [],
-    images: [],
-    date: "2023-08-01",
-    featured: false,
-    hidden: false,
-  },
-  mina: {
-    title: "Mina",
-    description:
-      "A fake door, three landing pages and a no-code MVP to test whether a consultant marketplace was worth building.",
-    body: [
-      {
-        tag: "p",
-        children: [
-          "Mina was an internal initiative at Blank to simplify how companies of any size get hold of consultants. Rather than building the product first, we tested whether anyone wanted it.",
-        ],
-      },
-      {
-        tag: "p",
-        children: [
-          "That meant a fake door test, three different landing pages in Next.js to see which framing actually landed, and an MVP built on the no-code framework Appfarm so we could put something real in front of people quickly.",
-        ],
-      },
-      {
-        tag: "p",
-        children: [
-          "I researched the market for a solution like this, built parts of the MVP in Appfarm, built and SEO-optimised the landing pages, and wrote a Slack bot so that a contact form submission landed straight in the team's channel instead of an inbox nobody watched.",
-        ],
-      },
-    ],
-    category: "work",
-    type: "website",
-    tech: ["Next.js", "Appfarm", "Slack API", "SEO"],
-    links: [],
-    images: [],
-    date: "2023-10-01",
     featured: false,
     hidden: false,
   },
