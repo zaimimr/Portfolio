@@ -1,6 +1,7 @@
 import { initVal } from "@valbuild/next";
 
 const { s, c, val, config, nextAppRouter, externalPageRouter } = initVal({
+  project: "zaimimr/portfolio",
   defaultTheme: "dark",
   gitBranch: process.env.VERCEL_GIT_COMMIT_REF,
   gitCommit: process.env.VERCEL_GIT_COMMIT_SHA,
