@@ -3,6 +3,8 @@ import { absoluteUrl } from "@/lib/site";
 
 const privatePaths = ["/admin", "/val", "/api/", "/styleguide", "/sign-in"];
 
+const publicPaths = ["/val/projects/"];
+
 const answerEngines = [
   "GPTBot",
   "OAI-SearchBot",
@@ -27,14 +29,13 @@ const answerEngines = [
 export default function robots(): MetadataRoute.Robots {
   return {
     rules: [
-      { userAgent: "*", allow: "/", disallow: privatePaths },
+      { userAgent: "*", allow: ["/", ...publicPaths], disallow: privatePaths },
       ...answerEngines.map((userAgent) => ({
         userAgent,
-        allow: "/",
+        allow: ["/", ...publicPaths],
         disallow: privatePaths,
       })),
     ],
     sitemap: absoluteUrl("/sitemap.xml"),
-    host: absoluteUrl("/").replace(/\/$/, ""),
   };
 }
