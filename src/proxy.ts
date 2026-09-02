@@ -1,7 +1,13 @@
 import { NextResponse } from "next/server";
 import { auth } from "@/lib/auth";
 
+const valImagePattern =
+  /^\/val\/[\w./-]+\.(?:webp|png|jpe?g|gif|svg|avif|ico)$/i;
+
 export const proxy = auth((request) => {
+  if (valImagePattern.test(request.nextUrl.pathname)) {
+    return NextResponse.next();
+  }
   if (request.auth) {
     return NextResponse.next();
   }
@@ -14,5 +20,5 @@ export const proxy = auth((request) => {
 });
 
 export const config = {
-  matcher: ["/admin/:path*"],
+  matcher: ["/admin/:path*", "/val", "/val/:path*"],
 };
