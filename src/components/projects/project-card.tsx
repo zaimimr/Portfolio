@@ -31,15 +31,15 @@ export function ProjectCard({ project, index }: ProjectCardProps) {
         >
           <span
             aria-hidden="true"
-            className="pointer-events-none absolute -top-8 right-1 select-none font-display text-[6.5rem] font-bold leading-none text-ink/8"
+            className="font-display text-ink/8 pointer-events-none absolute -top-8 right-1 text-[6.5rem] leading-none font-bold select-none"
           >
             {String(index + 1).padStart(2, "0")}
           </span>
           {project.cover ? (
-            <div className="relative aspect-video w-full overflow-hidden rounded-md border-2 border-line">
+            <div className="border-line relative aspect-video w-full overflow-hidden rounded-md border-2">
               <ValImage
                 src={project.cover}
-                alt=""
+                alt={`${project.titleText}, cover image`}
                 fill
                 sizes="(min-width: 48rem) 24rem, 100vw"
                 className="object-cover"
@@ -47,17 +47,17 @@ export function ProjectCard({ project, index }: ProjectCardProps) {
             </div>
           ) : null}
           <div className="relative flex flex-col gap-2 pr-14">
-            <h2 className="font-display text-h3 font-bold text-ink transition-colors duration-[var(--duration-fast)] ease-out group-hover:text-accent-strong">
+            <h2 className="font-display text-h3 text-ink group-hover:text-accent-strong font-bold transition-colors duration-[var(--duration-fast)] ease-out">
               {project.title}
             </h2>
-            <p className="text-sm text-ink-muted">{project.description}</p>
+            <p className="text-ink-muted text-sm">{project.description}</p>
           </div>
           <div className="mt-auto flex flex-wrap items-center gap-2">
             <Tag category={project.category}>
               {categoryLabels[project.category]}
             </Tag>
             <Tag>{typeLabels[project.type]}</Tag>
-            <span className="ml-auto font-mono text-mono-sm text-ink-muted">
+            <span className="text-mono-sm text-ink-muted ml-auto font-mono">
               {project.year}
             </span>
           </div>

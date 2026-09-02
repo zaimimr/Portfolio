@@ -20,6 +20,9 @@ import { Tag } from "@/components/ui/tag";
 import { SketchIcon } from "@/components/ui/sketch-icon";
 import { BisapDiagram } from "@/components/projects/bisap-diagram";
 import type { SketchIconName } from "@/components/ui/sketch-icon";
+import { JsonLd } from "@/components/seo/json-ld";
+import { breadcrumbSchema, projectSchema } from "@/lib/structured-data";
+import { absoluteUrl } from "@/lib/site";
 
 const linkPresentation: Record<
   string,
@@ -54,9 +57,23 @@ export async function generateMetadata({
   const visible = await getVisibleEntries();
   const project = visible.find((entry) => entry.slug === slug);
   if (!project) return {};
+  const title = val.raw(project.title);
+  const description = val.raw(project.description);
+  const tech = project.tech.map((item) => val.raw(item));
   return {
-    title: val.raw(project.title),
-    description: val.raw(project.description),
+    title,
+    description,
+    keywords: [title, ...tech, "Zaim Imran", "project"],
+    alternates: { canonical: `/projects/${slug}` },
+    openGraph: {
+      type: "article",
+      url: `/projects/${slug}`,
+      title,
+      description,
+      publishedTime: val.raw(project.date),
+      authors: ["Zaim Imran"],
+      tags: tech,
+    },
   };
 }
 
@@ -72,9 +89,33 @@ export default async function ProjectPage({
   if (!project) notFound();
 
   const nextProject = visible[(index + 1) % visible.length] ?? project;
+  const title = val.raw(project.title);
+  const imageUrls = project.images
+    .map((image) => val.raw(image).url)
+    .map((url) => absoluteUrl(url));
 
   return (
     <article className="px-gutter pb-section mx-auto w-full max-w-6xl pt-8 md:pt-12">
+      <JsonLd
+        id={`ld-project-${slug}`}
+        data={[
+          projectSchema({
+            slug,
+            title,
+            description: val.raw(project.description),
+            date: project.date,
+            tech: project.tech.map((item) => val.raw(item)),
+            type: project.type,
+            images: imageUrls,
+            links: project.links.map((link) => val.raw(link.url)),
+          }),
+          breadcrumbSchema([
+            { name: "Home", path: "/" },
+            { name: "Projects", path: "/projects" },
+            { name: title, path: `/projects/${slug}` },
+          ]),
+        ]}
+      />
       <nav aria-label="Breadcrumb">
         <Link
           href="/projects"
@@ -126,7 +167,7 @@ export default async function ProjectPage({
             >
               <ValImage
                 src={image}
-                alt=""
+                alt={`${title}, screenshot ${imageIndex + 1}`}
                 fill
                 sizes="(min-width: 48rem) 34rem, 100vw"
                 className="object-cover"

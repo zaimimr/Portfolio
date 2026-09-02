@@ -1,15 +1,40 @@
 import type { MetadataRoute } from "next";
-import { envOptional } from "@/lib/env";
+import { absoluteUrl } from "@/lib/site";
+
+const privatePaths = ["/admin", "/val", "/api/", "/styleguide", "/sign-in"];
+
+const answerEngines = [
+  "GPTBot",
+  "OAI-SearchBot",
+  "ChatGPT-User",
+  "ClaudeBot",
+  "Claude-User",
+  "Claude-SearchBot",
+  "PerplexityBot",
+  "Perplexity-User",
+  "Google-Extended",
+  "Applebot",
+  "Applebot-Extended",
+  "Bingbot",
+  "DuckAssistBot",
+  "Amazonbot",
+  "cohere-ai",
+  "MistralAI-User",
+  "meta-externalagent",
+  "YouBot",
+];
 
 export default function robots(): MetadataRoute.Robots {
-  const baseUrl = envOptional("NEXT_PUBLIC_SITE_URL") ?? "https://zaim.no";
-
   return {
-    rules: {
-      userAgent: "*",
-      allow: "/",
-      disallow: ["/admin", "/val", "/styleguide", "/sign-in", "/api/"],
-    },
-    sitemap: `${baseUrl}/sitemap.xml`,
+    rules: [
+      { userAgent: "*", allow: "/", disallow: privatePaths },
+      ...answerEngines.map((userAgent) => ({
+        userAgent,
+        allow: "/",
+        disallow: privatePaths,
+      })),
+    ],
+    sitemap: absoluteUrl("/sitemap.xml"),
+    host: absoluteUrl("/").replace(/\/$/, ""),
   };
 }

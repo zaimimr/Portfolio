@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import projectsVal from "@/content/projects.val";
 import { fetchVal } from "@/val/val.rsc";
 import {
@@ -10,6 +11,21 @@ import { PortfolioHero } from "@/components/site/portfolio-hero";
 import { FeaturedProjects } from "@/components/site/featured-projects";
 import { ContactSection } from "@/components/site/contact-section";
 import { TerrainScene } from "@/components/site/terrain/terrain-scene";
+import { ogImage, siteDescription, siteName } from "@/lib/site";
+
+export const metadata: Metadata = {
+  title: {
+    absolute: `${siteName}, developer in Oslo`,
+  },
+  description: siteDescription,
+  alternates: { canonical: "/" },
+  openGraph: {
+    url: "/",
+    title: `${siteName}, developer in Oslo`,
+    description: siteDescription,
+    images: [ogImage],
+  },
+};
 
 export default async function HomePage() {
   const projects = await fetchVal(projectsVal);

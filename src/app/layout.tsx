@@ -9,6 +9,13 @@ import {
 } from "next/font/google";
 import { Analytics } from "@vercel/analytics/next";
 import { Providers } from "./providers";
+import {
+  ogImage,
+  searchKeywords,
+  siteDescription,
+  siteName,
+  siteUrl,
+} from "@/lib/site";
 import "./globals.css";
 
 const bricolage = Bricolage_Grotesque({
@@ -32,11 +39,51 @@ const jetbrains = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL(siteUrl),
   title: {
-    default: "Zaim Imran",
-    template: "%s · Zaim Imran",
+    default: `${siteName}, developer in Oslo`,
+    template: `%s · ${siteName}`,
   },
-  description: "Selected websites, apps, games and experiments by Zaim Imran.",
+  description: siteDescription,
+  keywords: searchKeywords,
+  applicationName: siteName,
+  authors: [{ name: siteName, url: siteUrl }],
+  creator: siteName,
+  publisher: siteName,
+  alternates: {
+    canonical: "/",
+  },
+  openGraph: {
+    type: "website",
+    siteName,
+    locale: "en",
+    url: "/",
+    title: `${siteName}, developer in Oslo`,
+    description: siteDescription,
+    images: [ogImage],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: `${siteName}, developer in Oslo`,
+    description: siteDescription,
+    images: [ogImage],
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+      "max-video-preview": -1,
+    },
+  },
+  category: "technology",
+  other: {
+    "geo.region": "NO-03",
+    "geo.placename": "Oslo",
+  },
 };
 
 export default function RootLayout({

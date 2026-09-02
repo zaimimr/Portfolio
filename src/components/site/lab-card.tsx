@@ -12,6 +12,7 @@ import { spring } from "@/lib/motion";
 export type LabCardModel = {
   slug: string;
   title: string;
+  titleText: string;
   description: string;
   href: string;
   external: boolean;
@@ -43,10 +44,10 @@ export function LabCard({ experiment, index }: LabCardProps) {
       >
         <Card index={index} className="flex h-full flex-col gap-4">
           {experiment.image ? (
-            <div className="relative aspect-video w-full overflow-hidden rounded-md border-2 border-line">
+            <div className="border-line relative aspect-video w-full overflow-hidden rounded-md border-2">
               <ValImage
                 src={experiment.image}
-                alt=""
+                alt={`${experiment.titleText}, cover image`}
                 fill
                 sizes="(min-width: 48rem) 24rem, 100vw"
                 className="object-cover transition-transform duration-[var(--duration-slow)] ease-out group-hover:scale-105 motion-reduce:transition-none"
@@ -54,23 +55,23 @@ export function LabCard({ experiment, index }: LabCardProps) {
             </div>
           ) : null}
           <div className="flex items-start justify-between gap-3">
-            <h2 className="font-display text-h3 font-bold text-ink transition-colors duration-[var(--duration-fast)] ease-out group-hover:text-accent-strong">
+            <h2 className="font-display text-h3 text-ink group-hover:text-accent-strong font-bold transition-colors duration-[var(--duration-fast)] ease-out">
               {experiment.title}
             </h2>
             {experiment.external ? (
               <SketchIcon
                 name="external"
                 size={18}
-                className="mt-1.5 shrink-0 text-ink-muted transition-colors duration-[var(--duration-fast)] ease-out group-hover:text-accent-strong"
+                className="text-ink-muted group-hover:text-accent-strong mt-1.5 shrink-0 transition-colors duration-[var(--duration-fast)] ease-out"
               />
             ) : null}
           </div>
-          <p className="text-sm text-ink-muted">{experiment.description}</p>
+          <p className="text-ink-muted text-sm">{experiment.description}</p>
           <div className="mt-auto flex flex-wrap items-center gap-2 pt-1">
             {experiment.tags.map((tag) => (
               <Tag key={tag}>{tag}</Tag>
             ))}
-            <span className="ml-auto font-mono text-mono-sm text-ink-muted">
+            <span className="text-mono-sm text-ink-muted ml-auto font-mono">
               {experiment.year}
             </span>
           </div>

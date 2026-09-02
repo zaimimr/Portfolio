@@ -15,11 +15,24 @@ import { Card } from "@/components/ui/card";
 import { Divider } from "@/components/ui/divider";
 import { SketchIcon } from "@/components/ui/sketch-icon";
 import { Tag } from "@/components/ui/tag";
+import { JsonLd } from "@/components/seo/json-ld";
+import { breadcrumbSchema, personId } from "@/lib/structured-data";
+import { absoluteUrl, ogImage, siteName } from "@/lib/site";
+
+const aboutDescription =
+  "Zaim Imran is a developer and consultant in Oslo, Norway, working on event-driven platforms, data infrastructure and internal tooling. Experience, education, talks, awards and the full stack he works in.";
 
 export const metadata: Metadata = {
-  title: "About",
-  description:
-    "Who Zaim Imran is: developer in Norway, his experience, education and skills.",
+  title: "About Zaim Imran, developer in Oslo",
+  description: aboutDescription,
+  alternates: { canonical: "/about" },
+  openGraph: {
+    type: "profile",
+    url: "/about",
+    title: "About Zaim Imran, developer in Oslo",
+    description: aboutDescription,
+    images: [ogImage],
+  },
 };
 
 const monthFormatter = new Intl.DateTimeFormat("en", {
@@ -63,6 +76,26 @@ export default async function AboutPage() {
 
   return (
     <div className="px-gutter pb-section mx-auto w-full max-w-6xl pt-10 md:pt-16">
+      <JsonLd
+        id="ld-about"
+        data={[
+          {
+            "@context": "https://schema.org",
+            "@type": "ProfilePage",
+            "@id": absoluteUrl("/about#profile"),
+            url: absoluteUrl("/about"),
+            name: `About ${siteName}`,
+            description: aboutDescription,
+            inLanguage: "en",
+            mainEntity: { "@id": personId },
+            about: { "@id": personId },
+          },
+          breadcrumbSchema([
+            { name: "Home", path: "/" },
+            { name: "About", path: "/about" },
+          ]),
+        ]}
+      />
       <header className="max-w-3xl">
         <h1 className="font-display text-h1 text-ink font-bold">
           About <Highlight>me</Highlight>
