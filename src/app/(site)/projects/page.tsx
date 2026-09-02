@@ -1,16 +1,32 @@
 import type { Metadata } from "next";
+import { ogImage } from "@/lib/site";
 import pagesVal from "@/content/pages.val";
 import projectsVal from "@/content/projects.val";
 import { fetchVal } from "@/val/val.rsc";
-import { getVisibleProjects, sortByDate, toProjectEntries } from "@/lib/projects";
+import {
+  getVisibleProjects,
+  sortByDate,
+  toProjectEntries,
+} from "@/lib/projects";
 import { rawEntry, toCardModel } from "@/lib/project-view";
 import { ProjectsExplorer } from "@/components/projects/projects-explorer";
 import { Highlight } from "@/components/site/highlight";
+import { JsonLd } from "@/components/seo/json-ld";
+import { breadcrumbSchema, projectListSchema } from "@/lib/structured-data";
+
+const projectsDescription =
+  "Client work, freelance projects and side projects by Zaim Imran: event-driven platforms, data infrastructure, websites, mobile apps and games.";
 
 export const metadata: Metadata = {
-  title: "Projects",
-  description:
-    "Work, freelance and hobby projects by Zaim Imran: websites, apps and games.",
+  title: "Projects by Zaim Imran",
+  description: projectsDescription,
+  alternates: { canonical: "/projects" },
+  openGraph: {
+    url: "/projects",
+    title: "Projects by Zaim Imran",
+    description: projectsDescription,
+    images: [ogImage],
+  },
 };
 
 export default async function ProjectsPage({
@@ -27,12 +43,24 @@ export default async function ProjectsPage({
   const cards = visible.map(toCardModel);
 
   return (
-    <div className="mx-auto w-full max-w-6xl px-gutter pb-section pt-10 md:pt-16">
+    <div className="px-gutter pb-section mx-auto w-full max-w-6xl pt-10 md:pt-16">
+      <JsonLd
+        id="ld-projects"
+        data={[
+          projectListSchema(
+            cards.map(({ slug, titleText }) => ({ slug, title: titleText })),
+          ),
+          breadcrumbSchema([
+            { name: "Home", path: "/" },
+            { name: "Projects", path: "/projects" },
+          ]),
+        ]}
+      />
       <header className="mb-10 flex flex-col gap-4 md:mb-14">
-        <h1 className="font-display text-h1 font-bold text-ink">
+        <h1 className="font-display text-h1 text-ink font-bold">
           <Highlight>Projects</Highlight>
         </h1>
-        <p className="max-w-xl text-body-lg text-ink-muted">
+        <p className="text-body-lg text-ink-muted max-w-xl">
           {copy.projectsIntro}
         </p>
       </header>

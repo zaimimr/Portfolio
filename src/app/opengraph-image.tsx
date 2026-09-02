@@ -2,7 +2,7 @@ import { ImageResponse } from "next/og";
 
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
-export const alt = "Zaim Imran";
+export const alt = "Zaim Imran, developer in Oslo";
 
 export default function OpenGraphImage() {
   return new ImageResponse(
@@ -25,7 +25,7 @@ export default function OpenGraphImage() {
           Zaim Imran
         </div>
         <div style={{ display: "flex", fontSize: 36, color: "#8a97a6" }}>
-          Selected work, projects and experiments.
+          Developer in Oslo. Platforms, data and the tools on top.
         </div>
       </div>
       <div

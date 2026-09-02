@@ -17,7 +17,7 @@ export type Settings = t.inferSchema<typeof schema>;
 export default c.define("/src/content/settings.val.ts", schema, {
   siteTitle: "Zaim Imran",
   seoDescription:
-    "Zaim Imran builds event-driven platforms, data infrastructure and the tools on top of them. Selected work, apps and experiments.",
+    "Zaim Imran is a developer and consultant in Oslo, Norway. He builds event-driven platforms, real-time data infrastructure and the internal tools teams use every day, and takes on selected freelance and contract work.",
   email: "work@zaim.no",
   socials: [
     { label: "GitHub", url: "https://github.com/zaimimr" },

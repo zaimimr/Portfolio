@@ -54,7 +54,7 @@ export function FeaturedProjectCard({
             {project.cover ? (
               <ValImage
                 src={project.cover}
-                alt=""
+                alt={`${project.titleText}, cover image`}
                 fill
                 sizes="(min-width: 48rem) 40rem, 100vw"
                 className="object-cover"

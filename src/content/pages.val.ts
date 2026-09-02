@@ -13,8 +13,9 @@ export const schema = s.object({
 export type PagesCopy = t.inferSchema<typeof schema>;
 
 export default c.define("/src/content/pages.val.ts", schema, {
-  projectsIntro: "A complete archive of work, freelance and hobby projects.",
+  projectsIntro:
+    "A complete archive of client work, freelance projects and side projects: event-driven platforms, data infrastructure, websites, apps and games.",
   playgroundIntro: "Small experiments, tools and unfinished ideas.",
   contactBlurb:
-    "For project enquiries or anything else, send a message or email me directly.",
+    "For project enquiries or anything else, send a message or email me directly. I am based in Oslo, work remotely just as happily, and take on selected freelance and contract work.",
 });
