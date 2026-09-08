@@ -527,6 +527,179 @@ export default c.define("/src/content/projects.val.ts", schema, {
     featured: true,
     hidden: false,
   },
+  byradar: {
+    title: "Byradar",
+    description:
+      "A live map of Oslo's public transport, with every metro, tram, bus, ferry and train moving in real time.",
+    body: [
+      {
+        tag: "p",
+        children: [
+          "Byradar draws the whole Oslo transport network on one map and puts the vehicles on it. Over 200 lines in real route geometry, in each operator's own colours, with 750 to 850 metros, trams, buses, ferries and trains in motion at peak. It is built on Norwegian open data from Entur and Ruter, and inspired by openbaarvervoerbelgie.be, which does the same thing for Belgium.",
+        ],
+      },
+      {
+        tag: "h2",
+        children: ["The data problem"],
+      },
+      {
+        tag: "p",
+        children: [
+          "Ruter does not publish vehicle GPS. Their position feed is an operator-only service, and their codespace is missing from Entur's public vehicle position feeds entirely. So the vehicles come from two different places, and the interface always says which one you are looking at: a ",
+          { tag: "span", styles: ["bold"], children: ["GPS"] },
+          " badge for Vy trains, Flytoget and regional buses that actually report, and an ",
+          { tag: "span", styles: ["bold"], children: ["EST"] },
+          " badge for everything Ruter runs.",
+        ],
+      },
+      {
+        tag: "p",
+        children: [
+          "An EST position is computed, not guessed. The timetable says how far along its own shape a vehicle should be, so it is placed at that exact metre and then shifted by the live per-stop delay from the realtime feed. What it cannot know is where a bus sits between two stop reports, so one stuck in traffic drifts ahead of itself until the next update pulls it back. Recomputing the deviations independently from the raw feed gave a median of 155 seconds against the running engine's 150, so the delays it shows hold up.",
+        ],
+      },
+      {
+        tag: "h2",
+        children: ["Keeping the map calm"],
+      },
+      {
+        tag: "p",
+        children: [
+          "The hard part was not getting vehicles on the map, it was stopping them from twitching. Every 30 seconds a new delay lands and a vehicle's computed position can jump hundreds of metres, which done naively jolts the entire city at once. The fix is that a correction is only ever allowed to change a vehicle's speed, never its position: the server rate limits catch-up to a few metres per second, and the browser glides each vehicle over its own observed update rate instead of a fixed tick. A 300 metre correction dissolves into 20 seconds of slightly fast running that nobody notices.",
+        ],
+      },
+      {
+        tag: "p",
+        children: [
+          "Direction had the same flavour of problem. Vehicle icons are drawn in screen space, so passing a real world bearing straight through leaves every vehicle rotated wrong by exactly the map's own bearing, which is invisible until you rotate the map. Heading itself is a least squares fit over about 26 metres of route, long enough to ignore a stop lay-by and short enough not to reach around a corner. I checked it by measuring rendered pixels rather than trusting the code, and the median error is under two degrees.",
+        ],
+      },
+      {
+        tag: "h2",
+        children: ["What you can do with it"],
+      },
+      {
+        tag: "ul",
+        children: [
+          {
+            tag: "li",
+            children: [
+              {
+                tag: "p",
+                children: [
+                  "Read punctuality at a glance: every vehicle carries a coloured edge for early, on time, a little late or badly late",
+                ],
+              },
+            ],
+          },
+          {
+            tag: "li",
+            children: [
+              {
+                tag: "p",
+                children: [
+                  "Click a vehicle for its line, destination, live deviation and next stops with scheduled against expected times",
+                ],
+              },
+            ],
+          },
+          {
+            tag: "li",
+            children: [
+              {
+                tag: "p",
+                children: [
+                  "Follow a vehicle, which locks the camera to it and isolates its corridor until you drag the map away",
+                ],
+              },
+            ],
+          },
+          {
+            tag: "li",
+            children: [
+              {
+                tag: "p",
+                children: [
+                  "Search every line and stop in one box, folding the Norwegian letters so majorstua finds Majorstuen, then open that stop's departure board",
+                ],
+              },
+            ],
+          },
+          {
+            tag: "li",
+            children: [
+              {
+                tag: "p",
+                children: [
+                  "Watch the city pulse along the bottom: bar height is how many vehicles are running, bar colour is how punctual the network is right now",
+                ],
+              },
+            ],
+          },
+          {
+            tag: "li",
+            children: [
+              {
+                tag: "p",
+                children: [
+                  "Tilt into 3D for buildings extruded from real heights, and zoom in far enough that vehicles switch from bubbles to their true footprint on the street",
+                ],
+              },
+            ],
+          },
+        ],
+      },
+      {
+        tag: "h2",
+        children: ["How it is built"],
+      },
+      {
+        tag: "p",
+        children: [
+          "A pipeline turns the daily timetable dumps into line geometry, a stop list and a binary timetable index. A Fastify server loads the whole service day into memory as typed arrays, around 15,000 trips and 380,000 stop calls, polls the live feeds and recomputes every active vehicle once a second in 11 to 14 milliseconds. It then broadcasts 16 bytes per vehicle over a WebSocket, so the browser receives about 12 KB per update instead of a wall of JSON. The frontend is a MapLibre basemap with deck.gl layers on top and plain TypeScript for the rest of the interface.",
+        ],
+      },
+      {
+        tag: "p",
+        children: [
+          "It runs on a single box: Docker, Caddy for TLS, and a nightly timer that rebuilds the timetable into a staging directory, verifies every artifact and only swaps it in if the whole generation is clean, so a failed refresh leaves yesterday's timetable running.",
+        ],
+      },
+    ],
+    category: "hobby",
+    type: "website",
+    tech: [
+      "TypeScript",
+      "deck.gl",
+      "MapLibre GL",
+      "Fastify",
+      "WebSocket",
+      "Node.js",
+      "Vite",
+      "GTFS-RT",
+      "Docker",
+      "Caddy",
+    ],
+    links: [
+      { kind: "web", url: "https://byradar.no" },
+      { kind: "github", url: "https://github.com/zaimimr/byradar" },
+    ],
+    images: [
+      c.image("/public/val/projects/byradar-1.webp", {
+        width: 2000,
+        height: 1250,
+        mimeType: "image/webp",
+      }),
+      c.image("/public/val/projects/byradar-2.webp", {
+        width: 2000,
+        height: 1250,
+        mimeType: "image/webp",
+      }),
+    ],
+    date: "2026-09-08",
+    featured: false,
+    hidden: false,
+  },
   bonnetid: {
     title: "Bønnetid",
     description:
