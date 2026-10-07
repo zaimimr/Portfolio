@@ -1,7 +1,12 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  /* config options here */
+  async rewrites() {
+    return [
+      { source: "/demo", destination: "https://zaim-demo.vercel.app/" },
+      { source: "/demo/:path*", destination: "https://zaim-demo.vercel.app/:path*" },
+    ];
+  },
 };
 
 export default nextConfig;
