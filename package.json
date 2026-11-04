@@ -29,7 +29,7 @@
     "react": "19.2.8",
     "react-dom": "19.2.8",
     "resend": "^6.24.0",
-    "zod": "^4.4.3"
+    "zod": "^4.6.6"
   },
   "devDependencies": {
     "@tailwindcss/postcss": "^4",
